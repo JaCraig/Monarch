@@ -8,6 +8,7 @@ using Monarch.Defaults;
 using Monarch.Interfaces;
 using Monarch.Tests.BaseClasses;
 using Monarch.Tests.Utils;
+using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using TestFountain;
 using Xunit;
@@ -38,21 +39,14 @@ namespace Monarch.Tests.Commands.Parser
 
         [Theory]
         [FountainData(1000, 500)]
-        public void RandomArgs(TestData data)
+        public void RandomArgs([Required]TestData data)
         {
             var Item = Canister.Builder.Bootstrapper.Resolve<ArgParser>();
             var Tokens = Item.GetTokens(data?.Data);
-            if (data?.Data == null)
-            {
-                Tokens.Should().BeEmpty();
-            }
-            else
-            {
-                Tokens.Should().NotBeNullOrEmpty();
-                Tokens[0].Should().BeOfType<CommandToken>();
-                Tokens[0].Value.Should().Equals("?");
-                Tokens.Should().HaveCountGreaterOrEqualTo(1).And.HaveCountLessOrEqualTo(11);
-            }
+            Tokens.Should().NotBeNullOrEmpty();
+            Tokens[0].Should().BeOfType<CommandToken>();
+            Tokens[0].Value.Should().Equals("?");
+            Tokens.Should().HaveCountGreaterOrEqualTo(1).And.HaveCountLessOrEqualTo(11);
         }
 
         [Fact]
