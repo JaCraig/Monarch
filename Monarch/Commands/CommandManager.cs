@@ -116,9 +116,11 @@ namespace Monarch.Commands
             arg = arg.StripLeft(Options.CommandPrefix).ToUpper();
             var PotentialCommand = Commands.FirstOrDefault(x => x.Aliases.Contains(arg)) ??
                     Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(arg));
-            if (PotentialCommand == null && Commands.Count() == 3)
+            if (PotentialCommand != null)
+                return PotentialCommand;
+            if (Commands.Count() == 3)
                 return Commands.FirstOrDefault(x => !(x is HelpCommand) && !(x is VersionCommand));
-            if (PotentialCommand == null && Commands.Count() == 2)
+            if (Commands.Count() == 2)
                 return Commands.FirstOrDefault(x => x is HelpCommand);
             return null;
         }
