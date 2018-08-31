@@ -35,7 +35,14 @@ namespace Monarch.Defaults
         /// <param name="options">The options.</param>
         public DefaultConsoleWriter(IEnumerable<IOptions> options)
         {
-            ConsoleWidth = Console.BufferWidth > 10 ? Console.BufferWidth : DefaultWidth;
+            try
+            {
+                ConsoleWidth = Console.BufferWidth > 10 ? Console.BufferWidth : DefaultWidth;
+            }
+            catch
+            {
+                ConsoleWidth = DefaultWidth;
+            }
             Separator = new string('-', ConsoleWidth);
             Options = options.FirstOrDefault(x => !(x is DefaultOptions)) ?? new DefaultOptions();
         }
