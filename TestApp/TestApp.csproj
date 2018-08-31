@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <LangVersion>latest</LangVersion>
     <Description>Test Description</Description>
-    <PackageId>Test Application</PackageId>
+    <PackageId>TestApp</PackageId>
     <Product>Test Application</Product>
     <Copyright>2018</Copyright>
   </PropertyGroup>
