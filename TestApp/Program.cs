@@ -7,7 +7,7 @@ namespace TestApp
     /// <summary>
     /// Program
     /// </summary>
-    internal class Program
+    internal static class Program
     {
         /// <summary>
         /// Mains the specified arguments.

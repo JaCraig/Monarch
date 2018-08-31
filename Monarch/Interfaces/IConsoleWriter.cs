@@ -135,7 +135,6 @@ namespace Monarch.Interfaces
         /// <summary>
         /// Writes the text and ends with a new line.
         /// </summary>
-        /// <param name="value">The value.</param>
         /// <returns>This</returns>
         IConsoleWriter WriteLine();
 

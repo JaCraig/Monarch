@@ -39,7 +39,6 @@ namespace Monarch.Commands
         /// </summary>
         /// <param name="commands">The commands.</param>
         /// <param name="options">The options.</param>
-        /// <param name="parser">The parser.</param>
         public CommandManager(IEnumerable<ICommand> commands, IEnumerable<IOptions> options)
         {
             Commands = commands ?? new List<ICommand>();

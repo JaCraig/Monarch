@@ -29,7 +29,7 @@ namespace Monarch.Commands.BaseClasses
         where TInput : class, new()
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CommandBaseClass"/> class.
+        /// Initializes a new instance of the <see cref="CommandBaseClass{TInput}"/> class.
         /// </summary>
         protected CommandBaseClass()
         {

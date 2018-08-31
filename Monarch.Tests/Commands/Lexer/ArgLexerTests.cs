@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Monarch.Tests.Commands.Lexer
+﻿namespace Monarch.Tests.Commands.Lexer
 {
-    class ArgLexerTests
+    public class ArgLexerTests
     {
     }
 }

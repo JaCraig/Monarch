@@ -22,15 +22,24 @@ using System.Reflection;
 
 namespace Monarch.Commands.Lexer
 {
+    /// <summary>
+    /// Arg Lexer
+    /// </summary>
     public class ArgLexer
     {
+        /// <summary>
+        /// Lexes the specified tokens.
+        /// </summary>
+        /// <param name="tokens">The tokens.</param>
+        /// <param name="properties">The properties.</param>
+        /// <returns>The command</returns>
         public Command Lex(List<TokenBaseClass> tokens, PropertyInfo[] properties)
         {
             var Results = new Command();
             if (tokens.Count == 0)
                 return Results;
 
-            Results.Name = tokens.FirstOrDefault(x => x is CommandToken);
+            Results.Name = tokens.Find(x => x is CommandToken);
             tokens = tokens.Where(x => !(x is CommandToken)).ToList();
 
             if (properties.Length == 0)
@@ -42,7 +51,7 @@ namespace Monarch.Commands.Lexer
             {
                 if (tokens[0] is OptionNameToken)
                 {
-                    CurrentProperty = Results.Properties.FirstOrDefault(x => x.FlagName.UpperValue == tokens[0].UpperValue);
+                    CurrentProperty = Results.Properties.Find(x => x.FlagName.UpperValue == tokens[0].UpperValue);
                     if (CurrentProperty == null)
                     {
                         CurrentProperty = new Property

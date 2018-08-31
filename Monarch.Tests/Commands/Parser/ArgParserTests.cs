@@ -7,6 +7,7 @@ using Monarch.Commands.Parser;
 using Monarch.Defaults;
 using Monarch.Interfaces;
 using Monarch.Tests.BaseClasses;
+using Monarch.Tests.Utils;
 using System.Threading.Tasks;
 using TestFountain;
 using Xunit;
@@ -59,7 +60,7 @@ namespace Monarch.Tests.Commands.Parser
         {
             var Item = new ArgParser(new DefaultOptions(),
                 new ICommand[] {
-                    new HelpCommand(new IConsoleWriter[]{ },new IOptions[]{ }),
+                    new HelpCommand(new IConsoleWriter[]{new EmptyConsoleWriter() },new IOptions[]{ }),
                     new UserCommand()});
             var Tokens = Item.GetTokens(new string[] { "UserCommand", "Test", "Data" });
             Tokens.Should().NotBeNullOrEmpty();
