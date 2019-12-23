@@ -71,7 +71,7 @@ namespace Monarch.Commands.Default
         /// <returns>The result.</returns>
         protected override async Task<int> Run(EmptyInput input)
         {
-            await Task.CompletedTask;
+            await Task.CompletedTask.ConfigureAwait(false);
             var AppAssembly = Assembly.GetEntryAssembly();
             var CustomAttributes = AppAssembly.GetCustomAttributes();
             var AppName = AppAssembly.GetName();

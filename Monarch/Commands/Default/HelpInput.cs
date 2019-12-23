@@ -28,6 +28,6 @@ namespace Monarch.Commands.Default
         /// </summary>
         /// <value>The command to get help on.</value>
         [Display(Description = "The command that you wish to have information about.")]
-        public string Command { get; set; }
+        public string? Command { get; set; }
     }
 }

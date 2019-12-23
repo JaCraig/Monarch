@@ -30,7 +30,7 @@ namespace Monarch.Tests.Commands.Parser
         [MemberData(nameof(CommandsData))]
         public void CommandsParsed(TestData data, string expectedCommand)
         {
-            var Item = Canister.Builder.Bootstrapper.Resolve<ArgParser>();
+            var Item = Canister.Builder.Bootstrapper.Resolve<IArgParser>();
             var Tokens = Item.GetTokens(data?.Data);
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();
@@ -41,7 +41,7 @@ namespace Monarch.Tests.Commands.Parser
         [FountainData(1000, 500)]
         public void RandomArgs([Required]TestData data)
         {
-            var Item = Canister.Builder.Bootstrapper.Resolve<ArgParser>();
+            var Item = Canister.Builder.Bootstrapper.Resolve<IArgParser>();
             var Tokens = Item.GetTokens(data?.Data);
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();
@@ -54,7 +54,7 @@ namespace Monarch.Tests.Commands.Parser
         {
             var Item = new ArgParser(new DefaultOptions(),
                 new ICommand[] {
-                    new HelpCommand(new IConsoleWriter[]{new EmptyConsoleWriter() },new IOptions[]{ }),
+                    new HelpCommand(new IConsoleWriter[]{new EmptyConsoleWriter() },System.Array.Empty<IOptions>()),
                     new UserCommand()});
             var Tokens = Item.GetTokens(new string[] { "UserCommand", "Test", "Data" });
             Tokens.Should().NotBeNullOrEmpty();
@@ -82,7 +82,7 @@ namespace Monarch.Tests.Commands.Parser
 
             protected override async Task<int> Run(EmptyInput input)
             {
-                await Task.CompletedTask;
+                await Task.CompletedTask.ConfigureAwait(false);
                 return 1;
             }
         }

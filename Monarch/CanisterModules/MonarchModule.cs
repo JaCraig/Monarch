@@ -46,8 +46,8 @@ namespace Monarch.CanisterModules
             bootstrapper.RegisterAll<ICommand>(ServiceLifetime.Singleton);
             bootstrapper.RegisterAll<IOptions>(ServiceLifetime.Singleton);
             bootstrapper.RegisterAll<IConsoleWriter>(ServiceLifetime.Singleton);
-            bootstrapper.Register<ArgParser>();
-            bootstrapper.Register<ArgLexer>();
+            bootstrapper.Register<IArgParser, ArgParser>();
+            bootstrapper.Register<IArgLexer, ArgLexer>();
             bootstrapper.Register<CommandManager>(ServiceLifetime.Singleton);
             bootstrapper.Register<CommandRunner>(ServiceLifetime.Singleton);
         }

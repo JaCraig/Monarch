@@ -37,7 +37,7 @@ namespace Monarch.Commands.Lexer
         /// Gets or sets the name.
         /// </summary>
         /// <value>The name.</value>
-        public TokenBaseClass Name { get; set; }
+        public TokenBaseClass? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the properties.
@@ -60,9 +60,9 @@ namespace Monarch.Commands.Lexer
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        /// <returns>A <see cref="string"/> that represents this instance.</returns>
         public override string ToString()
         {
             return Name + " " + Properties.ToString(x => x.ToString());

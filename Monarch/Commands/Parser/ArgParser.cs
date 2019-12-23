@@ -28,7 +28,8 @@ namespace Monarch.Commands.Parser
     /// <summary>
     /// Arg parser
     /// </summary>
-    public class ArgParser
+    /// <seealso cref="IArgParser"/>
+    public class ArgParser : IArgParser
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArgParser"/> class.

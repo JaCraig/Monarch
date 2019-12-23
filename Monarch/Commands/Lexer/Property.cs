@@ -40,7 +40,7 @@ namespace Monarch.Commands.Lexer
         /// Gets or sets the name of the flag.
         /// </summary>
         /// <value>The name of the flag.</value>
-        public TokenBaseClass FlagName { get; set; }
+        public TokenBaseClass? FlagName { get; set; }
 
         /// <summary>
         /// Gets or sets the flag value.
@@ -52,7 +52,7 @@ namespace Monarch.Commands.Lexer
         /// Gets a value indicating whether this instance is ienumerable.
         /// </summary>
         /// <value><c>true</c> if this instance is ienumerable; otherwise, <c>false</c>.</value>
-        public bool IsIEnumerable => PropertyInfo.PropertyType != PropertyInfo.PropertyType.GetIEnumerableElementType();
+        public bool IsIEnumerable => PropertyInfo?.PropertyType != PropertyInfo?.PropertyType.GetIEnumerableElementType();
 
         /// <summary>
         /// Gets the maximum value count.
@@ -72,7 +72,7 @@ namespace Monarch.Commands.Lexer
         /// Gets or sets the property.
         /// </summary>
         /// <value>The property.</value>
-        public PropertyInfo PropertyInfo { get; set; }
+        public PropertyInfo? PropertyInfo { get; set; }
 
         /// <summary>
         /// Gets the value.
@@ -80,6 +80,8 @@ namespace Monarch.Commands.Lexer
         /// <param name="inputObject">The input object.</param>
         public void GetValue(object inputObject)
         {
+            if (PropertyInfo is null)
+                return;
             if (IsIEnumerable)
             {
                 var CurrentPropertyType = PropertyInfo.PropertyType;
@@ -101,9 +103,9 @@ namespace Monarch.Commands.Lexer
         }
 
         /// <summary>
-        /// Returns a <see cref="System.String"/> that represents this instance.
+        /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        /// <returns>A <see cref="string"/> that represents this instance.</returns>
         public override string ToString()
         {
             return FlagName + " " + FlagValue.ToString(x => x.ToString());

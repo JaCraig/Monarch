@@ -39,10 +39,14 @@ namespace Monarch.Commands
         /// </summary>
         /// <param name="commands">The commands.</param>
         /// <param name="options">The options.</param>
-        public CommandManager(IEnumerable<ICommand> commands, IEnumerable<IOptions> options)
+        /// <param name="lexer">The lexer.</param>
+        /// <param name="parser">The parser.</param>
+        public CommandManager(IEnumerable<ICommand> commands, IEnumerable<IOptions> options, IEnumerable<IArgLexer> lexer, IEnumerable<IArgParser> parser)
         {
             Commands = commands ?? new List<ICommand>();
             Options = options.FirstOrDefault(x => !(x is DefaultOptions)) ?? new DefaultOptions();
+            Lexer = lexer.FirstOrDefault(x => !(x is ArgLexer)) ?? new ArgLexer();
+            Parser = parser.FirstOrDefault(x => !(x is ArgParser)) ?? new ArgParser(Options, Commands);
         }
 
         /// <summary>
@@ -52,17 +56,29 @@ namespace Monarch.Commands
         public IEnumerable<ICommand> Commands { get; }
 
         /// <summary>
+        /// Gets the lexer.
+        /// </summary>
+        /// <value>The lexer.</value>
+        public IArgLexer Lexer { get; }
+
+        /// <summary>
         /// Gets the options.
         /// </summary>
         /// <value>The options.</value>
         public IOptions Options { get; }
 
         /// <summary>
+        /// Gets the parser.
+        /// </summary>
+        /// <value>The parser.</value>
+        public IArgParser Parser { get; }
+
+        /// <summary>
         /// Gets the command.
         /// </summary>
         /// <param name="args">The arguments.</param>
         /// <returns>The command specified by the arguments.</returns>
-        /// <exception cref="System.ArgumentNullException">args</exception>
+        /// <exception cref="ArgumentNullException">args</exception>
         public ICommand GetCommand(string[] args)
         {
             if (args == null)
@@ -86,7 +102,7 @@ namespace Monarch.Commands
         /// <returns>The resulting command input.</returns>
         public object GetInput(ICommand command, string[] args)
         {
-            var Tokens = new ArgParser(Options, Commands).GetTokens(args);
+            var Tokens = Parser.GetTokens(args);
 
             var InputObject = command.CreateInput();
 
@@ -96,7 +112,7 @@ namespace Monarch.Commands
                                                 .ThenBy(x => x.Name)
                                                 .ToArray();
 
-            var Tree = new ArgLexer().Lex(Tokens.ToList(), InputProperties);
+            var Tree = Lexer.Lex(Tokens.ToList(), InputProperties);
 
             var ReturnValue = Tree.GetValue(InputObject);
             ReturnValue.Validate();
@@ -109,7 +125,7 @@ namespace Monarch.Commands
         /// </summary>
         /// <param name="arg">The argument.</param>
         /// <returns>The appropriate command.</returns>
-        private ICommand GetCommand(string arg)
+        private ICommand? GetCommand(string arg)
         {
             if (!arg.StartsWith(Options.CommandPrefix, StringComparison.OrdinalIgnoreCase))
                 return null;

@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using BigBook;
+using Monarch.Commands.Interfaces;
 using Monarch.Commands.Parser;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,8 @@ namespace Monarch.Commands.Lexer
     /// <summary>
     /// Arg Lexer
     /// </summary>
-    public class ArgLexer
+    /// <seealso cref="IArgLexer"/>
+    public class ArgLexer : IArgLexer
     {
         /// <summary>
         /// Lexes the specified tokens.
@@ -45,13 +47,13 @@ namespace Monarch.Commands.Lexer
             if (properties.Length == 0)
                 return Results;
 
-            Property CurrentProperty = null;
+            Property? CurrentProperty = null;
 
             while (tokens.Count > 0)
             {
                 if (tokens[0] is OptionNameToken)
                 {
-                    CurrentProperty = Results.Properties.Find(x => x.FlagName.UpperValue == tokens[0].UpperValue);
+                    CurrentProperty = Results.Properties.Find(x => x.FlagName?.UpperValue == tokens[0].UpperValue);
                     if (CurrentProperty == null)
                     {
                         CurrentProperty = new Property
@@ -74,7 +76,7 @@ namespace Monarch.Commands.Lexer
                     properties = properties.Remove(new PropertyInfo[] { properties[0] }).ToArray();
                     Results.Properties.Add(CurrentProperty);
                 }
-                else
+                else if (CurrentProperty != null)
                 {
                     if (CurrentProperty.MaxValueCount <= CurrentProperty.FlagValue.Count && properties.Length > 0)
                     {

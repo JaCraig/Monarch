@@ -89,16 +89,16 @@ namespace Monarch.Commands.Default
         /// <returns>The result.</returns>
         protected override async Task<int> Run(HelpInput input)
         {
-            await Task.CompletedTask;
+            await Task.CompletedTask.ConfigureAwait(false);
             var AppAssembly = Assembly.GetEntryAssembly();
             var CustomAttributes = AppAssembly.GetCustomAttributes();
             var AppName = AppAssembly.GetName();
 
             Console.Indent();
             if (string.IsNullOrEmpty(input.Command))
-                PrintDefaultHelp(input, AppAssembly, CustomAttributes, AppName);
+                PrintDefaultHelp(CustomAttributes, AppName);
             else
-                PrintCommandHelp(input, AppAssembly, CustomAttributes, AppName);
+                PrintCommandHelp(input);
             Console.Outdent();
             return 0;
         }
@@ -116,12 +116,9 @@ namespace Monarch.Commands.Default
         /// Prints the command help.
         /// </summary>
         /// <param name="input">The input.</param>
-        /// <param name="appAssembly">The application assembly.</param>
-        /// <param name="customAttributes">The custom attributes.</param>
-        /// <param name="appName">Name of the application.</param>
-        private void PrintCommandHelp(HelpInput input, Assembly appAssembly, IEnumerable<Attribute> customAttributes, AssemblyName appName)
+        private void PrintCommandHelp(HelpInput input)
         {
-            var CommandUsing = Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(input.Command.ToUpper()));
+            var CommandUsing = Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(input.Command?.ToUpper()));
             if (CommandUsing == null)
             {
                 Console.WriteLine($"'{input.Command}' is not found as a command.");
@@ -132,13 +129,13 @@ namespace Monarch.Commands.Default
 
             var Properties = CommandUsing.CreateInput().GetType().GetProperties().OrderBy(x => x.Name).ToArray();
 
-            StringBuilder UsageBuilder = new StringBuilder();
+            var UsageBuilder = new StringBuilder();
             UsageBuilder.Append("Usage: ").Append(input.Command).Append(" ");
             for (int x = 0; x < Properties.Length; ++x)
             {
                 if ((Properties[x].PropertyType.IsGenericType
                     && Properties[x].PropertyType.GetGenericTypeDefinition() != typeof(Nullable<>))
-                    || Properties[x].Attribute<System.ComponentModel.DataAnnotations.RequiredAttribute>() != null)
+                    || Properties[x].Attribute<RequiredAttribute>() != null)
                 {
                     UsageBuilder.Append("<").Append(Properties[x].Name).Append("> ");
                 }
@@ -161,22 +158,22 @@ namespace Monarch.Commands.Default
 
                 for (int x = 0; x < Properties.Length; ++x)
                 {
-                    StringBuilder Builder = new StringBuilder();
+                    var Builder = new StringBuilder();
                     Builder.Append(SetLength(Properties[x].Name, MaxLength));
 
                     Builder.Append(Properties[x].GetCustomAttribute<DisplayAttribute>()?.Description);
 
-                    var ValidationAttributes = Properties[x].GetCustomAttributes<System.ComponentModel.DataAnnotations.ValidationAttribute>();
+                    var ValidationAttributes = Properties[x].GetCustomAttributes<ValidationAttribute>();
 
                     Builder.Append(" ");
 
-                    if (ValidationAttributes.FirstOrDefault(y => y is System.ComponentModel.DataAnnotations.MaxLengthAttribute) is System.ComponentModel.DataAnnotations.MaxLengthAttribute MaxLengthAttr)
+                    if (ValidationAttributes.FirstOrDefault(y => y is MaxLengthAttribute) is MaxLengthAttribute MaxLengthAttr)
                         Builder.Append("[Max Length = ").Append(MaxLengthAttr.Length).Append("]");
-                    if (ValidationAttributes.FirstOrDefault(y => y is System.ComponentModel.DataAnnotations.MinLengthAttribute) is System.ComponentModel.DataAnnotations.MinLengthAttribute MinLengthAttr)
+                    if (ValidationAttributes.FirstOrDefault(y => y is MinLengthAttribute) is MinLengthAttribute MinLengthAttr)
                         Builder.Append("[Min Length = ").Append(MinLengthAttr.Length).Append("]");
 
-                    Builder.Append(ValidationAttributes.Any(y => !(y is System.ComponentModel.DataAnnotations.MinLengthAttribute) && !(y is System.ComponentModel.DataAnnotations.MaxLengthAttribute)) ? ", " : " ")
-                        .Append(ValidationAttributes.Where(y => !(y is System.ComponentModel.DataAnnotations.MinLengthAttribute) && !(y is System.ComponentModel.DataAnnotations.MaxLengthAttribute))
+                    Builder.Append(ValidationAttributes.Any(y => !(y is MinLengthAttribute) && !(y is MaxLengthAttribute)) ? ", " : " ")
+                        .Append(ValidationAttributes.Where(y => !(y is MinLengthAttribute) && !(y is MaxLengthAttribute))
                         .ToString(y => "[" + y.GetType().Name.Replace("Attribute", "") + "]", ", "));
 
                     Console.WriteLine(Builder.ToString());
@@ -197,13 +194,11 @@ namespace Monarch.Commands.Default
         /// <summary>
         /// Prints the default help.
         /// </summary>
-        /// <param name="input">The input.</param>
-        /// <param name="AppAssembly">The application assembly.</param>
         /// <param name="CustomAttributes">The custom attributes.</param>
         /// <param name="AppName">Name of the application.</param>
-        private void PrintDefaultHelp(HelpInput input, Assembly AppAssembly, IEnumerable<System.Attribute> CustomAttributes, AssemblyName AppName)
+        private void PrintDefaultHelp(IEnumerable<Attribute> CustomAttributes, AssemblyName AppName)
         {
-            PrintHeader(AppAssembly, CustomAttributes, AppName);
+            PrintHeader(CustomAttributes, AppName);
 
             int MaxLength = GetMaxLength();
             PrintUserCommands(MaxLength);
@@ -213,16 +208,15 @@ namespace Monarch.Commands.Default
         /// <summary>
         /// Prints the header.
         /// </summary>
-        /// <param name="AppAssembly">The application assembly.</param>
         /// <param name="CustomAttributes">The custom attributes.</param>
         /// <param name="AppName">Name of the application.</param>
-        private void PrintHeader(Assembly AppAssembly, IEnumerable<System.Attribute> CustomAttributes, AssemblyName AppName)
+        private void PrintHeader(IEnumerable<Attribute> CustomAttributes, AssemblyName AppName)
         {
-            Console.WriteLine($"{CustomAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product} ({AppName.Version})")
-                    .WriteLine(CustomAttributes.OfType<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright)
+            Console.WriteLine($"{CustomAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product ?? ""} ({AppName.Version})")
+                    .WriteLine(CustomAttributes.OfType<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright ?? "")
                     .WriteLine()
                     .WriteSeparator()
-                    .WriteLine(CustomAttributes.OfType<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description)
+                    .WriteLine(CustomAttributes.OfType<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description ?? "")
                     .WriteLine()
                     .WriteSeparator()
                     .WriteLine($"Usage: {AppName.Name} [command] [command-options]")

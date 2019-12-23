@@ -25,7 +25,7 @@ namespace Monarch.Defaults
     /// <summary>
     /// Default console writer
     /// </summary>
-    /// <seealso cref="Monarch.Interfaces.IConsoleWriter"/>
+    /// <seealso cref="IConsoleWriter"/>
     /// <seealso cref="IConsoleWriter"/>
     public class DefaultConsoleWriter : IConsoleWriter
     {
@@ -427,7 +427,7 @@ namespace Monarch.Defaults
         /// <returns>The resulting lines</returns>
         private string[] BreakIntoLines(string input)
         {
-            if (string.IsNullOrEmpty(input)) return new string[0];
+            if (string.IsNullOrEmpty(input)) return Array.Empty<string>();
             var lines = new List<string>();
             while (input.Length > 0)
             {

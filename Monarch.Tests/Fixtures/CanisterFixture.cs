@@ -25,6 +25,11 @@ namespace Monarch.Tests.Fixtures
 
         public void Dispose()
         {
+            Dispose(true);
+        }
+
+        protected virtual void Dispose(bool managed)
+        {
         }
     }
 }

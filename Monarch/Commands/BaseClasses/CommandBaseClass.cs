@@ -82,7 +82,7 @@ namespace Monarch.Commands.BaseClasses
         /// <returns>The result.</returns>
         public Task<int> Run(object input)
         {
-            return Run(input as TInput);
+            return Run((input as TInput)!);
         }
 
         /// <summary>

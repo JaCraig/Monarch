@@ -13,14 +13,14 @@ namespace Monarch.Tests.Commands.Default
         [Fact]
         public void Creation()
         {
-            var TestObject = new VersionCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, new IOptions[] { });
+            var TestObject = new VersionCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, System.Array.Empty<IOptions>());
             TestObject.Console.Should().BeOfType<EmptyConsoleWriter>();
         }
 
         [Fact]
         public async Task Run()
         {
-            var TestObject = new VersionCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, new IOptions[] { });
+            var TestObject = new VersionCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, System.Array.Empty<IOptions>());
             var Result = await TestObject.Run(new EmptyInput()).ConfigureAwait(false);
             Result.Should().Be(0);
         }
