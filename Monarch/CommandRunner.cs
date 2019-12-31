@@ -28,7 +28,7 @@ namespace Monarch
         /// Initializes a new instance of the <see cref="CommandRunner"/> class.
         /// </summary>
         public CommandRunner()
-            : this(Canister.Builder.Bootstrapper.Resolve<CommandManager>())
+            : this(Canister.Builder.Bootstrapper?.Resolve<CommandManager>())
         {
         }
 
@@ -36,7 +36,7 @@ namespace Monarch
         /// Initializes a new instance of the <see cref="CommandRunner"/> class.
         /// </summary>
         /// <param name="manager">The manager.</param>
-        public CommandRunner(CommandManager manager)
+        public CommandRunner(CommandManager? manager)
         {
             Manager = manager;
         }
@@ -45,7 +45,7 @@ namespace Monarch
         /// Gets the manager.
         /// </summary>
         /// <value>The manager.</value>
-        public CommandManager Manager { get; }
+        public CommandManager? Manager { get; }
 
         /// <summary>
         /// Runs the specified arguments.
@@ -54,6 +54,8 @@ namespace Monarch
         /// <returns>The result.</returns>
         public Task<int> Run(string[] args)
         {
+            if (Manager == null)
+                return Task.FromResult(0);
             var Command = Manager.GetCommand(args);
             var Input = Manager.GetInput(Command, args);
             return Command.Run(Input);

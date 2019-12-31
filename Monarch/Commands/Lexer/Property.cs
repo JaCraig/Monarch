@@ -58,15 +58,7 @@ namespace Monarch.Commands.Lexer
         /// Gets the maximum value count.
         /// </summary>
         /// <value>The maximum value count.</value>
-        public int MaxValueCount
-        {
-            get
-            {
-                if (IsIEnumerable)
-                    return PropertyInfo.Attribute<MaxLengthAttribute>()?.Length ?? int.MaxValue;
-                return 1;
-            }
-        }
+        public int MaxValueCount => IsIEnumerable ? (PropertyInfo?.Attribute<MaxLengthAttribute>()?.Length ?? int.MaxValue) : 1;
 
         /// <summary>
         /// Gets or sets the property.
@@ -87,11 +79,11 @@ namespace Monarch.Commands.Lexer
                 var CurrentPropertyType = PropertyInfo.PropertyType;
                 var ConvertToType = CurrentPropertyType.GetIEnumerableElementType();
 
-                var CurrentList = (IList)typeof(List<>).MakeGenericType(ConvertToType).Create();
+                var CurrentList = (IList?)typeof(List<>).MakeGenericType(ConvertToType).Create();
                 for (int i = 0, FlagValueCount = FlagValue.Count; i < FlagValueCount; i++)
                 {
                     var Item = FlagValue[i];
-                    CurrentList.Add(Item.Value.To(ConvertToType, null));
+                    CurrentList?.Add(Item.Value.To(ConvertToType, null));
                 }
                 PropertyInfo.SetValue(inputObject, CurrentList);
             }
@@ -106,9 +98,6 @@ namespace Monarch.Commands.Lexer
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return FlagName + " " + FlagValue.ToString(x => x.ToString());
-        }
+        public override string ToString() => FlagName + " " + FlagValue.ToString(x => x.ToString());
     }
 }

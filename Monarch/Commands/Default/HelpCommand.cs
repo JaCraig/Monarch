@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using BigBook;
+using Monarch.Commands.Attributes;
 using Monarch.Commands.BaseClasses;
 using Monarch.Commands.Interfaces;
 using Monarch.Defaults;
@@ -50,7 +51,7 @@ namespace Monarch.Commands.Default
         /// Gets the aliases.
         /// </summary>
         /// <value>The aliases.</value>
-        public override string[] Aliases => new string[] { "?" };
+        public override string[] Aliases => new string[] { "?", "help", "h" };
 
         /// <summary>
         /// Gets the console.
@@ -80,7 +81,7 @@ namespace Monarch.Commands.Default
         /// Gets the commands.
         /// </summary>
         /// <value>The commands.</value>
-        private IEnumerable<ICommand> Commands => Canister.Builder.Bootstrapper.ResolveAll<ICommand>();
+        private IEnumerable<ICommand> Commands => Canister.Builder.Bootstrapper?.ResolveAll<ICommand>() ?? Array.Empty<ICommand>();
 
         /// <summary>
         /// Runs the specified input.
@@ -124,7 +125,7 @@ namespace Monarch.Commands.Default
                 Console.WriteLine($"'{input.Command}' is not found as a command.");
                 return;
             }
-            Console.WriteLine($"Command: '{input.Command.ToString(StringCase.FirstCharacterUpperCase)}' ({CommandUsing.Description})")
+            Console.WriteLine($"Command: '{input.Command?.ToString(StringCase.FirstCharacterUpperCase)}' ({CommandUsing.Description})")
                     .WriteLine();
 
             var Properties = CommandUsing.CreateInput().GetType().GetProperties().OrderBy(x => x.Name).ToArray();
@@ -163,9 +164,16 @@ namespace Monarch.Commands.Default
 
                     Builder.Append(Properties[x].GetCustomAttribute<DisplayAttribute>()?.Description);
 
-                    var ValidationAttributes = Properties[x].GetCustomAttributes<ValidationAttribute>();
+                    Builder.Append(Properties[x].GetCustomAttribute<DynamicDisplayAttribute>()?.GetDescription());
 
                     Builder.Append(" ");
+
+                    if (Properties[x].PropertyType.IsEnum)
+                    {
+                        Builder.Append("[Values = (").Append(Enum.GetNames(Properties[x].PropertyType).ToString(x => "'" + x + "'")).Append(")] ");
+                    }
+
+                    var ValidationAttributes = Properties[x].GetCustomAttributes<ValidationAttribute>();
 
                     if (ValidationAttributes.FirstOrDefault(y => y is MaxLengthAttribute) is MaxLengthAttribute MaxLengthAttr)
                         Builder.Append("[Max Length = ").Append(MaxLengthAttr.Length).Append("]");
