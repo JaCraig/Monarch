@@ -78,17 +78,15 @@ namespace Monarch.Commands
         /// </summary>
         /// <param name="args">The arguments.</param>
         /// <returns>The command specified by the arguments.</returns>
-        /// <exception cref="ArgumentNullException">args</exception>
         public ICommand GetCommand(string[] args)
         {
-            if (args == null)
-                throw new ArgumentNullException(nameof(args));
+            args ??= Array.Empty<string>();
             if (args.Length == 0)
                 return GetCommand(new string[] { Options.CommandPrefix + "?" });
             for (int x = 0; x < args.Length; ++x)
             {
                 var TempCommand = GetCommand(args[x]);
-                if (TempCommand != null)
+                if (!(TempCommand is null))
                     return TempCommand;
             }
             throw new Exception("Could not find command");
@@ -132,7 +130,7 @@ namespace Monarch.Commands
             arg = arg.StripLeft(Options.CommandPrefix).ToUpper();
             var PotentialCommand = Commands.FirstOrDefault(x => x.Aliases.Contains(arg)) ??
                     Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(arg));
-            if (PotentialCommand != null)
+            if (!(PotentialCommand is null))
                 return PotentialCommand;
             if (Commands.Count() == 3)
                 return Commands.FirstOrDefault(x => !(x is HelpCommand) && !(x is VersionCommand));

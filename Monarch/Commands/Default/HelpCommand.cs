@@ -120,7 +120,7 @@ namespace Monarch.Commands.Default
         private void PrintCommandHelp(HelpInput input)
         {
             var CommandUsing = Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(input.Command?.ToUpper()));
-            if (CommandUsing == null)
+            if (CommandUsing is null)
             {
                 Console.WriteLine($"'{input.Command}' is not found as a command.");
                 return;

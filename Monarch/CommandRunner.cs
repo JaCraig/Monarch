@@ -54,7 +54,7 @@ namespace Monarch
         /// <returns>The result.</returns>
         public Task<int> Run(string[] args)
         {
-            if (Manager == null)
+            if (Manager is null)
                 return Task.FromResult(0);
             var Command = Manager.GetCommand(args);
             var Input = Manager.GetInput(Command, args);

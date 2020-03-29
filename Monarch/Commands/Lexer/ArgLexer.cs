@@ -54,7 +54,7 @@ namespace Monarch.Commands.Lexer
                 if (tokens[0] is OptionNameToken)
                 {
                     CurrentProperty = Results.Properties.Find(x => x.FlagName?.UpperValue == tokens[0].UpperValue);
-                    if (CurrentProperty == null)
+                    if (CurrentProperty is null)
                     {
                         CurrentProperty = new Property
                         {
@@ -65,7 +65,7 @@ namespace Monarch.Commands.Lexer
                         Results.Properties.Add(CurrentProperty);
                     }
                 }
-                else if (CurrentProperty == null && properties.Length > 0)
+                else if (CurrentProperty is null && properties.Length > 0)
                 {
                     CurrentProperty = new Property
                     {

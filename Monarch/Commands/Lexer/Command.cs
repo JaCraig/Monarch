@@ -65,7 +65,7 @@ namespace Monarch.Commands.Lexer
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
         public override string ToString()
         {
-            return Name + " " + Properties.ToString(x => x.ToString());
+            return $"{Name} {Properties.ToString(x => x.ToString())}";
         }
     }
 }
