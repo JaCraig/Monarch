@@ -1,5 +1,5 @@
-﻿using Monarch;
-using System.Reflection;
+﻿using Microsoft.Extensions.DependencyInjection;
+using Monarch;
 
 namespace ExampleApp
 {
@@ -7,9 +7,8 @@ namespace ExampleApp
     {
         private static void Main(string[] args)
         {
-            Canister.Builder.CreateContainer(null, typeof(Program).GetTypeInfo().Assembly)
-                   .RegisterMonarch()
-                   .Build();
+            new ServiceCollection().AddCanisterModules(configure => configure.AddAssembly(typeof(Program).Assembly)
+                   .RegisterMonarch());
 
             Canister.Builder.Bootstrapper.Resolve<CommandRunner>().Run(args);
         }

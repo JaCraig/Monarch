@@ -16,7 +16,7 @@ limitations under the License.
 
 using Canister.Interfaces;
 
-namespace Monarch
+namespace Microsoft.Extensions.DependencyInjection
 {
     /// <summary>
     /// Canister extensions
@@ -28,9 +28,9 @@ namespace Monarch
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
         /// <returns>The bootstrapper.</returns>
-        public static IBootstrapper RegisterMonarch(this IBootstrapper bootstrapper)
+        public static ICanisterConfiguration? RegisterMonarch(this ICanisterConfiguration? bootstrapper)
         {
-            return bootstrapper.AddAssembly(typeof(CanisterExtensions).Assembly);
+            return bootstrapper?.AddAssembly(typeof(CanisterExtensions).Assembly);
         }
     }
 }

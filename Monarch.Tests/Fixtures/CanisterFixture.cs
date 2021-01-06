@@ -1,6 +1,5 @@
-﻿using System;
-using System.Reflection;
-using TestFountain.Registration;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using Xunit;
 
 namespace Monarch.Tests.Fixtures
@@ -16,10 +15,9 @@ namespace Monarch.Tests.Fixtures
         {
             if (Canister.Builder.Bootstrapper == null)
             {
-                Canister.Builder.CreateContainer(null, typeof(CanisterFixture).GetTypeInfo().Assembly)
+                new ServiceCollection().AddCanisterModules(x => x.AddAssembly(typeof(CanisterFixture).Assembly)
                    .RegisterTestFountain()
-                   .RegisterMonarch()
-                   .Build();
+                   .RegisterMonarch());
             }
         }
 

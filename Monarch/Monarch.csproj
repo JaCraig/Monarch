@@ -26,10 +26,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="3.0.47" />
-    <PackageReference Include="Canister.IoC" Version="3.0.4" />
-    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
-    <PackageReference Include="Valkyrie" Version="3.0.2" />
+    <PackageReference Include="BigBook" Version="3.0.56" />
+    <PackageReference Include="Canister.IoC" Version="4.0.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="Valkyrie" Version="3.0.4" />
   </ItemGroup>
 
 </Project>
