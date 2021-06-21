@@ -7,8 +7,7 @@ namespace ExampleApp
     {
         private static void Main(string[] args)
         {
-            new ServiceCollection().AddCanisterModules(configure => configure.AddAssembly(typeof(Program).Assembly)
-                   .RegisterMonarch());
+            new ServiceCollection().AddCanisterModules();
 
             Canister.Builder.Bootstrapper.Resolve<CommandRunner>().Run(args);
         }

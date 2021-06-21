@@ -39,7 +39,7 @@ namespace Monarch.CanisterModules
         /// Loads the module using the bootstrapper
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IBootstrapper bootstrapper)
+        public void Load(IBootstrapper? bootstrapper)
         {
             if (bootstrapper is null)
                 return;

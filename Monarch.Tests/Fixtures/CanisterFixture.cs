@@ -15,15 +15,14 @@ namespace Monarch.Tests.Fixtures
         {
             if (Canister.Builder.Bootstrapper == null)
             {
-                new ServiceCollection().AddCanisterModules(x => x.AddAssembly(typeof(CanisterFixture).Assembly)
-                   .RegisterTestFountain()
-                   .RegisterMonarch());
+                new ServiceCollection().AddCanisterModules();
             }
         }
 
         public void Dispose()
         {
             Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool managed)
