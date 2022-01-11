@@ -31,9 +31,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="4.0.15" />
-    <PackageReference Include="Canister.IoC" Version="4.0.3" />
+    <PackageReference Include="BigBook" Version="4.0.16" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="Valkyrie" Version="3.0.6" />
+    <PackageReference Include="Valkyrie" Version="3.0.7" />
   </ItemGroup>
 </Project>

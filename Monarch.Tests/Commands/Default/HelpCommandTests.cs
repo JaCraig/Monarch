@@ -9,7 +9,7 @@ using Xunit;
 
 namespace Monarch.Tests.Commands.Default
 {
-    public class HelpCommandTests : TestBaseClass
+    public class HelpCommandTests : TestBaseClass<HelpCommand>
     {
         public static readonly TheoryData<HelpInput> CommandsData = new TheoryData<HelpInput>
         {

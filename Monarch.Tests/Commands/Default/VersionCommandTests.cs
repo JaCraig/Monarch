@@ -8,7 +8,7 @@ using Xunit;
 
 namespace Monarch.Tests.Commands.Default
 {
-    public class VersionCommandTests : TestBaseClass
+    public class VersionCommandTests : TestBaseClass<VersionCommand>
     {
         [Fact]
         public void Creation()
