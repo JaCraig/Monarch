@@ -37,7 +37,7 @@ namespace Monarch.Commands.Default
         /// <param name="options">The options.</param>
         public VersionCommand(IEnumerable<IConsoleWriter> console, IEnumerable<IOptions> options)
         {
-            Console = console.FirstOrDefault(x => !(x is DefaultConsoleWriter)) ?? new DefaultConsoleWriter(options);
+            Console = console.FirstOrDefault(x => x is not DefaultConsoleWriter) ?? new DefaultConsoleWriter(options);
         }
 
         /// <summary>

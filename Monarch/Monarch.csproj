@@ -10,7 +10,7 @@
     <Description>Monarch is a command line parser/command runner</Description>
     <AssemblyTitle>Monarch</AssemblyTitle>
     <Authors>James Craig</Authors>
-	  <TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+	  <TargetFrameworks>net6.0</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Monarch</AssemblyName>
     <PackageId>Monarch</PackageId>
@@ -21,7 +21,7 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.0.$(BuildNumber)</Version>
+    <Version>3.0.$(BuildNumber)</Version>
     <Nullable>enable</Nullable>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -31,8 +31,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BigBook" Version="4.0.18" />
+    <PackageReference Include="BigBook" Version="5.0.0" />
     <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
-    <PackageReference Include="Valkyrie" Version="3.0.10" />
+    <PackageReference Include="Valkyrie" Version="4.0.0" />
   </ItemGroup>
 </Project>

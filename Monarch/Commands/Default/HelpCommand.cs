@@ -15,10 +15,12 @@ limitations under the License.
 */
 
 using BigBook;
+using Microsoft.Extensions.DependencyInjection;
 using Monarch.Commands.Attributes;
 using Monarch.Commands.BaseClasses;
 using Monarch.Commands.Interfaces;
 using Monarch.Defaults;
+using Monarch.ExtensionMethods;
 using Monarch.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -43,8 +45,8 @@ namespace Monarch.Commands.Default
         /// <param name="options">The options.</param>
         public HelpCommand(IEnumerable<IConsoleWriter> console, IEnumerable<IOptions> options)
         {
-            Console = console.FirstOrDefault(x => !(x is DefaultConsoleWriter)) ?? new DefaultConsoleWriter(options);
-            Options = options.FirstOrDefault(x => !(x is DefaultOptions)) ?? new DefaultOptions();
+            Console = console.FirstOrDefault(x => x is not DefaultConsoleWriter) ?? new DefaultConsoleWriter(options);
+            Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
         }
 
         /// <summary>
@@ -81,7 +83,7 @@ namespace Monarch.Commands.Default
         /// Gets the commands.
         /// </summary>
         /// <value>The commands.</value>
-        private IEnumerable<ICommand> Commands => Canister.Builder.Bootstrapper?.ResolveAll<ICommand>() ?? Array.Empty<ICommand>();
+        private IEnumerable<ICommand> Commands => Services.ServiceProvider.GetServices<ICommand>() ?? Array.Empty<ICommand>();
 
         /// <summary>
         /// Runs the specified input.
@@ -180,8 +182,8 @@ namespace Monarch.Commands.Default
                     if (ValidationAttributes.FirstOrDefault(y => y is MinLengthAttribute) is MinLengthAttribute MinLengthAttr)
                         Builder.Append("[Min Length = ").Append(MinLengthAttr.Length).Append("]");
 
-                    Builder.Append(ValidationAttributes.Any(y => !(y is MinLengthAttribute) && !(y is MaxLengthAttribute)) ? ", " : " ")
-                        .Append(ValidationAttributes.Where(y => !(y is MinLengthAttribute) && !(y is MaxLengthAttribute))
+                    Builder.Append(ValidationAttributes.Any(y => y is not MinLengthAttribute && y is not MaxLengthAttribute) ? ", " : " ")
+                        .Append(ValidationAttributes.Where(y => y is not MinLengthAttribute && y is not MaxLengthAttribute)
                         .ToString(y => "[" + y.GetType().Name.Replace("Attribute", "") + "]", ", "));
 
                     Console.WriteLine(Builder.ToString());
@@ -255,7 +257,7 @@ namespace Monarch.Commands.Default
         private void PrintUserCommands(int MaxLength)
         {
             foreach (var Command in Commands
-                            .Where(x => !(x is HelpCommand) && !(x is VersionCommand))
+                            .Where(x => x is not HelpCommand && x is not VersionCommand)
                             .OrderBy(x => x.Aliases.FirstOrDefault()))
             {
                 PrintCommandInfo(MaxLength, Command);

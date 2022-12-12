@@ -44,7 +44,7 @@ namespace Monarch.Defaults
                 ConsoleWidth = DefaultWidth;
             }
             Separator = new string('-', ConsoleWidth);
-            Options = options.FirstOrDefault(x => !(x is DefaultOptions)) ?? new DefaultOptions();
+            Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
         }
 
         /// <summary>

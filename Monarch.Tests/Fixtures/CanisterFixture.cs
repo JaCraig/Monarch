@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
+﻿using System;
 using Xunit;
 
 namespace Monarch.Tests.Fixtures
@@ -11,14 +10,6 @@ namespace Monarch.Tests.Fixtures
 
     public class CanisterFixture : IDisposable
     {
-        public CanisterFixture()
-        {
-            if (Canister.Builder.Bootstrapper == null)
-            {
-                new ServiceCollection().AddCanisterModules();
-            }
-        }
-
         public void Dispose()
         {
             Dispose(true);

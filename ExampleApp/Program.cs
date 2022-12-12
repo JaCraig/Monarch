@@ -9,7 +9,7 @@ namespace ExampleApp
         {
             new ServiceCollection().AddCanisterModules();
 
-            Canister.Builder.Bootstrapper.Resolve<CommandRunner>().Run(args);
+            new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetService<CommandRunner>().Run(args);
         }
     }
 }

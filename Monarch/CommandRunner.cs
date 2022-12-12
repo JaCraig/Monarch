@@ -14,7 +14,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using Microsoft.Extensions.DependencyInjection;
 using Monarch.Commands;
+using Monarch.ExtensionMethods;
 using System.Threading.Tasks;
 
 namespace Monarch
@@ -28,7 +30,7 @@ namespace Monarch
         /// Initializes a new instance of the <see cref="CommandRunner"/> class.
         /// </summary>
         public CommandRunner()
-            : this(Canister.Builder.Bootstrapper?.Resolve<CommandManager>())
+            : this(Services.ServiceProvider.GetService<CommandManager>())
         {
         }
 

@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using Microsoft.Extensions.DependencyInjection;
 using Monarch.Commands.Attributes;
 using Monarch.Commands.BaseClasses;
 using System;
@@ -41,7 +42,7 @@ namespace ExampleApp
     {
         public override string ToString()
         {
-            return "Assemblies currently loaded: " + Canister.Builder.Bootstrapper.ResolveAll<Assembly>().ToString(x => x.GetName().Name);
+            return "Assemblies currently loaded: " + new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetServices<Assembly>().ToString(x => x.GetName().Name);
         }
     }
 }

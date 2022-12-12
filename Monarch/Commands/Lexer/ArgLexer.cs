@@ -42,7 +42,7 @@ namespace Monarch.Commands.Lexer
                 return Results;
 
             Results.Name = tokens.Find(x => x is CommandToken);
-            tokens = tokens.Where(x => !(x is CommandToken)).ToList();
+            tokens = tokens.Where(x => x is not CommandToken).ToList();
 
             if (properties.Length == 0)
                 return Results;

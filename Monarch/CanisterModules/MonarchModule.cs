@@ -39,17 +39,15 @@ namespace Monarch.CanisterModules
         /// Loads the module using the bootstrapper
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IBootstrapper? bootstrapper)
+        public void Load(IServiceCollection? bootstrapper)
         {
-            if (bootstrapper is null)
-                return;
-            bootstrapper.RegisterAll<ICommand>(ServiceLifetime.Singleton);
-            bootstrapper.RegisterAll<IOptions>(ServiceLifetime.Singleton);
-            bootstrapper.RegisterAll<IConsoleWriter>(ServiceLifetime.Singleton);
-            bootstrapper.Register<IArgParser, ArgParser>();
-            bootstrapper.Register<IArgLexer, ArgLexer>();
-            bootstrapper.Register<CommandManager>(ServiceLifetime.Singleton);
-            bootstrapper.Register<CommandRunner>(ServiceLifetime.Singleton);
+            bootstrapper?.AddAllSingleton<ICommand>()
+                    ?.AddAllSingleton<IOptions>()
+                    ?.AddAllSingleton<IConsoleWriter>()
+                    ?.AddTransient<IArgParser, ArgParser>()
+                    .AddTransient<IArgLexer, ArgLexer>()
+                    .AddSingleton<CommandManager>()
+                    .AddSingleton<CommandRunner>();
         }
     }
 }

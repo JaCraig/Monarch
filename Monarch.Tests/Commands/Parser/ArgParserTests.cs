@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using Mecha.xUnit;
+using Microsoft.Extensions.DependencyInjection;
 using Mirage.Generators.Default;
 using Monarch.Commands.BaseClasses;
 using Monarch.Commands.Default;
@@ -30,7 +31,7 @@ namespace Monarch.Tests.Commands.Parser
         [MemberData(nameof(CommandsData))]
         public void CommandsParsed(TestData data, string expectedCommand)
         {
-            var Item = Canister.Builder.Bootstrapper.Resolve<IArgParser>();
+            var Item = new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetService<IArgParser>();
             var Tokens = Item.GetTokens(data?.Data);
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();
@@ -40,7 +41,7 @@ namespace Monarch.Tests.Commands.Parser
         [Property]
         public void RandomArgs([Required] TestData data)
         {
-            var Item = Canister.Builder.Bootstrapper.Resolve<IArgParser>();
+            var Item = new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetService<IArgParser>();
             var Tokens = Item.GetTokens(data?.Data);
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();

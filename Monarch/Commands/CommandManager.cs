@@ -44,9 +44,9 @@ namespace Monarch.Commands
         public CommandManager(IEnumerable<ICommand> commands, IEnumerable<IOptions> options, IEnumerable<IArgLexer> lexer, IEnumerable<IArgParser> parser)
         {
             Commands = commands ?? new List<ICommand>();
-            Options = options.FirstOrDefault(x => !(x is DefaultOptions)) ?? new DefaultOptions();
-            Lexer = lexer.FirstOrDefault(x => !(x is ArgLexer)) ?? new ArgLexer();
-            Parser = parser.FirstOrDefault(x => !(x is ArgParser)) ?? new ArgParser(Options, Commands);
+            Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
+            Lexer = lexer.FirstOrDefault(x => x is not ArgLexer) ?? new ArgLexer();
+            Parser = parser.FirstOrDefault(x => x is not ArgParser) ?? new ArgParser(Options, Commands);
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Monarch.Commands
             for (int x = 0; x < args.Length; ++x)
             {
                 var TempCommand = GetCommand(args[x]);
-                if (!(TempCommand is null))
+                if (TempCommand is not null)
                     return TempCommand;
             }
             throw new Exception("Could not find command");
@@ -130,10 +130,10 @@ namespace Monarch.Commands
             arg = arg.StripLeft(Options.CommandPrefix).ToUpper();
             var PotentialCommand = Commands.FirstOrDefault(x => x.Aliases.Contains(arg)) ??
                     Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(arg));
-            if (!(PotentialCommand is null))
+            if (PotentialCommand is not null)
                 return PotentialCommand;
             if (Commands.Count() == 3)
-                return Commands.FirstOrDefault(x => !(x is HelpCommand) && !(x is VersionCommand));
+                return Commands.FirstOrDefault(x => x is not HelpCommand && x is not VersionCommand);
             if (Commands.Count() == 2)
                 return Commands.FirstOrDefault(x => x is HelpCommand);
             return null;

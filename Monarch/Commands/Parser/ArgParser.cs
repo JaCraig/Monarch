@@ -74,9 +74,9 @@ namespace Monarch.Commands.Parser
             {
                 Results.Add(new CommandToken(args[0].StripLeft(Options.CommandPrefix)));
             }
-            else if (Commands.Count(x => !(x is HelpCommand) && !(x is VersionCommand)) == 1)
+            else if (Commands.Count(x => x is not HelpCommand && x is not VersionCommand) == 1)
             {
-                Results.Add(new CommandToken(Commands.First(x => !(x is HelpCommand) && !(x is VersionCommand)).Aliases[0]));
+                Results.Add(new CommandToken(Commands.First(x => x is not HelpCommand && x is not VersionCommand).Aliases[0]));
             }
             else
             {
