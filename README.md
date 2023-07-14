@@ -1,20 +1,17 @@
 # Monarch
 
-[![Build status](https://ci.appveyor.com/api/projects/status/am86kwcnwmyj21ra?svg=true)](https://ci.appveyor.com/project/JaCraig/monarch)
+[![.NET Publish](https://github.com/JaCraig/Monarch/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/Monarch/actions/workflows/dotnet-publish.yml)
 
 
 Monarch is a command line parser/task runner.
 
 ## Basic Usage
 
-The system relies on an IoC wrapper called [Canister](https://github.com/JaCraig/Canister). While Canister has a built in IoC container, it's purpose is to actually wrap your container of choice in a way that simplifies setup and usage for other libraries that don't want to be tied to a specific IoC container. Monarch uses it to detect and pull in various info. As such you must set up Canister in order to use Monarch:
+In order to use the system, you need to register it with your ServiceCollection:
 
-    Canister.Builder.CreateContainer(null)
-					.AddAssembly(...) //Add your current assembly so that commands can be discovered by the system.
-                    .RegisterMonarch()
-                    .Build();
+    serviceCollection.AddCanisterModules();
 					
-This is required prior to using the Monarch class for the first time. Once Canister is set up, you can use the CommandRunner class:
+This is required prior to using the Monarch class for the first time. Once it is wired up, you can use the CommandRunner class:
 
     var Instance = new CommandRunner();
 	return Instance.Run(args);
