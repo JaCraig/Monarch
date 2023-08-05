@@ -1,9 +1,4 @@
 {
-  "api/index.html": {
-    "href": "api/index.html",
-    "title": "Welcome | Monarch API Reference",
-    "keywords": "Welcome Welcome to the API browser."
-  },
   "api/Microsoft.Extensions.DependencyInjection.CanisterExtensions.html": {
     "href": "api/Microsoft.Extensions.DependencyInjection.CanisterExtensions.html",
     "title": "Class CanisterExtensions | Monarch API Reference",
@@ -14,15 +9,15 @@
     "title": "Namespace Microsoft.Extensions.DependencyInjection | Monarch API Reference",
     "keywords": "Namespace Microsoft.Extensions.DependencyInjection Classes CanisterExtensions Canister extensions"
   },
-  "api/Monarch.CanisterModules.html": {
-    "href": "api/Monarch.CanisterModules.html",
-    "title": "Namespace Monarch.CanisterModules | Monarch API Reference",
-    "keywords": "Namespace Monarch.CanisterModules Classes MonarchModule Monarch module"
-  },
   "api/Monarch.CanisterModules.MonarchModule.html": {
     "href": "api/Monarch.CanisterModules.MonarchModule.html",
     "title": "Class MonarchModule | Monarch API Reference",
     "keywords": "Class MonarchModule Monarch module Inheritance object MonarchModule Implements IModule Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Monarch.CanisterModules Assembly: Monarch.dll Syntax public class MonarchModule : IModule Properties | Improve this Doc View Source Order Order to run this in Declaration public int Order { get; } Property Value Type Description int See Also IModule Methods | Improve this Doc View Source Load(IServiceCollection?) Loads the module using the bootstrapper Declaration public void Load(IServiceCollection? bootstrapper) Parameters Type Name Description IServiceCollection bootstrapper The bootstrapper. See Also IModule Implements IModule See Also IModule"
+  },
+  "api/Monarch.CanisterModules.html": {
+    "href": "api/Monarch.CanisterModules.html",
+    "title": "Namespace Monarch.CanisterModules | Monarch API Reference",
+    "keywords": "Namespace Monarch.CanisterModules Classes MonarchModule Monarch module"
   },
   "api/Monarch.CommandRunner.html": {
     "href": "api/Monarch.CommandRunner.html",
@@ -69,25 +64,15 @@
     "title": "Class HelpInput | Monarch API Reference",
     "keywords": "Class HelpInput Help input Inheritance object HelpInput Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Monarch.Commands.Default Assembly: Monarch.dll Syntax public class HelpInput Properties | Improve this Doc View Source Command Gets or sets the command to get help on. Declaration [Display(Description = \"The command that you wish to have information about.\")] public string? Command { get; set; } Property Value Type Description string The command to get help on."
   },
-  "api/Monarch.Commands.Default.html": {
-    "href": "api/Monarch.Commands.Default.html",
-    "title": "Namespace Monarch.Commands.Default | Monarch API Reference",
-    "keywords": "Namespace Monarch.Commands.Default Classes EmptyInput Empty input HelpCommand Help command HelpInput Help input VersionCommand Version command"
-  },
   "api/Monarch.Commands.Default.VersionCommand.html": {
     "href": "api/Monarch.Commands.Default.VersionCommand.html",
     "title": "Class VersionCommand | Monarch API Reference",
     "keywords": "Class VersionCommand Version command Inheritance object CommandBaseClass<EmptyInput> VersionCommand Implements ICommand<EmptyInput> ICommand Inherited Members CommandBaseClass<EmptyInput>.CanRun(string) CommandBaseClass<EmptyInput>.CreateInput() CommandBaseClass<EmptyInput>.Run(object) object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Monarch.Commands.Default Assembly: Monarch.dll Syntax public class VersionCommand : CommandBaseClass<EmptyInput>, ICommand<EmptyInput>, ICommand Constructors | Improve this Doc View Source VersionCommand(IEnumerable<IConsoleWriter>, IEnumerable<IOptions>) Initializes a new instance of the VersionCommand class. Declaration public VersionCommand(IEnumerable<IConsoleWriter> console, IEnumerable<IOptions> options) Parameters Type Name Description IEnumerable<IConsoleWriter> console The console. IEnumerable<IOptions> options The options. See Also CommandBaseClass<TInput> Properties | Improve this Doc View Source Aliases Gets the aliases. Declaration public override string[] Aliases { get; } Property Value Type Description string[] The aliases. Overrides CommandBaseClass<EmptyInput>.Aliases See Also CommandBaseClass<TInput> | Improve this Doc View Source Console Gets the console. Declaration public IConsoleWriter Console { get; } Property Value Type Description IConsoleWriter The console. See Also CommandBaseClass<TInput> | Improve this Doc View Source Description Gets the description. Declaration public override string Description { get; } Property Value Type Description string The description. Overrides CommandBaseClass<EmptyInput>.Description See Also CommandBaseClass<TInput> | Improve this Doc View Source Name Gets the name. Declaration public override string Name { get; } Property Value Type Description string The name. Overrides CommandBaseClass<EmptyInput>.Name See Also CommandBaseClass<TInput> Methods | Improve this Doc View Source Run(EmptyInput) Runs the specified input. Declaration protected override Task<int> Run(EmptyInput input) Parameters Type Name Description EmptyInput input The input. Returns Type Description Task<int> The result. Overrides CommandBaseClass<EmptyInput>.Run(EmptyInput) See Also CommandBaseClass<TInput> Implements ICommand<TInput> ICommand See Also CommandBaseClass<TInput>"
   },
-  "api/Monarch.Commands.html": {
-    "href": "api/Monarch.Commands.html",
-    "title": "Namespace Monarch.Commands | Monarch API Reference",
-    "keywords": "Namespace Monarch.Commands Classes CommandManager Manager class."
-  },
-  "api/Monarch.Commands.Interfaces.html": {
-    "href": "api/Monarch.Commands.Interfaces.html",
-    "title": "Namespace Monarch.Commands.Interfaces | Monarch API Reference",
-    "keywords": "Namespace Monarch.Commands.Interfaces Interfaces IArgLexer Arg lexer interface IArgParser Arg parser interface ICommand Command interface ICommand<TInput> Command interface"
+  "api/Monarch.Commands.Default.html": {
+    "href": "api/Monarch.Commands.Default.html",
+    "title": "Namespace Monarch.Commands.Default | Monarch API Reference",
+    "keywords": "Namespace Monarch.Commands.Default Classes EmptyInput Empty input HelpCommand Help command HelpInput Help input VersionCommand Version command"
   },
   "api/Monarch.Commands.Interfaces.IArgLexer.html": {
     "href": "api/Monarch.Commands.Interfaces.IArgLexer.html",
@@ -109,6 +94,11 @@
     "title": "Interface ICommand | Monarch API Reference",
     "keywords": "Interface ICommand Command interface Namespace: Monarch.Commands.Interfaces Assembly: Monarch.dll Syntax public interface ICommand Properties | Improve this Doc View Source Aliases Gets the aliases. Declaration string[] Aliases { get; } Property Value Type Description string[] The aliases. | Improve this Doc View Source Description Gets the description. Declaration string Description { get; } Property Value Type Description string The description. | Improve this Doc View Source Name Gets the name Declaration string Name { get; } Property Value Type Description string The name Methods | Improve this Doc View Source CanRun(string) Determines whether this instance can run the specified argument. Declaration bool CanRun(string arg) Parameters Type Name Description string arg The argument. Returns Type Description bool true if this instance can run the specified argument; otherwise, false. | Improve this Doc View Source CreateInput() Creates a command input. Declaration object CreateInput() Returns Type Description object The command input. | Improve this Doc View Source Run(object) Runs the specified input. Declaration Task<int> Run(object input) Parameters Type Name Description object input The input. Returns Type Description Task<int> The result"
   },
+  "api/Monarch.Commands.Interfaces.html": {
+    "href": "api/Monarch.Commands.Interfaces.html",
+    "title": "Namespace Monarch.Commands.Interfaces | Monarch API Reference",
+    "keywords": "Namespace Monarch.Commands.Interfaces Interfaces IArgLexer Arg lexer interface IArgParser Arg parser interface ICommand Command interface ICommand<TInput> Command interface"
+  },
   "api/Monarch.Commands.Lexer.ArgLexer.html": {
     "href": "api/Monarch.Commands.Lexer.ArgLexer.html",
     "title": "Class ArgLexer | Monarch API Reference",
@@ -119,15 +109,15 @@
     "title": "Class Command | Monarch API Reference",
     "keywords": "Class Command Command Inheritance object Command Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Monarch.Commands.Lexer Assembly: Monarch.dll Syntax public class Command Constructors | Improve this Doc View Source Command() Initializes a new instance of the Command class. Declaration public Command() Properties | Improve this Doc View Source Name Gets or sets the name. Declaration public TokenBaseClass? Name { get; set; } Property Value Type Description TokenBaseClass The name. | Improve this Doc View Source Properties Gets or sets the properties. Declaration public List<Property> Properties { get; set; } Property Value Type Description List<Property> The properties. Methods | Improve this Doc View Source GetValue(object) Gets the value. Declaration public object GetValue(object inputObject) Parameters Type Name Description object inputObject The input object. Returns Type Description object The resulting value. | Improve this Doc View Source ToString() Returns a string that represents this instance. Declaration public override string ToString() Returns Type Description string A string that represents this instance. Overrides object.ToString()"
   },
-  "api/Monarch.Commands.Lexer.html": {
-    "href": "api/Monarch.Commands.Lexer.html",
-    "title": "Namespace Monarch.Commands.Lexer | Monarch API Reference",
-    "keywords": "Namespace Monarch.Commands.Lexer Classes ArgLexer Arg Lexer Command Command Property Property Info"
-  },
   "api/Monarch.Commands.Lexer.Property.html": {
     "href": "api/Monarch.Commands.Lexer.Property.html",
     "title": "Class Property | Monarch API Reference",
     "keywords": "Class Property Property Info Inheritance object Property Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Monarch.Commands.Lexer Assembly: Monarch.dll Syntax public class Property Constructors | Improve this Doc View Source Property() Initializes a new instance of the Property class. Declaration public Property() Properties | Improve this Doc View Source FlagName Gets or sets the name of the flag. Declaration public TokenBaseClass? FlagName { get; set; } Property Value Type Description TokenBaseClass The name of the flag. | Improve this Doc View Source FlagValue Gets or sets the flag value. Declaration public List<TokenBaseClass> FlagValue { get; set; } Property Value Type Description List<TokenBaseClass> The flag value. | Improve this Doc View Source IsIEnumerable Gets a value indicating whether this instance is ienumerable. Declaration public bool IsIEnumerable { get; } Property Value Type Description bool true if this instance is ienumerable; otherwise, false. | Improve this Doc View Source MaxValueCount Gets the maximum value count. Declaration public int MaxValueCount { get; } Property Value Type Description int The maximum value count. | Improve this Doc View Source PropertyInfo Gets or sets the property. Declaration public PropertyInfo? PropertyInfo { get; set; } Property Value Type Description PropertyInfo The property. Methods | Improve this Doc View Source GetValue(object) Gets the value. Declaration public void GetValue(object inputObject) Parameters Type Name Description object inputObject The input object. | Improve this Doc View Source ToString() Returns a string that represents this instance. Declaration public override string ToString() Returns Type Description string A string that represents this instance. Overrides object.ToString()"
+  },
+  "api/Monarch.Commands.Lexer.html": {
+    "href": "api/Monarch.Commands.Lexer.html",
+    "title": "Namespace Monarch.Commands.Lexer | Monarch API Reference",
+    "keywords": "Namespace Monarch.Commands.Lexer Classes ArgLexer Arg Lexer Command Command Property Property Info"
   },
   "api/Monarch.Commands.Parser.ArgParser.html": {
     "href": "api/Monarch.Commands.Parser.ArgParser.html",
@@ -138,11 +128,6 @@
     "href": "api/Monarch.Commands.Parser.CommandToken.html",
     "title": "Class CommandToken | Monarch API Reference",
     "keywords": "Class CommandToken Command token Inheritance object TokenBaseClass CommandToken Inherited Members TokenBaseClass.UpperValue TokenBaseClass.Value TokenBaseClass.ToString() object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Monarch.Commands.Parser Assembly: Monarch.dll Syntax public class CommandToken : TokenBaseClass Constructors | Improve this Doc View Source CommandToken(string) Initializes a new instance of the CommandToken class. Declaration public CommandToken(string token) Parameters Type Name Description string token The token. See Also TokenBaseClass See Also TokenBaseClass"
-  },
-  "api/Monarch.Commands.Parser.html": {
-    "href": "api/Monarch.Commands.Parser.html",
-    "title": "Namespace Monarch.Commands.Parser | Monarch API Reference",
-    "keywords": "Namespace Monarch.Commands.Parser Classes ArgParser Arg parser CommandToken Command token OptionNameToken Option name token OptionValueToken Option value token TokenBaseClass Token base class"
   },
   "api/Monarch.Commands.Parser.OptionNameToken.html": {
     "href": "api/Monarch.Commands.Parser.OptionNameToken.html",
@@ -159,6 +144,16 @@
     "title": "Class TokenBaseClass | Monarch API Reference",
     "keywords": "Class TokenBaseClass Token base class Inheritance object TokenBaseClass CommandToken OptionNameToken OptionValueToken Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Monarch.Commands.Parser Assembly: Monarch.dll Syntax public abstract class TokenBaseClass Constructors | Improve this Doc View Source TokenBaseClass(string) Initializes a new instance of the TokenBaseClass class. Declaration protected TokenBaseClass(string value) Parameters Type Name Description string value The value. Exceptions Type Condition ArgumentNullException value Properties | Improve this Doc View Source UpperValue Gets the upper value. Declaration public string UpperValue { get; } Property Value Type Description string The upper value. | Improve this Doc View Source Value Gets the value. Declaration public string Value { get; } Property Value Type Description string The value. Methods | Improve this Doc View Source ToString() Returns a string that represents this instance. Declaration public override string ToString() Returns Type Description string A string that represents this instance. Overrides object.ToString()"
   },
+  "api/Monarch.Commands.Parser.html": {
+    "href": "api/Monarch.Commands.Parser.html",
+    "title": "Namespace Monarch.Commands.Parser | Monarch API Reference",
+    "keywords": "Namespace Monarch.Commands.Parser Classes ArgParser Arg parser CommandToken Command token OptionNameToken Option name token OptionValueToken Option value token TokenBaseClass Token base class"
+  },
+  "api/Monarch.Commands.html": {
+    "href": "api/Monarch.Commands.html",
+    "title": "Namespace Monarch.Commands | Monarch API Reference",
+    "keywords": "Namespace Monarch.Commands Classes CommandManager Manager class."
+  },
   "api/Monarch.Defaults.DefaultConsoleWriter.html": {
     "href": "api/Monarch.Defaults.DefaultConsoleWriter.html",
     "title": "Class DefaultConsoleWriter | Monarch API Reference",
@@ -174,25 +169,15 @@
     "title": "Namespace Monarch.Defaults | Monarch API Reference",
     "keywords": "Namespace Monarch.Defaults Classes DefaultConsoleWriter Default console writer DefaultOptions Default options"
   },
-  "api/Monarch.Exceptions.html": {
-    "href": "api/Monarch.Exceptions.html",
-    "title": "Namespace Monarch.Exceptions | Monarch API Reference",
-    "keywords": "Namespace Monarch.Exceptions Classes ParsingException Parsing exception"
-  },
   "api/Monarch.Exceptions.ParsingException.html": {
     "href": "api/Monarch.Exceptions.ParsingException.html",
     "title": "Class ParsingException | Monarch API Reference",
     "keywords": "Class ParsingException Parsing exception Inheritance object Exception ParsingException Implements ISerializable Inherited Members Exception.GetBaseException() Exception.GetObjectData(SerializationInfo, StreamingContext) Exception.GetType() Exception.ToString() Exception.Data Exception.HelpLink Exception.HResult Exception.InnerException Exception.Message Exception.Source Exception.StackTrace Exception.TargetSite Exception.SerializeObjectState object.Equals(object) object.Equals(object, object) object.GetHashCode() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Monarch.Exceptions Assembly: Monarch.dll Syntax public class ParsingException : Exception, ISerializable Constructors | Improve this Doc View Source ParsingException() Initializes a new instance of the ParsingException class. Declaration public ParsingException() See Also Exception | Improve this Doc View Source ParsingException(SerializationInfo, StreamingContext) Initializes a new instance of the ParsingException class. Declaration protected ParsingException(SerializationInfo info, StreamingContext context) Parameters Type Name Description SerializationInfo info The SerializationInfo that holds the serialized object data about the exception being thrown. StreamingContext context The StreamingContext that contains contextual information about the source or destination. See Also Exception | Improve this Doc View Source ParsingException(string) Initializes a new instance of the ParsingException class. Declaration public ParsingException(string message) Parameters Type Name Description string message The message that describes the error. See Also Exception | Improve this Doc View Source ParsingException(string, Exception) Initializes a new instance of the ParsingException class. Declaration public ParsingException(string message, Exception innerException) Parameters Type Name Description string message The error message that explains the reason for the exception. Exception innerException The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. See Also Exception Implements ISerializable See Also Exception"
   },
-  "api/Monarch.html": {
-    "href": "api/Monarch.html",
-    "title": "Namespace Monarch | Monarch API Reference",
-    "keywords": "Namespace Monarch Classes CommandRunner Command runner"
-  },
-  "api/Monarch.Interfaces.html": {
-    "href": "api/Monarch.Interfaces.html",
-    "title": "Namespace Monarch.Interfaces | Monarch API Reference",
-    "keywords": "Namespace Monarch.Interfaces Interfaces IConsoleWriter Console writer IOptions Options interface"
+  "api/Monarch.Exceptions.html": {
+    "href": "api/Monarch.Exceptions.html",
+    "title": "Namespace Monarch.Exceptions | Monarch API Reference",
+    "keywords": "Namespace Monarch.Exceptions Classes ParsingException Parsing exception"
   },
   "api/Monarch.Interfaces.IConsoleWriter.html": {
     "href": "api/Monarch.Interfaces.IConsoleWriter.html",
@@ -203,6 +188,21 @@
     "href": "api/Monarch.Interfaces.IOptions.html",
     "title": "Interface IOptions | Monarch API Reference",
     "keywords": "Interface IOptions Options interface Namespace: Monarch.Interfaces Assembly: Monarch.dll Syntax public interface IOptions Properties | Improve this Doc View Source CommandPrefix Gets the command prefix. Declaration string CommandPrefix { get; } Property Value Type Description string The command prefix. | Improve this Doc View Source FlagPrefix Gets the flag prefix. Declaration string FlagPrefix { get; } Property Value Type Description string The flag prefix. | Improve this Doc View Source IndentAmount Gets the indent amount. Declaration int IndentAmount { get; } Property Value Type Description int The indent amount."
+  },
+  "api/Monarch.Interfaces.html": {
+    "href": "api/Monarch.Interfaces.html",
+    "title": "Namespace Monarch.Interfaces | Monarch API Reference",
+    "keywords": "Namespace Monarch.Interfaces Interfaces IConsoleWriter Console writer IOptions Options interface"
+  },
+  "api/Monarch.html": {
+    "href": "api/Monarch.html",
+    "title": "Namespace Monarch | Monarch API Reference",
+    "keywords": "Namespace Monarch Classes CommandRunner Command runner"
+  },
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "Welcome | Monarch API Reference",
+    "keywords": "Welcome Welcome to the API browser."
   },
   "articles/intro.html": {
     "href": "articles/intro.html",

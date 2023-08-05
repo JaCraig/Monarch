@@ -322,14 +322,6 @@ references:
   fullName.vb: Monarch.Commands.BaseClasses.CommandBaseClass(Of TInput).Name
   nameWithType: CommandBaseClass<TInput>.Name
   nameWithType.vb: CommandBaseClass(Of TInput).Name
-- uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)
-  name: Run(TInput)
-  href: api/Monarch.Commands.BaseClasses.CommandBaseClass-1.html#Monarch_Commands_BaseClasses_CommandBaseClass_1_Run__0_
-  commentId: M:Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)
-  fullName: Monarch.Commands.BaseClasses.CommandBaseClass<TInput>.Run(TInput)
-  fullName.vb: Monarch.Commands.BaseClasses.CommandBaseClass(Of TInput).Run(TInput)
-  nameWithType: CommandBaseClass<TInput>.Run(TInput)
-  nameWithType.vb: CommandBaseClass(Of TInput).Run(TInput)
 - uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(System.Object)
   name: Run(object)
   href: api/Monarch.Commands.BaseClasses.CommandBaseClass-1.html#Monarch_Commands_BaseClasses_CommandBaseClass_1_Run_System_Object_
@@ -339,6 +331,14 @@ references:
   fullName.vb: Monarch.Commands.BaseClasses.CommandBaseClass(Of TInput).Run(Object)
   nameWithType: CommandBaseClass<TInput>.Run(object)
   nameWithType.vb: CommandBaseClass(Of TInput).Run(Object)
+- uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)
+  name: Run(TInput)
+  href: api/Monarch.Commands.BaseClasses.CommandBaseClass-1.html#Monarch_Commands_BaseClasses_CommandBaseClass_1_Run__0_
+  commentId: M:Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)
+  fullName: Monarch.Commands.BaseClasses.CommandBaseClass<TInput>.Run(TInput)
+  fullName.vb: Monarch.Commands.BaseClasses.CommandBaseClass(Of TInput).Run(TInput)
+  nameWithType: CommandBaseClass<TInput>.Run(TInput)
+  nameWithType.vb: CommandBaseClass(Of TInput).Run(TInput)
 - uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run*
   name: Run
   href: api/Monarch.Commands.BaseClasses.CommandBaseClass-1.html#Monarch_Commands_BaseClasses_CommandBaseClass_1_Run_
@@ -1715,15 +1715,6 @@ references:
   fullName.vb: Monarch.Exceptions.ParsingException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: ParsingException.ParsingException(SerializationInfo, StreamingContext)
   nameWithType.vb: ParsingException.New(SerializationInfo, StreamingContext)
-- uid: Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)
-  name: ParsingException(string, Exception)
-  href: api/Monarch.Exceptions.ParsingException.html#Monarch_Exceptions_ParsingException__ctor_System_String_System_Exception_
-  commentId: M:Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)
-  name.vb: New(String, Exception)
-  fullName: Monarch.Exceptions.ParsingException.ParsingException(string, System.Exception)
-  fullName.vb: Monarch.Exceptions.ParsingException.New(String, System.Exception)
-  nameWithType: ParsingException.ParsingException(string, Exception)
-  nameWithType.vb: ParsingException.New(String, Exception)
 - uid: Monarch.Exceptions.ParsingException.#ctor(System.String)
   name: ParsingException(string)
   href: api/Monarch.Exceptions.ParsingException.html#Monarch_Exceptions_ParsingException__ctor_System_String_
@@ -1733,6 +1724,15 @@ references:
   fullName.vb: Monarch.Exceptions.ParsingException.New(String)
   nameWithType: ParsingException.ParsingException(string)
   nameWithType.vb: ParsingException.New(String)
+- uid: Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)
+  name: ParsingException(string, Exception)
+  href: api/Monarch.Exceptions.ParsingException.html#Monarch_Exceptions_ParsingException__ctor_System_String_System_Exception_
+  commentId: M:Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Monarch.Exceptions.ParsingException.ParsingException(string, System.Exception)
+  fullName.vb: Monarch.Exceptions.ParsingException.New(String, System.Exception)
+  nameWithType: ParsingException.ParsingException(string, Exception)
+  nameWithType.vb: ParsingException.New(String, Exception)
 - uid: Monarch.Exceptions.ParsingException.#ctor*
   name: ParsingException
   href: api/Monarch.Exceptions.ParsingException.html#Monarch_Exceptions_ParsingException__ctor_
