@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.5"></a>
+## [3.0.5](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.5) (2023-8-8)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([825149c](https://www.github.com/JaCraig/Monarch/commit/825149c4bed40f7e10bfc1f627f47dcb8f6d8f9f))
+
+### Other
+
+* Merge pull request #5 from JaCraig/dependabot/nuget/dependencies-9681f44e0c ([0265897](https://www.github.com/JaCraig/Monarch/commit/0265897967b463ae78287f8f924e39aba72a0c17))
+* Update dependabot.yml ([b7d7a6e](https://www.github.com/JaCraig/Monarch/commit/b7d7a6e51c9ed13df04af03289bb466a19ae27ad))
+
 <a name="3.0.4"></a>
 ## [3.0.4](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.4) (2023-8-7)
 
