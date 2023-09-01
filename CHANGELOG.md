@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.15"></a>
+## [3.0.15](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.15) (2023-9-1)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([23d6957](https://www.github.com/JaCraig/Monarch/commit/23d695723c9f9d77143efc8c04decc50ff674c21))
+
+### Other
+
+* Merge pull request #26 from JaCraig/dependabot/nuget/dependencies-0c882e2808 ([f52f05a](https://www.github.com/JaCraig/Monarch/commit/f52f05ae79da39cce72b8ee881765a4c22e4009b))
+
 <a name="3.0.14"></a>
 ## [3.0.14](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.14) (2023-8-31)
 
