@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.20"></a>
+## [3.0.20](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.20) (2023-9-11)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([a0c53ef](https://www.github.com/JaCraig/Monarch/commit/a0c53ef380f4bb741867eb6aa3713533a3c10b50))
+
+### Other
+
+* Merge pull request #36 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-a36d827776 ([83e2d94](https://www.github.com/JaCraig/Monarch/commit/83e2d94fbc01926fef44ff55641a9a4a3db6bbd5))
+* Merge pull request #37 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-2560c786da ([930e51f](https://www.github.com/JaCraig/Monarch/commit/930e51fc4ea4d37fbd963e0b05be93157e91ed25))
+* Merge pull request #38 from JaCraig/dependabot/nuget/dependencies-c6ef9d0dfb ([16238ae](https://www.github.com/JaCraig/Monarch/commit/16238ae4e6f657aa230a09a2c27cf7ba5ef4d001))
+* bump the dependencies group in /Monarch.Tests with 1 update ([0bea547](https://www.github.com/JaCraig/Monarch/commit/0bea547047e36d0f16fd974b393661d3e90fe2cb))
+* bump the dependencies group in /Monarch.Tests with 1 update ([291e631](https://www.github.com/JaCraig/Monarch/commit/291e6311f5f3b409cf3ced16de8f9b984d4a752c))
+* Update dependabot.yml ([b6e4583](https://www.github.com/JaCraig/Monarch/commit/b6e4583199d1010818627433c8dccf210666ac26))
+
 <a name="3.0.19"></a>
 ## [3.0.19](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.19) (2023-9-7)
 
