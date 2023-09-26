@@ -52,9 +52,9 @@ namespace Monarch.Commands.Lexer
         /// <returns>The resulting value.</returns>
         public object GetValue(object inputObject)
         {
-            for (int i = 0; i < Properties.Count; i++)
+            for (var I = 0; I < Properties.Count; I++)
             {
-                Properties[i].GetValue(inputObject);
+                Properties[I].GetValue(inputObject);
             }
             return inputObject;
         }
@@ -63,9 +63,6 @@ namespace Monarch.Commands.Lexer
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return $"{Name} {Properties.ToString(x => x.ToString())}";
-        }
+        public override string ToString() => $"{Name} {Properties.ToString(x => x.ToString())}";
     }
 }

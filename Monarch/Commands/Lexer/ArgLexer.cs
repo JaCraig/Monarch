@@ -61,7 +61,7 @@ namespace Monarch.Commands.Lexer
                             FlagName = tokens[0],
                             PropertyInfo = System.Array.Find(properties, x => string.Equals(x.Name.ToUpper(), tokens[0].UpperValue, System.StringComparison.CurrentCulture))
                         };
-                        properties = properties.Remove(new PropertyInfo[] { CurrentProperty.PropertyInfo }).ToArray();
+                        properties = properties.Remove(new PropertyInfo[] { CurrentProperty.PropertyInfo! }).ToArray();
                         Results.Properties.Add(CurrentProperty);
                     }
                 }

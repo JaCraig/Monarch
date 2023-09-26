@@ -30,7 +30,7 @@ namespace Monarch
         /// Initializes a new instance of the <see cref="CommandRunner"/> class.
         /// </summary>
         public CommandRunner()
-            : this(Services.ServiceProvider.GetService<CommandManager>())
+            : this(Services.ServiceProvider?.GetService<CommandManager>())
         {
         }
 
@@ -58,7 +58,7 @@ namespace Monarch
         {
             if (Manager is null)
                 return Task.FromResult(0);
-            var Command = Manager.GetCommand(args);
+            Commands.Interfaces.ICommand Command = Manager.GetCommand(args);
             var Input = Manager.GetInput(Command, args);
             return Command.Run(Input);
         }

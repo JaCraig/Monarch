@@ -37,20 +37,15 @@ namespace Monarch.Defaults
         {
             try
             {
-                ConsoleWidth = Console.BufferWidth > 10 ? Console.BufferWidth : DefaultWidth;
+                ConsoleWidth = Console.BufferWidth > 10 ? Console.BufferWidth : _DefaultWidth;
             }
             catch
             {
-                ConsoleWidth = DefaultWidth;
+                ConsoleWidth = _DefaultWidth;
             }
             Separator = new string('-', ConsoleWidth);
             Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
         }
-
-        /// <summary>
-        /// The default width
-        /// </summary>
-        private const int DefaultWidth = 120;
 
         /// <summary>
         /// Gets the width of the console.
@@ -75,6 +70,11 @@ namespace Monarch.Defaults
         /// </summary>
         /// <value>The options.</value>
         private IOptions Options { get; }
+
+        /// <summary>
+        /// The default width
+        /// </summary>
+        private const int _DefaultWidth = 120;
 
         /// <summary>
         /// Indents this instance.
@@ -271,9 +271,9 @@ namespace Monarch.Defaults
         public IConsoleWriter WriteLine(string value)
         {
             var Lines = BreakIntoLines(value);
-            for (int i = 0; i < Lines.Length; i++)
+            for (var I = 0; I < Lines.Length; I++)
             {
-                Console.WriteLine(Lines[i]);
+                Console.WriteLine(Lines[I]);
             }
             return this;
         }
@@ -427,25 +427,23 @@ namespace Monarch.Defaults
         /// <returns>The resulting lines</returns>
         private string[] BreakIntoLines(string input)
         {
-            if (string.IsNullOrEmpty(input)) return Array.Empty<string>();
-            var lines = new List<string>();
+            if (string.IsNullOrEmpty(input))
+                return Array.Empty<string>();
+            var Lines = new List<string>();
             while (input.Length > 0)
             {
                 var Width = ConsoleWidth - CurrentIndent;
                 Width = input.Length > Width ? Width : input.Length;
 
-                lines.Add(new string(' ', CurrentIndent) + input.Left(Width));
+                Lines.Add(new string(' ', CurrentIndent) + input.Left(Width));
                 input = input.Remove(0, Width);
             }
-            return lines.ToArray();
+            return Lines.ToArray();
         }
 
         /// <summary>
         /// Writes the indent.
         /// </summary>
-        private void WriteIndent()
-        {
-            Console.Write(new string(' ', CurrentIndent));
-        }
+        private void WriteIndent() => Console.Write(new string(' ', CurrentIndent));
     }
 }

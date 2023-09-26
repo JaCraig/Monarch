@@ -10,6 +10,7 @@ using Monarch.Defaults;
 using Monarch.Interfaces;
 using Monarch.Tests.BaseClasses;
 using Monarch.Tests.Utils;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Xunit;
@@ -18,7 +19,7 @@ namespace Monarch.Tests.Commands.Parser
 {
     public class ArgParserTests : TestBaseClass<ArgParser>
     {
-        public static readonly TheoryData<TestData, string> CommandsData = new TheoryData<TestData, string>
+        public static readonly TheoryData<TestData, string> CommandsData = new()
         {
             { new TestData{Data=new string[]{"?","?" } },"?" },
             { new TestData{Data=new string[]{"V","?" } },"v" },
@@ -31,8 +32,8 @@ namespace Monarch.Tests.Commands.Parser
         [MemberData(nameof(CommandsData))]
         public void CommandsParsed(TestData data, string expectedCommand)
         {
-            var Item = new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetService<IArgParser>();
-            var Tokens = Item.GetTokens(data?.Data);
+            IArgParser? Item = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider().GetService<IArgParser>();
+            TokenBaseClass[] Tokens = Item?.GetTokens(data?.Data ?? Array.Empty<string>()) ?? Array.Empty<TokenBaseClass>();
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();
             Assert.StartsWith(expectedCommand, Tokens[0].Value, System.StringComparison.OrdinalIgnoreCase);
@@ -41,8 +42,8 @@ namespace Monarch.Tests.Commands.Parser
         [Property]
         public void RandomArgs([Required] TestData data)
         {
-            var Item = new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetService<IArgParser>();
-            var Tokens = Item.GetTokens(data?.Data);
+            IArgParser? Item = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider().GetService<IArgParser>();
+            TokenBaseClass[] Tokens = Item?.GetTokens(data?.Data ?? Array.Empty<string>()) ?? Array.Empty<TokenBaseClass>();
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();
             Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
@@ -56,7 +57,7 @@ namespace Monarch.Tests.Commands.Parser
                 new ICommand[] {
                     new HelpCommand(new IConsoleWriter[]{new EmptyConsoleWriter() },System.Array.Empty<IOptions>()),
                     new UserCommand()});
-            var Tokens = Item.GetTokens(new string[] { "UserCommand", "Test", "Data" });
+            TokenBaseClass[] Tokens = Item.GetTokens(new string[] { "UserCommand", "Test", "Data" });
             Tokens.Should().NotBeNullOrEmpty();
             Tokens[0].Should().BeOfType<CommandToken>();
             Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
@@ -69,7 +70,7 @@ namespace Monarch.Tests.Commands.Parser
         public class TestData
         {
             [ArrayGenerator(typeof(string), 1, 10)]
-            public string[] Data { get; set; }
+            public string[]? Data { get; set; }
         }
 
         public class UserCommand : CommandBaseClass<EmptyInput>

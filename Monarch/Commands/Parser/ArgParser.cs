@@ -65,30 +65,30 @@ namespace Monarch.Commands.Parser
             if (args is null || args.Length == 0)
                 return Array.Empty<TokenBaseClass>();
             var Results = new List<TokenBaseClass>();
-            bool Found = false;
+            var Found = false;
             if (args[0].StartsWith(Options.CommandPrefix, StringComparison.Ordinal))
             {
-                Found |= Commands.Any(x => x.CanRun(args[0].StripLeft(Options.CommandPrefix)));
+                Found |= Commands.Any(x => x.CanRun(args[0].StripLeft(Options.CommandPrefix) ?? ""));
             }
             if (Found)
             {
-                Results.Add(new CommandToken(args[0].StripLeft(Options.CommandPrefix)));
+                Results.Add(new CommandToken(args[0].StripLeft(Options.CommandPrefix) ?? ""));
             }
-            else if (Commands.Count(x => x is not HelpCommand && x is not VersionCommand) == 1)
+            else if (Commands.Count(x => x is not HelpCommand and not VersionCommand) == 1)
             {
-                Results.Add(new CommandToken(Commands.First(x => x is not HelpCommand && x is not VersionCommand).Aliases[0]));
+                Results.Add(new CommandToken(Commands.First(x => x is not HelpCommand and not VersionCommand).Aliases[0]));
             }
             else
             {
                 Results.Add(new CommandToken(Commands.First(x => x is HelpCommand).Aliases[0]));
             }
 
-            for (int x = Found ? 1 : 0; x < args.Length; ++x)
+            for (var X = Found ? 1 : 0; X < args.Length; ++X)
             {
-                if (args[x].StartsWith(Options.FlagPrefix, StringComparison.Ordinal))
-                    Results.Add(new OptionNameToken(args[x].Replace(Options.FlagPrefix, "")));
+                if (args[X].StartsWith(Options.FlagPrefix, StringComparison.Ordinal))
+                    Results.Add(new OptionNameToken(args[X].Replace(Options.FlagPrefix, "")));
                 else
-                    Results.Add(new OptionValueToken(args[x]));
+                    Results.Add(new OptionValueToken(args[X]));
             }
             return Results.ToArray();
         }

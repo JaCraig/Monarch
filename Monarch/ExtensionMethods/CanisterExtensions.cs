@@ -21,16 +21,13 @@ namespace Microsoft.Extensions.DependencyInjection
     /// <summary>
     /// Canister extensions
     /// </summary>
-    public static class CanisterExtensions
+    public static class MonarchCanisterExtensions
     {
         /// <summary>
         /// Registers monarch with Canister.
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
         /// <returns>The bootstrapper.</returns>
-        public static ICanisterConfiguration? RegisterMonarch(this ICanisterConfiguration? bootstrapper)
-        {
-            return bootstrapper?.AddAssembly(typeof(CanisterExtensions).Assembly);
-        }
+        public static ICanisterConfiguration? RegisterMonarch(this ICanisterConfiguration? bootstrapper) => bootstrapper?.AddAssembly(typeof(MonarchCanisterExtensions).Assembly);
     }
 }

@@ -11,7 +11,7 @@ namespace Monarch.Tests.Commands.Default
 {
     public class HelpCommandTests : TestBaseClass<HelpCommand>
     {
-        public static readonly TheoryData<HelpInput> CommandsData = new TheoryData<HelpInput>
+        public static readonly TheoryData<HelpInput> CommandsData = new()
         {
             { new HelpInput{Command="?" } },
             { new HelpInput{Command="v" } },
@@ -32,7 +32,7 @@ namespace Monarch.Tests.Commands.Default
         public async Task Run(HelpInput data)
         {
             var TestObject = new HelpCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, System.Array.Empty<IOptions>());
-            var Result = await TestObject.Run(data).ConfigureAwait(false);
+            var Result = await TestObject.Run(data);
             Result.Should().Be(0);
         }
     }

@@ -31,7 +31,7 @@ namespace Monarch.Tests.BaseClasses
         /// Gets or sets the test object.
         /// </summary>
         /// <value>The test object.</value>
-        protected TTestObject TestObject { get; set; }
+        protected TTestObject? TestObject { get; set; }
 
         /// <summary>
         /// Attempts to break the object.
@@ -40,18 +40,18 @@ namespace Monarch.Tests.BaseClasses
         [Fact]
         public Task BreakObject()
         {
-            if (TestObject is null)
-                return Task.CompletedTask;
-            return Mech.BreakAsync(TestObject, new Options
-            {
-                MaxDuration = 1000,
-                ExceptionHandlers = new ExceptionHandler()
+            return TestObject is null
+                ? Task.CompletedTask
+                : Mech.BreakAsync(TestObject, new Options
+                {
+                    MaxDuration = 1000,
+                    ExceptionHandlers = new ExceptionHandler()
                     .IgnoreException<NotImplementedException>()
                     .IgnoreException<ArgumentOutOfRangeException>((_, __) => true)
                     .IgnoreException<ArgumentException>()
                     .IgnoreException<ObjectDisposedException>((_, __) => true),
-                DiscoverInheritedMethods = false
-            });
+                    DiscoverInheritedMethods = false
+                });
         }
     }
 
@@ -65,7 +65,7 @@ namespace Monarch.Tests.BaseClasses
         /// </summary>
         protected TestBaseClass()
         {
-            lock (LockObject)
+            lock (_LockObject)
             {
                 new ServiceCollection().AddCanisterModules();
                 _ = Mech.Default;
@@ -81,7 +81,7 @@ namespace Monarch.Tests.BaseClasses
         /// <summary>
         /// The lock object
         /// </summary>
-        private static readonly object LockObject = new object();
+        private static readonly object _LockObject = new();
 
         /// <summary>
         /// Attempts to break the object.
@@ -90,12 +90,12 @@ namespace Monarch.Tests.BaseClasses
         [Fact]
         public Task BreakType()
         {
-            if (ObjectType is null)
-                return Task.CompletedTask;
-            return Mech.BreakAsync(ObjectType, new Options
-            {
-                MaxDuration = 1000,
-                ExceptionHandlers = new ExceptionHandler()
+            return ObjectType is null
+                ? Task.CompletedTask
+                : Mech.BreakAsync(ObjectType, new Options
+                {
+                    MaxDuration = 1000,
+                    ExceptionHandlers = new ExceptionHandler()
                     .IgnoreException<NotImplementedException>()
                     .IgnoreException<ArgumentOutOfRangeException>((_, __) => true)
                     .IgnoreException<ArgumentException>((_, __) => true)
@@ -103,7 +103,7 @@ namespace Monarch.Tests.BaseClasses
                     .IgnoreException<ObjectDisposedException>((_, __) => true)
                     .IgnoreException<EndOfStreamException>((_, __) => true)
                     .IgnoreException<OutOfMemoryException>((_, __) => true)
-            });
+                });
         }
     }
 }

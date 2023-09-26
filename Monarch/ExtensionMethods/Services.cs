@@ -12,13 +12,13 @@ namespace Monarch.ExtensionMethods
         /// Gets the service provider.
         /// </summary>
         /// <value>The service provider.</value>
-        public static IServiceProvider ServiceProvider
+        public static IServiceProvider? ServiceProvider
         {
             get
             {
                 if (_ServiceProvider is not null)
                     return _ServiceProvider;
-                lock (ServiceProviderLock)
+                lock (_ServiceProviderLock)
                 {
                     if (_ServiceProvider is not null)
                         return _ServiceProvider;
@@ -31,11 +31,11 @@ namespace Monarch.ExtensionMethods
         /// <summary>
         /// The service provider lock
         /// </summary>
-        private static readonly object ServiceProviderLock = new object();
+        private static readonly object _ServiceProviderLock = new();
 
         /// <summary>
         /// The service provider
         /// </summary>
-        private static IServiceProvider _ServiceProvider;
+        private static IServiceProvider? _ServiceProvider;
     }
 }

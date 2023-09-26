@@ -77,13 +77,13 @@ namespace Monarch.Commands.Lexer
                 return;
             if (IsIEnumerable)
             {
-                var CurrentPropertyType = PropertyInfo.PropertyType;
-                var ConvertToType = CurrentPropertyType.GetIEnumerableElementType();
+                System.Type CurrentPropertyType = PropertyInfo.PropertyType;
+                System.Type ConvertToType = CurrentPropertyType.GetIEnumerableElementType();
 
                 var CurrentList = (IList?)typeof(List<>).MakeGenericType(ConvertToType).Create();
-                for (int i = 0, FlagValueCount = FlagValue.Count; i < FlagValueCount; i++)
+                for (int I = 0, FlagValueCount = FlagValue.Count; I < FlagValueCount; I++)
                 {
-                    var Item = FlagValue[i];
+                    TokenBaseClass Item = FlagValue[I];
                     CurrentList?.Add(Item.Value.To(ConvertToType, null));
                 }
                 PropertyInfo.SetValue(inputObject, CurrentList);

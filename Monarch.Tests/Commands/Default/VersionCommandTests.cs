@@ -21,7 +21,7 @@ namespace Monarch.Tests.Commands.Default
         public async Task Run()
         {
             var TestObject = new VersionCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, System.Array.Empty<IOptions>());
-            var Result = await TestObject.Run(new EmptyInput()).ConfigureAwait(false);
+            var Result = await TestObject.Run(new EmptyInput());
             Result.Should().Be(0);
         }
     }

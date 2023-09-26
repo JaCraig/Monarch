@@ -73,8 +73,10 @@ namespace Monarch.Commands.Default
         {
             await Task.CompletedTask.ConfigureAwait(false);
             var AppAssembly = Assembly.GetEntryAssembly();
-            var CustomAttributes = AppAssembly.GetCustomAttributes();
-            var AppName = AppAssembly.GetName();
+            if (AppAssembly is null)
+                return 0;
+            IEnumerable<System.Attribute> CustomAttributes = AppAssembly.GetCustomAttributes();
+            AssemblyName AppName = AppAssembly.GetName();
 
             Console.WriteLine($"{CustomAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product} ({AppName.Version})");
             return 0;

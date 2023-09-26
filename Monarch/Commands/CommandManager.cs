@@ -83,9 +83,9 @@ namespace Monarch.Commands
             args ??= Array.Empty<string>();
             if (args.Length == 0)
                 return GetCommand(new string[] { Options.CommandPrefix + "?" });
-            for (int x = 0; x < args.Length; ++x)
+            for (var X = 0; X < args.Length; ++X)
             {
-                var TempCommand = GetCommand(args[x]);
+                ICommand? TempCommand = GetCommand(args[X]);
                 if (TempCommand is not null)
                     return TempCommand;
             }
@@ -100,17 +100,17 @@ namespace Monarch.Commands
         /// <returns>The resulting command input.</returns>
         public object GetInput(ICommand command, string[] args)
         {
-            var Tokens = Parser.GetTokens(args);
+            TokenBaseClass[] Tokens = Parser.GetTokens(args);
 
             var InputObject = command.CreateInput();
 
-            var InputProperties = InputObject.GetType()
+            System.Reflection.PropertyInfo[] InputProperties = InputObject.GetType()
                                                 .GetProperties()
                                                 .OrderBy(x => x.Attribute<DisplayAttribute>()?.GetOrder() ?? int.MaxValue)
                                                 .ThenBy(x => x.Name)
                                                 .ToArray();
 
-            var Tree = Lexer.Lex(Tokens.ToList(), InputProperties);
+            Command Tree = Lexer.Lex(Tokens.ToList(), InputProperties);
 
             var ReturnValue = Tree.GetValue(InputObject);
             ReturnValue.Validate();
@@ -127,16 +127,14 @@ namespace Monarch.Commands
         {
             if (!arg.StartsWith(Options.CommandPrefix, StringComparison.OrdinalIgnoreCase))
                 return null;
-            arg = arg.StripLeft(Options.CommandPrefix).ToUpper();
-            var PotentialCommand = Commands.FirstOrDefault(x => x.Aliases.Contains(arg)) ??
+            arg = arg.StripLeft(Options.CommandPrefix)?.ToUpper() ?? "";
+            ICommand? PotentialCommand = Commands.FirstOrDefault(x => x.Aliases.Contains(arg)) ??
                     Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(arg));
             if (PotentialCommand is not null)
                 return PotentialCommand;
-            if (Commands.Count() == 3)
-                return Commands.FirstOrDefault(x => x is not HelpCommand && x is not VersionCommand);
-            if (Commands.Count() == 2)
-                return Commands.FirstOrDefault(x => x is HelpCommand);
-            return null;
+            return Commands.Count() == 3
+                ? Commands.FirstOrDefault(x => x is not HelpCommand and not VersionCommand)
+                : Commands.Count() == 2 ? Commands.FirstOrDefault(x => x is HelpCommand) : null;
         }
     }
 }

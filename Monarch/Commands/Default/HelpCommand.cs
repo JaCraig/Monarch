@@ -83,7 +83,7 @@ namespace Monarch.Commands.Default
         /// Gets the commands.
         /// </summary>
         /// <value>The commands.</value>
-        private IEnumerable<ICommand> Commands => Services.ServiceProvider.GetServices<ICommand>() ?? Array.Empty<ICommand>();
+        private static IEnumerable<ICommand> Commands => Services.ServiceProvider?.GetServices<ICommand>() ?? Array.Empty<ICommand>();
 
         /// <summary>
         /// Runs the specified input.
@@ -94,8 +94,10 @@ namespace Monarch.Commands.Default
         {
             await Task.CompletedTask.ConfigureAwait(false);
             var AppAssembly = Assembly.GetEntryAssembly();
-            var CustomAttributes = AppAssembly.GetCustomAttributes();
-            var AppName = AppAssembly.GetName();
+            if (AppAssembly is null)
+                return 0;
+            IEnumerable<Attribute> CustomAttributes = AppAssembly.GetCustomAttributes();
+            AssemblyName AppName = AppAssembly.GetName();
 
             Console.Indent();
             if (string.IsNullOrEmpty(input.Command))
@@ -107,13 +109,22 @@ namespace Monarch.Commands.Default
         }
 
         /// <summary>
+        /// Sets the length.
+        /// </summary>
+        /// <param name="v">The v.</param>
+        /// <param name="maxLength">The maximum length.</param>
+        /// <returns>The resulting string</returns>
+        private static string SetLength(string v, int maxLength)
+        {
+            var NumberSpaces = maxLength - v.Length;
+            return v + new string(' ', NumberSpaces);
+        }
+
+        /// <summary>
         /// Gets the maximum length.
         /// </summary>
         /// <returns></returns>
-        private int GetMaxLength()
-        {
-            return Commands.Max(x => (x.Aliases.ToString(y => Options.CommandPrefix + y, ", ") + "    ").Length);
-        }
+        private int GetMaxLength() => Commands.Max(x => (x.Aliases.ToString(y => Options.CommandPrefix + y, ", ") + "    ").Length);
 
         /// <summary>
         /// Prints the command help.
@@ -121,7 +132,7 @@ namespace Monarch.Commands.Default
         /// <param name="input">The input.</param>
         private void PrintCommandHelp(HelpInput input)
         {
-            var CommandUsing = Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(input.Command?.ToUpper()));
+            ICommand? CommandUsing = Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(input.Command?.ToUpper()));
             if (CommandUsing is null)
             {
                 Console.WriteLine($"'{input.Command}' is not found as a command.");
@@ -130,21 +141,21 @@ namespace Monarch.Commands.Default
             Console.WriteLine($"Command: '{input.Command?.ToString(StringCase.FirstCharacterUpperCase)}' ({CommandUsing.Description})")
                     .WriteLine();
 
-            var Properties = CommandUsing.CreateInput().GetType().GetProperties().OrderBy(x => x.Name).ToArray();
+            PropertyInfo[] Properties = CommandUsing.CreateInput().GetType().GetProperties().OrderBy(x => x.Name).ToArray();
 
             var UsageBuilder = new StringBuilder();
-            UsageBuilder.Append("Usage: ").Append(input.Command).Append(" ");
-            for (int x = 0; x < Properties.Length; ++x)
+            UsageBuilder.Append("Usage: ").Append(input.Command).Append(' ');
+            for (var X = 0; X < Properties.Length; ++X)
             {
-                if ((Properties[x].PropertyType.IsGenericType
-                    && Properties[x].PropertyType.GetGenericTypeDefinition() != typeof(Nullable<>))
-                    || Properties[x].Attribute<RequiredAttribute>() != null)
+                if ((Properties[X].PropertyType.IsGenericType
+                    && Properties[X].PropertyType.GetGenericTypeDefinition() != typeof(Nullable<>))
+                    || Properties[X].Attribute<RequiredAttribute>() != null)
                 {
-                    UsageBuilder.Append("<").Append(Properties[x].Name).Append("> ");
+                    UsageBuilder.Append('<').Append(Properties[X].Name).Append("> ");
                 }
                 else
                 {
-                    UsageBuilder.Append("[").Append(Properties[x].Name).Append("] ");
+                    UsageBuilder.Append('[').Append(Properties[X].Name).Append("] ");
                 }
             }
 
@@ -159,31 +170,31 @@ namespace Monarch.Commands.Default
 
                 var MaxLength = Properties.Max(x => (x.Name + "    ").Length);
 
-                for (int x = 0; x < Properties.Length; ++x)
+                for (var X = 0; X < Properties.Length; ++X)
                 {
                     var Builder = new StringBuilder();
-                    Builder.Append(SetLength(Properties[x].Name, MaxLength));
+                    Builder.Append(SetLength(Properties[X].Name, MaxLength));
 
-                    Builder.Append(Properties[x].GetCustomAttribute<DisplayAttribute>()?.Description);
+                    Builder.Append(Properties[X].GetCustomAttribute<DisplayAttribute>()?.Description);
 
-                    Builder.Append(Properties[x].GetCustomAttribute<DynamicDisplayAttribute>()?.GetDescription());
+                    Builder.Append(Properties[X].GetCustomAttribute<DynamicDisplayAttribute>()?.GetDescription());
 
-                    Builder.Append(" ");
+                    Builder.Append(' ');
 
-                    if (Properties[x].PropertyType.IsEnum)
+                    if (Properties[X].PropertyType.IsEnum)
                     {
-                        Builder.Append("[Values = (").Append(Enum.GetNames(Properties[x].PropertyType).ToString(x => "'" + x + "'")).Append(")] ");
+                        Builder.Append("[Values = (").Append(Enum.GetNames(Properties[X].PropertyType).ToString(x => "'" + x + "'")).Append(")] ");
                     }
 
-                    var ValidationAttributes = Properties[x].GetCustomAttributes<ValidationAttribute>();
+                    IEnumerable<ValidationAttribute> ValidationAttributes = Properties[X].GetCustomAttributes<ValidationAttribute>();
 
                     if (ValidationAttributes.FirstOrDefault(y => y is MaxLengthAttribute) is MaxLengthAttribute MaxLengthAttr)
-                        Builder.Append("[Max Length = ").Append(MaxLengthAttr.Length).Append("]");
+                        Builder.Append("[Max Length = ").Append(MaxLengthAttr.Length).Append(']');
                     if (ValidationAttributes.FirstOrDefault(y => y is MinLengthAttribute) is MinLengthAttribute MinLengthAttr)
-                        Builder.Append("[Min Length = ").Append(MinLengthAttr.Length).Append("]");
+                        Builder.Append("[Min Length = ").Append(MinLengthAttr.Length).Append(']');
 
-                    Builder.Append(ValidationAttributes.Any(y => y is not MinLengthAttribute && y is not MaxLengthAttribute) ? ", " : " ")
-                        .Append(ValidationAttributes.Where(y => y is not MinLengthAttribute && y is not MaxLengthAttribute)
+                    Builder.Append(ValidationAttributes.Any(y => y is not MinLengthAttribute and not MaxLengthAttribute) ? ", " : " ")
+                        .Append(ValidationAttributes.Where(y => y is not MinLengthAttribute and not MaxLengthAttribute)
                         .ToString(y => "[" + y.GetType().Name.Replace("Attribute", "") + "]", ", "));
 
                     Console.WriteLine(Builder.ToString());
@@ -194,23 +205,20 @@ namespace Monarch.Commands.Default
         /// <summary>
         /// Prints the command information.
         /// </summary>
-        /// <param name="MaxLength">The maximum length.</param>
-        /// <param name="Command">The command.</param>
-        private void PrintCommandInfo(int MaxLength, ICommand Command)
-        {
-            Console.WriteLine(SetLength(Command.Aliases.ToString(x => Options.CommandPrefix + x, ", "), MaxLength) + Command.Description);
-        }
+        /// <param name="maxLength">The maximum length.</param>
+        /// <param name="command">The command.</param>
+        private void PrintCommandInfo(int maxLength, ICommand command) => Console.WriteLine(SetLength(command.Aliases.ToString(x => Options.CommandPrefix + x, ", "), maxLength) + command.Description);
 
         /// <summary>
         /// Prints the default help.
         /// </summary>
-        /// <param name="CustomAttributes">The custom attributes.</param>
-        /// <param name="AppName">Name of the application.</param>
-        private void PrintDefaultHelp(IEnumerable<Attribute> CustomAttributes, AssemblyName AppName)
+        /// <param name="customAttributes">The custom attributes.</param>
+        /// <param name="appName">Name of the application.</param>
+        private void PrintDefaultHelp(IEnumerable<Attribute> customAttributes, AssemblyName appName)
         {
-            PrintHeader(CustomAttributes, AppName);
+            PrintHeader(customAttributes, appName);
 
-            int MaxLength = GetMaxLength();
+            var MaxLength = GetMaxLength();
             PrintUserCommands(MaxLength);
             PrintInternalCommands(MaxLength);
         }
@@ -218,18 +226,18 @@ namespace Monarch.Commands.Default
         /// <summary>
         /// Prints the header.
         /// </summary>
-        /// <param name="CustomAttributes">The custom attributes.</param>
-        /// <param name="AppName">Name of the application.</param>
-        private void PrintHeader(IEnumerable<Attribute> CustomAttributes, AssemblyName AppName)
+        /// <param name="customAttributes">The custom attributes.</param>
+        /// <param name="appName">Name of the application.</param>
+        private void PrintHeader(IEnumerable<Attribute> customAttributes, AssemblyName appName)
         {
-            Console.WriteLine($"{CustomAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product ?? ""} ({AppName.Version})")
-                    .WriteLine(CustomAttributes.OfType<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright ?? "")
+            Console.WriteLine($"{customAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product ?? ""} ({appName.Version})")
+                    .WriteLine(customAttributes.OfType<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright ?? "")
                     .WriteLine()
                     .WriteSeparator()
-                    .WriteLine(CustomAttributes.OfType<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description ?? "")
+                    .WriteLine(customAttributes.OfType<AssemblyDescriptionAttribute>().FirstOrDefault()?.Description ?? "")
                     .WriteLine()
                     .WriteSeparator()
-                    .WriteLine($"Usage: {AppName.Name} [command] [command-options]")
+                    .WriteLine($"Usage: {appName.Name} [command] [command-options]")
                     .WriteLine()
                     .WriteLine("Commands:")
                     .WriteLine();
@@ -238,42 +246,30 @@ namespace Monarch.Commands.Default
         /// <summary>
         /// Prints the internal commands.
         /// </summary>
-        /// <param name="MaxLength">The maximum length.</param>
-        private void PrintInternalCommands(int MaxLength)
+        /// <param name="maxLength">The maximum length.</param>
+        private void PrintInternalCommands(int maxLength)
         {
             Console.WriteLine();
-            foreach (var Command in Commands
-                                .Where(x => (x is HelpCommand) || (x is VersionCommand))
+            foreach (ICommand? Command in Commands
+                                .Where(x => x is HelpCommand or VersionCommand)
                                 .OrderBy(x => x.Aliases.FirstOrDefault()))
             {
-                PrintCommandInfo(MaxLength, Command);
+                PrintCommandInfo(maxLength, Command);
             }
         }
 
         /// <summary>
         /// Prints the user commands.
         /// </summary>
-        /// <param name="MaxLength">The maximum length.</param>
-        private void PrintUserCommands(int MaxLength)
+        /// <param name="maxLength">The maximum length.</param>
+        private void PrintUserCommands(int maxLength)
         {
-            foreach (var Command in Commands
-                            .Where(x => x is not HelpCommand && x is not VersionCommand)
+            foreach (ICommand? Command in Commands
+                            .Where(x => x is not HelpCommand and not VersionCommand)
                             .OrderBy(x => x.Aliases.FirstOrDefault()))
             {
-                PrintCommandInfo(MaxLength, Command);
+                PrintCommandInfo(maxLength, Command);
             }
-        }
-
-        /// <summary>
-        /// Sets the length.
-        /// </summary>
-        /// <param name="v">The v.</param>
-        /// <param name="maxLength">The maximum length.</param>
-        /// <returns>The resulting string</returns>
-        private string SetLength(string v, int maxLength)
-        {
-            var NumberSpaces = maxLength - v.Length;
-            return v + new string(' ', NumberSpaces);
         }
     }
 }
