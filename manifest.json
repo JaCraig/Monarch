@@ -13,10 +13,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.CanisterExtensions.yml",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.CanisterExtensions.html"
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.html"
         }
       },
       "version": ""
