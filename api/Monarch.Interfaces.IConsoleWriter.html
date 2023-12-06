@@ -1,1549 +1,1291 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Interface IConsoleWriter
  | Monarch API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Interface IConsoleWriter
  | Monarch API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Monarch" class="logomark">
-              <span class="brand-title">Monarch</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Monarch">
+            Monarch
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Monarch" class="logomark">
-                          <span class="brand-title">Monarch</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Monarch'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Monarch.Interfaces.IConsoleWriter">
+        <article data-uid="Monarch.Interfaces.IConsoleWriter">
 
 
 
-  <h1 id="Monarch_Interfaces_IConsoleWriter" data-uid="Monarch.Interfaces.IConsoleWriter" class="text-break">Interface IConsoleWriter
-</h1>
-  <div class="markdown level0 summary"><p>Console writer</p>
+  <h1 id="Monarch_Interfaces_IConsoleWriter" data-uid="Monarch.Interfaces.IConsoleWriter" class="text-break">
+    Interface IConsoleWriter
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Monarch.html">Monarch</a>.<a class="xref" href="Monarch.Interfaces.html">Interfaces</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Monarch.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Console writer</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Monarch.html">Monarch</a>.<a class="xref" href="Monarch.Interfaces.html">Interfaces</a></h6>
-  <h6><strong>Assembly</strong>: Monarch.dll</h6>
-  <h5 id="Monarch_Interfaces_IConsoleWriter_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public interface IConsoleWriter</code></pre>
   </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Indent.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Indent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L30">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Indent_" data-uid="Monarch.Interfaces.IConsoleWriter.Indent*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Indent" data-uid="Monarch.Interfaces.IConsoleWriter.Indent">Indent()</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Indent" data-uid="Monarch.Interfaces.IConsoleWriter.Indent">
+  Indent()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Indents this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Indent()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Outdent.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Outdent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L36">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Outdent_" data-uid="Monarch.Interfaces.IConsoleWriter.Outdent*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Outdent" data-uid="Monarch.Interfaces.IConsoleWriter.Outdent">Outdent()</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Outdent" data-uid="Monarch.Interfaces.IConsoleWriter.Outdent">
+  Outdent()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Outdents this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Outdent()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_ResetConsoleColor.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.ResetConsoleColor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L42">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_ResetConsoleColor_" data-uid="Monarch.Interfaces.IConsoleWriter.ResetConsoleColor*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_ResetConsoleColor" data-uid="Monarch.Interfaces.IConsoleWriter.ResetConsoleColor">ResetConsoleColor()</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_ResetConsoleColor" data-uid="Monarch.Interfaces.IConsoleWriter.ResetConsoleColor">
+  ResetConsoleColor()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Resets the color of the console.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter ResetConsoleColor()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_SetConsoleColor_System_ConsoleColor_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.SetConsoleColor(System.ConsoleColor)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L49">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_SetConsoleColor_" data-uid="Monarch.Interfaces.IConsoleWriter.SetConsoleColor*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_SetConsoleColor_System_ConsoleColor_" data-uid="Monarch.Interfaces.IConsoleWriter.SetConsoleColor(System.ConsoleColor)">SetConsoleColor(ConsoleColor)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_SetConsoleColor_System_ConsoleColor_" data-uid="Monarch.Interfaces.IConsoleWriter.SetConsoleColor(System.ConsoleColor)">
+  SetConsoleColor(ConsoleColor)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets the color of the console.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter SetConsoleColor(ConsoleColor color)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolecolor">ConsoleColor</a></td>
-        <td><span class="parametername">color</span></td>
-        <td><p>The color.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Boolean_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L56">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>color</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.consolecolor">ConsoleColor</a></dt>
+    <dd><p>The color.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Boolean_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Boolean)">Write(bool)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Boolean_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Boolean)">
+  Write(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(bool value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Char_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Char)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L63">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Char_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Char)">Write(char)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Char_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Char)">
+  Write(char)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(char value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Char___.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Char%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L70">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Char___" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Char[])">Write(char[])</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Char___" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Char[])">
+  Write(char[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L70"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(char[] value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>[]</td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Decimal_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Decimal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L77">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>[]</dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Decimal_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Decimal)">Write(decimal)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Decimal_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Decimal)">
+  Write(decimal)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(decimal value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Double_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L84">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Double_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Double)">Write(double)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Double_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Double)">
+  Write(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L84"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(double value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Int32_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L98">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Int32_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Int32)">Write(int)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Int32_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Int32)">
+  Write(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(int value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Int64_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L105">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Int64_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Int64)">Write(long)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Int64_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Int64)">
+  Write(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(long value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Object_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L112">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Object_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Object)">Write(object)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Object_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Object)">
+  Write(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(object value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_Single_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.Single)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L91">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_Single_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Single)">Write(float)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_Single_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.Single)">
+  Write(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(float value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_String_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L119">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_String_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.String)">Write(string)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_String_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.String)">
+  Write(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L119"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(string value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_UInt32_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.UInt32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L126">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_UInt32_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.UInt32)">Write(uint)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_UInt32_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.UInt32)">
+  Write(uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(uint value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_Write_System_UInt64_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.Write(System.UInt64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L133">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_Write_" data-uid="Monarch.Interfaces.IConsoleWriter.Write*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_Write_System_UInt64_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.UInt64)">Write(ulong)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_Write_System_UInt64_" data-uid="Monarch.Interfaces.IConsoleWriter.Write(System.UInt64)">
+  Write(ulong)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L133"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter Write(ulong value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L139">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine">WriteLine()</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine">
+  WriteLine()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Boolean_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L146">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Boolean_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Boolean)">WriteLine(bool)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Boolean_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Boolean)">
+  WriteLine(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(bool value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Char_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Char)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L153">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Char_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Char)">WriteLine(char)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Char_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Char)">
+  WriteLine(char)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(char value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Char___.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Char%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L160">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Char___" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Char[])">WriteLine(char[])</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Char___" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Char[])">
+  WriteLine(char[])
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L160"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(char[] value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>[]</td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Decimal_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Decimal)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L167">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a>[]</dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Decimal_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Decimal)">WriteLine(decimal)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Decimal_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Decimal)">
+  WriteLine(decimal)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(decimal value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Double_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L174">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.decimal">decimal</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Double_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Double)">WriteLine(double)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Double_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Double)">
+  WriteLine(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L174"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(double value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Int32_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L188">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Int32_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Int32)">WriteLine(int)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Int32_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Int32)">
+  WriteLine(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L188"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(int value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Int64_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L195">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Int64_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Int64)">WriteLine(long)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Int64_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Int64)">
+  WriteLine(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L195"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(long value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Object_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L202">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Object_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Object)">WriteLine(object)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Object_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Object)">
+  WriteLine(object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L202"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(object value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_Single_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.Single)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L181">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Single_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Single)">WriteLine(float)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_Single_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.Single)">
+  WriteLine(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(float value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_String_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L209">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_String_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.String)">WriteLine(string)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_String_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.String)">
+  WriteLine(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(string value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_UInt32_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.UInt32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L216">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_UInt32_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.UInt32)">WriteLine(uint)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_UInt32_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.UInt32)">
+  WriteLine(uint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(uint value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteLine_System_UInt64_.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteLine(System.UInt64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L223">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteLine_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_UInt64_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.UInt64)">WriteLine(ulong)</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteLine_System_UInt64_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteLine(System.UInt64)">
+  WriteLine(ulong)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L223"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the text and ends with a new line.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteLine(ulong value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The value.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Monarch/new/master/apiSpec/new?filename=Monarch_Interfaces_IConsoleWriter_WriteSeparator.md&amp;value=---%0Auid%3A%20Monarch.Interfaces.IConsoleWriter.WriteSeparator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L229">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint64">ulong</a></dt>
+    <dd><p>The value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Monarch_Interfaces_IConsoleWriter_WriteSeparator_" data-uid="Monarch.Interfaces.IConsoleWriter.WriteSeparator*"></a>
-  <h4 id="Monarch_Interfaces_IConsoleWriter_WriteSeparator" data-uid="Monarch.Interfaces.IConsoleWriter.WriteSeparator">WriteSeparator()</h4>
+
+  <h3 id="Monarch_Interfaces_IConsoleWriter_WriteSeparator" data-uid="Monarch.Interfaces.IConsoleWriter.WriteSeparator">
+  WriteSeparator()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the separator.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">IConsoleWriter WriteSeparator()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></td>
-        <td><p>This</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Monarch.Interfaces.IConsoleWriter.html">IConsoleWriter</a></dt>
+    <dd><p>This</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Interfaces/IConsoleWriter.cs/#L24" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Monarch'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
