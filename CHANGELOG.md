@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.42"></a>
+## [3.0.42](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.42) (2023-12-13)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([ba90288](https://www.github.com/JaCraig/Monarch/commit/ba90288684c24d84937b2c7daea4765a8a10fb4c))
+
+### Other
+
+* Merge pull request #100 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-beb0c94413 ([5f8e76b](https://www.github.com/JaCraig/Monarch/commit/5f8e76b23c4d09f4008d03fe25d796b4c10f6e9f))
+* Merge pull request #101 from JaCraig/dependabot/nuget/dependencies-6b2ca1e1fa ([0a0f6e6](https://www.github.com/JaCraig/Monarch/commit/0a0f6e6605f24cf533c1e264803a6014aead900b))
+* Merge pull request #96 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-1725126a36 ([5c64f8e](https://www.github.com/JaCraig/Monarch/commit/5c64f8e32c661756221ff4a73bc6ed9dd4bd8f14))
+* Merge pull request #97 from JaCraig/dependabot/github_actions/dependencies-9d15ffb50c ([706869b](https://www.github.com/JaCraig/Monarch/commit/706869bce5e0e565848958c9b37cd3ccfde35dd4))
+* Merge pull request #98 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-6095d6a029 ([3fb11d6](https://www.github.com/JaCraig/Monarch/commit/3fb11d601c534a8ed7091662a3bfd35d9588ffa6))
+* Merge pull request #99 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-9380cae661 ([011387c](https://www.github.com/JaCraig/Monarch/commit/011387c004f13555feca2a2e2b8fc2adc442c963))
+* bump the dependencies group in /Monarch.Tests with 1 update ([6f6e5d4](https://www.github.com/JaCraig/Monarch/commit/6f6e5d42abe0272e48022f2025f2bdbe640eee12))
+* bump the dependencies group in /Monarch.Tests with 1 update ([9ae802d](https://www.github.com/JaCraig/Monarch/commit/9ae802d047ca4f830f8525e9c4ef2988a8a40c79))
+* bump the dependencies group in /Monarch.Tests with 1 update ([5cff532](https://www.github.com/JaCraig/Monarch/commit/5cff532c8c030538915dcecacfcfe04646bf9baf))
+* bump the dependencies group in /Monarch.Tests with 2 updates ([8c54cf0](https://www.github.com/JaCraig/Monarch/commit/8c54cf0f31765b487d1e4aa934cc7a9735e8d053))
+* bump the dependencies group with 1 update ([e0e2853](https://www.github.com/JaCraig/Monarch/commit/e0e28531e34491d5ee9d53e54e767a224a0875fc))
+* Fixing doc gen ([73489b3](https://www.github.com/JaCraig/Monarch/commit/73489b3db59afa5d702f378ae3f6f0e6478c6ad6))
+
 <a name="3.0.41"></a>
 ## [3.0.41](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.41) (2023-11-24)
 
