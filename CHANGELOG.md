@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.61"></a>
+## [3.0.61](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.61) (2024-03-05)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([0042d3a](https://www.github.com/JaCraig/Monarch/commit/0042d3a40e01a781b605c3f3c8ec4e295f504eb1))
+
+### Other
+
+* Merge pull request #169 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-6a0b745551 ([18b57df](https://www.github.com/JaCraig/Monarch/commit/18b57df6baae204d9e584ef041d0bceb4a1c9370))
+* Merge pull request #170 from JaCraig/dependabot/nuget/dependencies-ba7be29bb2 ([28588ea](https://www.github.com/JaCraig/Monarch/commit/28588ea6eb39d5bba267a41e1993a11b568e5435))
+* bump the dependencies group in /Monarch.Tests with 1 update ([74d6ac7](https://www.github.com/JaCraig/Monarch/commit/74d6ac7154af17f687ca84dffc1d12d814f50ddc))
+
 <a name="3.0.60"></a>
 ## [3.0.60](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.60) (2024-03-04)
 
