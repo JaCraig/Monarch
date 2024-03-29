@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.69"></a>
+## [3.0.69](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.69) (2024-03-29)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([9dd0437](https://www.github.com/JaCraig/Monarch/commit/9dd0437b0fd811e794e984276a4920e11b66197f))
+
+### Other
+
+* Merge pull request #188 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-1e835a635f ([70e94af](https://www.github.com/JaCraig/Monarch/commit/70e94af67ae12d44e94991117c394072da402545))
+* Merge pull request #189 from JaCraig/dependabot/github_actions/dependencies-c3ed15e864 ([ac68601](https://www.github.com/JaCraig/Monarch/commit/ac686015190d1c4b612e3b5a79b71443f9d9d673))
+* Merge pull request #190 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-aedbb0ddba ([965be05](https://www.github.com/JaCraig/Monarch/commit/965be05e5d9a42a253086666fcbb87366dcf15db))
+* Merge pull request #191 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-c9b27241bf ([f0db181](https://www.github.com/JaCraig/Monarch/commit/f0db181c83f9ba9ffd56eb91c30f8c6dcb8db02c))
+* Merge pull request #192 from JaCraig/dependabot/nuget/dependencies-d7ffd5ff1b ([820533e](https://www.github.com/JaCraig/Monarch/commit/820533ee4222f327f1523b57c6d653dc1f8428f6))
+* bump the dependencies group in /Monarch.Tests with 1 update ([983d484](https://www.github.com/JaCraig/Monarch/commit/983d4849d7d4a939e68f9bebf1420e2c4a637f9c))
+* bump the dependencies group in /Monarch.Tests with 1 update ([3f08a5f](https://www.github.com/JaCraig/Monarch/commit/3f08a5f88f433acfa780f19cbc36882558bcb167))
+* bump the dependencies group in /Monarch.Tests with 1 update ([fb87430](https://www.github.com/JaCraig/Monarch/commit/fb87430dd620cd31b1c8888310892786f0e4fa56))
+* bump the dependencies group with 1 update ([83dfe24](https://www.github.com/JaCraig/Monarch/commit/83dfe244e03c5d1cb1c6bd6dfc80560b8f8a25dc))
+
 <a name="3.0.68"></a>
 ## [3.0.68](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.68) (2024-03-18)
 
