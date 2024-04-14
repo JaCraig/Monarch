@@ -124,13 +124,13 @@ references:
   fullName: Monarch.CommandRunner.Manager
   nameWithType: CommandRunner.Manager
 - uid: Monarch.CommandRunner.Run(System.String[])
-  name: Run(string[])
+  name: Run(string?[]?)
   href: api/Monarch.CommandRunner.html#Monarch_CommandRunner_Run_System_String___
   commentId: M:Monarch.CommandRunner.Run(System.String[])
   name.vb: Run(String())
-  fullName: Monarch.CommandRunner.Run(string[])
+  fullName: Monarch.CommandRunner.Run(string?[]?)
   fullName.vb: Monarch.CommandRunner.Run(String())
-  nameWithType: CommandRunner.Run(string[])
+  nameWithType: CommandRunner.Run(string?[]?)
   nameWithType.vb: CommandRunner.Run(String())
 - uid: Monarch.CommandRunner.Run*
   name: Run
@@ -158,13 +158,13 @@ references:
   fullName: Monarch.Commands.Attributes.DynamicDisplayAttribute
   nameWithType: DynamicDisplayAttribute
 - uid: Monarch.Commands.Attributes.DynamicDisplayAttribute.#ctor(System.Type)
-  name: DynamicDisplayAttribute(Type)
+  name: DynamicDisplayAttribute(Type?)
   href: api/Monarch.Commands.Attributes.DynamicDisplayAttribute.html#Monarch_Commands_Attributes_DynamicDisplayAttribute__ctor_System_Type_
   commentId: M:Monarch.Commands.Attributes.DynamicDisplayAttribute.#ctor(System.Type)
   name.vb: New(Type)
-  fullName: Monarch.Commands.Attributes.DynamicDisplayAttribute.DynamicDisplayAttribute(System.Type)
+  fullName: Monarch.Commands.Attributes.DynamicDisplayAttribute.DynamicDisplayAttribute(System.Type?)
   fullName.vb: Monarch.Commands.Attributes.DynamicDisplayAttribute.New(System.Type)
-  nameWithType: DynamicDisplayAttribute.DynamicDisplayAttribute(Type)
+  nameWithType: DynamicDisplayAttribute.DynamicDisplayAttribute(Type?)
   nameWithType.vb: DynamicDisplayAttribute.New(Type)
 - uid: Monarch.Commands.Attributes.DynamicDisplayAttribute.#ctor*
   name: DynamicDisplayAttribute
@@ -323,21 +323,22 @@ references:
   nameWithType: CommandBaseClass<TInput>.Name
   nameWithType.vb: CommandBaseClass(Of TInput).Name
 - uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(System.Object)
-  name: Run(object)
+  name: Run(object?)
   href: api/Monarch.Commands.BaseClasses.CommandBaseClass-1.html#Monarch_Commands_BaseClasses_CommandBaseClass_1_Run_System_Object_
   commentId: M:Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(System.Object)
   name.vb: Run(Object)
-  fullName: Monarch.Commands.BaseClasses.CommandBaseClass<TInput>.Run(object)
+  fullName: Monarch.Commands.BaseClasses.CommandBaseClass<TInput>.Run(object?)
   fullName.vb: Monarch.Commands.BaseClasses.CommandBaseClass(Of TInput).Run(Object)
-  nameWithType: CommandBaseClass<TInput>.Run(object)
+  nameWithType: CommandBaseClass<TInput>.Run(object?)
   nameWithType.vb: CommandBaseClass(Of TInput).Run(Object)
 - uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)
-  name: Run(TInput)
+  name: Run(TInput?)
   href: api/Monarch.Commands.BaseClasses.CommandBaseClass-1.html#Monarch_Commands_BaseClasses_CommandBaseClass_1_Run__0_
   commentId: M:Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)
-  fullName: Monarch.Commands.BaseClasses.CommandBaseClass<TInput>.Run(TInput)
+  name.vb: Run(TInput)
+  fullName: Monarch.Commands.BaseClasses.CommandBaseClass<TInput>.Run(TInput?)
   fullName.vb: Monarch.Commands.BaseClasses.CommandBaseClass(Of TInput).Run(TInput)
-  nameWithType: CommandBaseClass<TInput>.Run(TInput)
+  nameWithType: CommandBaseClass<TInput>.Run(TInput?)
   nameWithType.vb: CommandBaseClass(Of TInput).Run(TInput)
 - uid: Monarch.Commands.BaseClasses.CommandBaseClass`1.Run*
   name: Run
@@ -355,13 +356,13 @@ references:
   fullName: Monarch.Commands.CommandManager
   nameWithType: CommandManager
 - uid: Monarch.Commands.CommandManager.#ctor(System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.ICommand},System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions},System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.IArgLexer},System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.IArgParser})
-  name: CommandManager(IEnumerable<ICommand>, IEnumerable<IOptions>, IEnumerable<IArgLexer>, IEnumerable<IArgParser>)
+  name: CommandManager(IEnumerable<ICommand>?, IEnumerable<IOptions>?, IEnumerable<IArgLexer>?, IEnumerable<IArgParser>?)
   href: api/Monarch.Commands.CommandManager.html#Monarch_Commands_CommandManager__ctor_System_Collections_Generic_IEnumerable_Monarch_Commands_Interfaces_ICommand__System_Collections_Generic_IEnumerable_Monarch_Interfaces_IOptions__System_Collections_Generic_IEnumerable_Monarch_Commands_Interfaces_IArgLexer__System_Collections_Generic_IEnumerable_Monarch_Commands_Interfaces_IArgParser__
   commentId: M:Monarch.Commands.CommandManager.#ctor(System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.ICommand},System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions},System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.IArgLexer},System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.IArgParser})
   name.vb: New(IEnumerable(Of ICommand), IEnumerable(Of IOptions), IEnumerable(Of IArgLexer), IEnumerable(Of IArgParser))
-  fullName: Monarch.Commands.CommandManager.CommandManager(System.Collections.Generic.IEnumerable<Monarch.Commands.Interfaces.ICommand>, System.Collections.Generic.IEnumerable<Monarch.Interfaces.IOptions>, System.Collections.Generic.IEnumerable<Monarch.Commands.Interfaces.IArgLexer>, System.Collections.Generic.IEnumerable<Monarch.Commands.Interfaces.IArgParser>)
+  fullName: Monarch.Commands.CommandManager.CommandManager(System.Collections.Generic.IEnumerable<Monarch.Commands.Interfaces.ICommand>?, System.Collections.Generic.IEnumerable<Monarch.Interfaces.IOptions>?, System.Collections.Generic.IEnumerable<Monarch.Commands.Interfaces.IArgLexer>?, System.Collections.Generic.IEnumerable<Monarch.Commands.Interfaces.IArgParser>?)
   fullName.vb: Monarch.Commands.CommandManager.New(System.Collections.Generic.IEnumerable(Of Monarch.Commands.Interfaces.ICommand), System.Collections.Generic.IEnumerable(Of Monarch.Interfaces.IOptions), System.Collections.Generic.IEnumerable(Of Monarch.Commands.Interfaces.IArgLexer), System.Collections.Generic.IEnumerable(Of Monarch.Commands.Interfaces.IArgParser))
-  nameWithType: CommandManager.CommandManager(IEnumerable<ICommand>, IEnumerable<IOptions>, IEnumerable<IArgLexer>, IEnumerable<IArgParser>)
+  nameWithType: CommandManager.CommandManager(IEnumerable<ICommand>?, IEnumerable<IOptions>?, IEnumerable<IArgLexer>?, IEnumerable<IArgParser>?)
   nameWithType.vb: CommandManager.New(IEnumerable(Of ICommand), IEnumerable(Of IOptions), IEnumerable(Of IArgLexer), IEnumerable(Of IArgParser))
 - uid: Monarch.Commands.CommandManager.#ctor*
   name: CommandManager
@@ -387,13 +388,13 @@ references:
   fullName: Monarch.Commands.CommandManager.Commands
   nameWithType: CommandManager.Commands
 - uid: Monarch.Commands.CommandManager.GetCommand(System.String[])
-  name: GetCommand(string[])
+  name: GetCommand(string?[]?)
   href: api/Monarch.Commands.CommandManager.html#Monarch_Commands_CommandManager_GetCommand_System_String___
   commentId: M:Monarch.Commands.CommandManager.GetCommand(System.String[])
   name.vb: GetCommand(String())
-  fullName: Monarch.Commands.CommandManager.GetCommand(string[])
+  fullName: Monarch.Commands.CommandManager.GetCommand(string?[]?)
   fullName.vb: Monarch.Commands.CommandManager.GetCommand(String())
-  nameWithType: CommandManager.GetCommand(string[])
+  nameWithType: CommandManager.GetCommand(string?[]?)
   nameWithType.vb: CommandManager.GetCommand(String())
 - uid: Monarch.Commands.CommandManager.GetCommand*
   name: GetCommand
@@ -403,13 +404,13 @@ references:
   fullName: Monarch.Commands.CommandManager.GetCommand
   nameWithType: CommandManager.GetCommand
 - uid: Monarch.Commands.CommandManager.GetInput(Monarch.Commands.Interfaces.ICommand,System.String[])
-  name: GetInput(ICommand, string[])
+  name: GetInput(ICommand?, string?[]?)
   href: api/Monarch.Commands.CommandManager.html#Monarch_Commands_CommandManager_GetInput_Monarch_Commands_Interfaces_ICommand_System_String___
   commentId: M:Monarch.Commands.CommandManager.GetInput(Monarch.Commands.Interfaces.ICommand,System.String[])
   name.vb: GetInput(ICommand, String())
-  fullName: Monarch.Commands.CommandManager.GetInput(Monarch.Commands.Interfaces.ICommand, string[])
+  fullName: Monarch.Commands.CommandManager.GetInput(Monarch.Commands.Interfaces.ICommand?, string?[]?)
   fullName.vb: Monarch.Commands.CommandManager.GetInput(Monarch.Commands.Interfaces.ICommand, String())
-  nameWithType: CommandManager.GetInput(ICommand, string[])
+  nameWithType: CommandManager.GetInput(ICommand?, string?[]?)
   nameWithType.vb: CommandManager.GetInput(ICommand, String())
 - uid: Monarch.Commands.CommandManager.GetInput*
   name: GetInput
@@ -476,13 +477,13 @@ references:
   fullName: Monarch.Commands.Default.HelpCommand
   nameWithType: HelpCommand
 - uid: Monarch.Commands.Default.HelpCommand.#ctor(System.Collections.Generic.IEnumerable{Monarch.Interfaces.IConsoleWriter},System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions})
-  name: HelpCommand(IEnumerable<IConsoleWriter>, IEnumerable<IOptions>)
+  name: HelpCommand(IEnumerable<IConsoleWriter>?, IEnumerable<IOptions>?)
   href: api/Monarch.Commands.Default.HelpCommand.html#Monarch_Commands_Default_HelpCommand__ctor_System_Collections_Generic_IEnumerable_Monarch_Interfaces_IConsoleWriter__System_Collections_Generic_IEnumerable_Monarch_Interfaces_IOptions__
   commentId: M:Monarch.Commands.Default.HelpCommand.#ctor(System.Collections.Generic.IEnumerable{Monarch.Interfaces.IConsoleWriter},System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions})
   name.vb: New(IEnumerable(Of IConsoleWriter), IEnumerable(Of IOptions))
-  fullName: Monarch.Commands.Default.HelpCommand.HelpCommand(System.Collections.Generic.IEnumerable<Monarch.Interfaces.IConsoleWriter>, System.Collections.Generic.IEnumerable<Monarch.Interfaces.IOptions>)
+  fullName: Monarch.Commands.Default.HelpCommand.HelpCommand(System.Collections.Generic.IEnumerable<Monarch.Interfaces.IConsoleWriter>?, System.Collections.Generic.IEnumerable<Monarch.Interfaces.IOptions>?)
   fullName.vb: Monarch.Commands.Default.HelpCommand.New(System.Collections.Generic.IEnumerable(Of Monarch.Interfaces.IConsoleWriter), System.Collections.Generic.IEnumerable(Of Monarch.Interfaces.IOptions))
-  nameWithType: HelpCommand.HelpCommand(IEnumerable<IConsoleWriter>, IEnumerable<IOptions>)
+  nameWithType: HelpCommand.HelpCommand(IEnumerable<IConsoleWriter>?, IEnumerable<IOptions>?)
   nameWithType.vb: HelpCommand.New(IEnumerable(Of IConsoleWriter), IEnumerable(Of IOptions))
 - uid: Monarch.Commands.Default.HelpCommand.#ctor*
   name: HelpCommand
@@ -560,11 +561,14 @@ references:
   fullName: Monarch.Commands.Default.HelpCommand.Options
   nameWithType: HelpCommand.Options
 - uid: Monarch.Commands.Default.HelpCommand.Run(Monarch.Commands.Default.HelpInput)
-  name: Run(HelpInput)
+  name: Run(HelpInput?)
   href: api/Monarch.Commands.Default.HelpCommand.html#Monarch_Commands_Default_HelpCommand_Run_Monarch_Commands_Default_HelpInput_
   commentId: M:Monarch.Commands.Default.HelpCommand.Run(Monarch.Commands.Default.HelpInput)
-  fullName: Monarch.Commands.Default.HelpCommand.Run(Monarch.Commands.Default.HelpInput)
-  nameWithType: HelpCommand.Run(HelpInput)
+  name.vb: Run(HelpInput)
+  fullName: Monarch.Commands.Default.HelpCommand.Run(Monarch.Commands.Default.HelpInput?)
+  fullName.vb: Monarch.Commands.Default.HelpCommand.Run(Monarch.Commands.Default.HelpInput)
+  nameWithType: HelpCommand.Run(HelpInput?)
+  nameWithType.vb: HelpCommand.Run(HelpInput)
 - uid: Monarch.Commands.Default.HelpCommand.Run*
   name: Run
   href: api/Monarch.Commands.Default.HelpCommand.html#Monarch_Commands_Default_HelpCommand_Run_
@@ -716,13 +720,13 @@ references:
   fullName: Monarch.Commands.Interfaces.IArgParser
   nameWithType: IArgParser
 - uid: Monarch.Commands.Interfaces.IArgParser.GetTokens(System.String[])
-  name: GetTokens(string[])
+  name: GetTokens(string?[]?)
   href: api/Monarch.Commands.Interfaces.IArgParser.html#Monarch_Commands_Interfaces_IArgParser_GetTokens_System_String___
   commentId: M:Monarch.Commands.Interfaces.IArgParser.GetTokens(System.String[])
   name.vb: GetTokens(String())
-  fullName: Monarch.Commands.Interfaces.IArgParser.GetTokens(string[])
+  fullName: Monarch.Commands.Interfaces.IArgParser.GetTokens(string?[]?)
   fullName.vb: Monarch.Commands.Interfaces.IArgParser.GetTokens(String())
-  nameWithType: IArgParser.GetTokens(string[])
+  nameWithType: IArgParser.GetTokens(string?[]?)
   nameWithType.vb: IArgParser.GetTokens(String())
 - uid: Monarch.Commands.Interfaces.IArgParser.GetTokens*
   name: GetTokens
@@ -806,13 +810,13 @@ references:
   fullName: Monarch.Commands.Interfaces.ICommand.Name
   nameWithType: ICommand.Name
 - uid: Monarch.Commands.Interfaces.ICommand.Run(System.Object)
-  name: Run(object)
+  name: Run(object?)
   href: api/Monarch.Commands.Interfaces.ICommand.html#Monarch_Commands_Interfaces_ICommand_Run_System_Object_
   commentId: M:Monarch.Commands.Interfaces.ICommand.Run(System.Object)
   name.vb: Run(Object)
-  fullName: Monarch.Commands.Interfaces.ICommand.Run(object)
+  fullName: Monarch.Commands.Interfaces.ICommand.Run(object?)
   fullName.vb: Monarch.Commands.Interfaces.ICommand.Run(Object)
-  nameWithType: ICommand.Run(object)
+  nameWithType: ICommand.Run(object?)
   nameWithType.vb: ICommand.Run(Object)
 - uid: Monarch.Commands.Interfaces.ICommand.Run*
   name: Run
@@ -843,13 +847,13 @@ references:
   fullName: Monarch.Commands.Lexer.ArgLexer
   nameWithType: ArgLexer
 - uid: Monarch.Commands.Lexer.ArgLexer.Lex(System.Collections.Generic.List{Monarch.Commands.Parser.TokenBaseClass},System.Reflection.PropertyInfo[])
-  name: Lex(List<TokenBaseClass>, PropertyInfo[])
+  name: Lex(List<TokenBaseClass>?, PropertyInfo[]?)
   href: api/Monarch.Commands.Lexer.ArgLexer.html#Monarch_Commands_Lexer_ArgLexer_Lex_System_Collections_Generic_List_Monarch_Commands_Parser_TokenBaseClass__System_Reflection_PropertyInfo___
   commentId: M:Monarch.Commands.Lexer.ArgLexer.Lex(System.Collections.Generic.List{Monarch.Commands.Parser.TokenBaseClass},System.Reflection.PropertyInfo[])
   name.vb: Lex(List(Of TokenBaseClass), PropertyInfo())
-  fullName: Monarch.Commands.Lexer.ArgLexer.Lex(System.Collections.Generic.List<Monarch.Commands.Parser.TokenBaseClass>, System.Reflection.PropertyInfo[])
+  fullName: Monarch.Commands.Lexer.ArgLexer.Lex(System.Collections.Generic.List<Monarch.Commands.Parser.TokenBaseClass>?, System.Reflection.PropertyInfo[]?)
   fullName.vb: Monarch.Commands.Lexer.ArgLexer.Lex(System.Collections.Generic.List(Of Monarch.Commands.Parser.TokenBaseClass), System.Reflection.PropertyInfo())
-  nameWithType: ArgLexer.Lex(List<TokenBaseClass>, PropertyInfo[])
+  nameWithType: ArgLexer.Lex(List<TokenBaseClass>?, PropertyInfo[]?)
   nameWithType.vb: ArgLexer.Lex(List(Of TokenBaseClass), PropertyInfo())
 - uid: Monarch.Commands.Lexer.ArgLexer.Lex*
   name: Lex
@@ -884,13 +888,13 @@ references:
   nameWithType: Command.Command
   nameWithType.vb: Command.New
 - uid: Monarch.Commands.Lexer.Command.GetValue(System.Object)
-  name: GetValue(object)
+  name: GetValue(object?)
   href: api/Monarch.Commands.Lexer.Command.html#Monarch_Commands_Lexer_Command_GetValue_System_Object_
   commentId: M:Monarch.Commands.Lexer.Command.GetValue(System.Object)
   name.vb: GetValue(Object)
-  fullName: Monarch.Commands.Lexer.Command.GetValue(object)
+  fullName: Monarch.Commands.Lexer.Command.GetValue(object?)
   fullName.vb: Monarch.Commands.Lexer.Command.GetValue(Object)
-  nameWithType: Command.GetValue(object)
+  nameWithType: Command.GetValue(object?)
   nameWithType.vb: Command.GetValue(Object)
 - uid: Monarch.Commands.Lexer.Command.GetValue*
   name: GetValue
@@ -990,13 +994,13 @@ references:
   fullName: Monarch.Commands.Lexer.Property.FlagValue
   nameWithType: Property.FlagValue
 - uid: Monarch.Commands.Lexer.Property.GetValue(System.Object)
-  name: GetValue(object)
+  name: GetValue(object?)
   href: api/Monarch.Commands.Lexer.Property.html#Monarch_Commands_Lexer_Property_GetValue_System_Object_
   commentId: M:Monarch.Commands.Lexer.Property.GetValue(System.Object)
   name.vb: GetValue(Object)
-  fullName: Monarch.Commands.Lexer.Property.GetValue(object)
+  fullName: Monarch.Commands.Lexer.Property.GetValue(object?)
   fullName.vb: Monarch.Commands.Lexer.Property.GetValue(Object)
-  nameWithType: Property.GetValue(object)
+  nameWithType: Property.GetValue(object?)
   nameWithType.vb: Property.GetValue(Object)
 - uid: Monarch.Commands.Lexer.Property.GetValue*
   name: GetValue
@@ -1102,13 +1106,13 @@ references:
   fullName: Monarch.Commands.Parser.ArgParser.Commands
   nameWithType: ArgParser.Commands
 - uid: Monarch.Commands.Parser.ArgParser.GetTokens(System.String[])
-  name: GetTokens(string[])
+  name: GetTokens(string?[]?)
   href: api/Monarch.Commands.Parser.ArgParser.html#Monarch_Commands_Parser_ArgParser_GetTokens_System_String___
   commentId: M:Monarch.Commands.Parser.ArgParser.GetTokens(System.String[])
   name.vb: GetTokens(String())
-  fullName: Monarch.Commands.Parser.ArgParser.GetTokens(string[])
+  fullName: Monarch.Commands.Parser.ArgParser.GetTokens(string?[]?)
   fullName.vb: Monarch.Commands.Parser.ArgParser.GetTokens(String())
-  nameWithType: ArgParser.GetTokens(string[])
+  nameWithType: ArgParser.GetTokens(string?[]?)
   nameWithType.vb: ArgParser.GetTokens(String())
 - uid: Monarch.Commands.Parser.ArgParser.GetTokens*
   name: GetTokens
@@ -1282,13 +1286,13 @@ references:
   fullName: Monarch.Defaults.DefaultConsoleWriter
   nameWithType: DefaultConsoleWriter
 - uid: Monarch.Defaults.DefaultConsoleWriter.#ctor(System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions})
-  name: DefaultConsoleWriter(IEnumerable<IOptions>)
+  name: DefaultConsoleWriter(IEnumerable<IOptions>?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter__ctor_System_Collections_Generic_IEnumerable_Monarch_Interfaces_IOptions__
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.#ctor(System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions})
   name.vb: New(IEnumerable(Of IOptions))
-  fullName: Monarch.Defaults.DefaultConsoleWriter.DefaultConsoleWriter(System.Collections.Generic.IEnumerable<Monarch.Interfaces.IOptions>)
+  fullName: Monarch.Defaults.DefaultConsoleWriter.DefaultConsoleWriter(System.Collections.Generic.IEnumerable<Monarch.Interfaces.IOptions>?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.New(System.Collections.Generic.IEnumerable(Of Monarch.Interfaces.IOptions))
-  nameWithType: DefaultConsoleWriter.DefaultConsoleWriter(IEnumerable<IOptions>)
+  nameWithType: DefaultConsoleWriter.DefaultConsoleWriter(IEnumerable<IOptions>?)
   nameWithType.vb: DefaultConsoleWriter.New(IEnumerable(Of IOptions))
 - uid: Monarch.Defaults.DefaultConsoleWriter.#ctor*
   name: DefaultConsoleWriter
@@ -1410,13 +1414,13 @@ references:
   nameWithType: DefaultConsoleWriter.Write(char)
   nameWithType.vb: DefaultConsoleWriter.Write(Char)
 - uid: Monarch.Defaults.DefaultConsoleWriter.Write(System.Char[])
-  name: Write(char[])
+  name: Write(char[]?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter_Write_System_Char___
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.Write(System.Char[])
   name.vb: Write(Char())
-  fullName: Monarch.Defaults.DefaultConsoleWriter.Write(char[])
+  fullName: Monarch.Defaults.DefaultConsoleWriter.Write(char[]?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.Write(Char())
-  nameWithType: DefaultConsoleWriter.Write(char[])
+  nameWithType: DefaultConsoleWriter.Write(char[]?)
   nameWithType.vb: DefaultConsoleWriter.Write(Char())
 - uid: Monarch.Defaults.DefaultConsoleWriter.Write(System.Decimal)
   name: Write(decimal)
@@ -1455,13 +1459,13 @@ references:
   nameWithType: DefaultConsoleWriter.Write(long)
   nameWithType.vb: DefaultConsoleWriter.Write(Long)
 - uid: Monarch.Defaults.DefaultConsoleWriter.Write(System.Object)
-  name: Write(object)
+  name: Write(object?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter_Write_System_Object_
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.Write(System.Object)
   name.vb: Write(Object)
-  fullName: Monarch.Defaults.DefaultConsoleWriter.Write(object)
+  fullName: Monarch.Defaults.DefaultConsoleWriter.Write(object?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.Write(Object)
-  nameWithType: DefaultConsoleWriter.Write(object)
+  nameWithType: DefaultConsoleWriter.Write(object?)
   nameWithType.vb: DefaultConsoleWriter.Write(Object)
 - uid: Monarch.Defaults.DefaultConsoleWriter.Write(System.Single)
   name: Write(float)
@@ -1473,13 +1477,13 @@ references:
   nameWithType: DefaultConsoleWriter.Write(float)
   nameWithType.vb: DefaultConsoleWriter.Write(Single)
 - uid: Monarch.Defaults.DefaultConsoleWriter.Write(System.String)
-  name: Write(string)
+  name: Write(string?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter_Write_System_String_
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.Write(System.String)
   name.vb: Write(String)
-  fullName: Monarch.Defaults.DefaultConsoleWriter.Write(string)
+  fullName: Monarch.Defaults.DefaultConsoleWriter.Write(string?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.Write(String)
-  nameWithType: DefaultConsoleWriter.Write(string)
+  nameWithType: DefaultConsoleWriter.Write(string?)
   nameWithType.vb: DefaultConsoleWriter.Write(String)
 - uid: Monarch.Defaults.DefaultConsoleWriter.Write(System.UInt32)
   name: Write(uint)
@@ -1531,13 +1535,13 @@ references:
   nameWithType: DefaultConsoleWriter.WriteLine(char)
   nameWithType.vb: DefaultConsoleWriter.WriteLine(Char)
 - uid: Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.Char[])
-  name: WriteLine(char[])
+  name: WriteLine(char[]?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter_WriteLine_System_Char___
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.Char[])
   name.vb: WriteLine(Char())
-  fullName: Monarch.Defaults.DefaultConsoleWriter.WriteLine(char[])
+  fullName: Monarch.Defaults.DefaultConsoleWriter.WriteLine(char[]?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.WriteLine(Char())
-  nameWithType: DefaultConsoleWriter.WriteLine(char[])
+  nameWithType: DefaultConsoleWriter.WriteLine(char[]?)
   nameWithType.vb: DefaultConsoleWriter.WriteLine(Char())
 - uid: Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.Decimal)
   name: WriteLine(decimal)
@@ -1576,13 +1580,13 @@ references:
   nameWithType: DefaultConsoleWriter.WriteLine(long)
   nameWithType.vb: DefaultConsoleWriter.WriteLine(Long)
 - uid: Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.Object)
-  name: WriteLine(object)
+  name: WriteLine(object?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter_WriteLine_System_Object_
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.Object)
   name.vb: WriteLine(Object)
-  fullName: Monarch.Defaults.DefaultConsoleWriter.WriteLine(object)
+  fullName: Monarch.Defaults.DefaultConsoleWriter.WriteLine(object?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.WriteLine(Object)
-  nameWithType: DefaultConsoleWriter.WriteLine(object)
+  nameWithType: DefaultConsoleWriter.WriteLine(object?)
   nameWithType.vb: DefaultConsoleWriter.WriteLine(Object)
 - uid: Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.Single)
   name: WriteLine(float)
@@ -1594,13 +1598,13 @@ references:
   nameWithType: DefaultConsoleWriter.WriteLine(float)
   nameWithType.vb: DefaultConsoleWriter.WriteLine(Single)
 - uid: Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.String)
-  name: WriteLine(string)
+  name: WriteLine(string?)
   href: api/Monarch.Defaults.DefaultConsoleWriter.html#Monarch_Defaults_DefaultConsoleWriter_WriteLine_System_String_
   commentId: M:Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.String)
   name.vb: WriteLine(String)
-  fullName: Monarch.Defaults.DefaultConsoleWriter.WriteLine(string)
+  fullName: Monarch.Defaults.DefaultConsoleWriter.WriteLine(string?)
   fullName.vb: Monarch.Defaults.DefaultConsoleWriter.WriteLine(String)
-  nameWithType: DefaultConsoleWriter.WriteLine(string)
+  nameWithType: DefaultConsoleWriter.WriteLine(string?)
   nameWithType.vb: DefaultConsoleWriter.WriteLine(String)
 - uid: Monarch.Defaults.DefaultConsoleWriter.WriteLine(System.UInt32)
   name: WriteLine(uint)
@@ -1716,22 +1720,22 @@ references:
   nameWithType: ParsingException.ParsingException(SerializationInfo, StreamingContext)
   nameWithType.vb: ParsingException.New(SerializationInfo, StreamingContext)
 - uid: Monarch.Exceptions.ParsingException.#ctor(System.String)
-  name: ParsingException(string)
+  name: ParsingException(string?)
   href: api/Monarch.Exceptions.ParsingException.html#Monarch_Exceptions_ParsingException__ctor_System_String_
   commentId: M:Monarch.Exceptions.ParsingException.#ctor(System.String)
   name.vb: New(String)
-  fullName: Monarch.Exceptions.ParsingException.ParsingException(string)
+  fullName: Monarch.Exceptions.ParsingException.ParsingException(string?)
   fullName.vb: Monarch.Exceptions.ParsingException.New(String)
-  nameWithType: ParsingException.ParsingException(string)
+  nameWithType: ParsingException.ParsingException(string?)
   nameWithType.vb: ParsingException.New(String)
 - uid: Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)
-  name: ParsingException(string, Exception)
+  name: ParsingException(string?, Exception?)
   href: api/Monarch.Exceptions.ParsingException.html#Monarch_Exceptions_ParsingException__ctor_System_String_System_Exception_
   commentId: M:Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)
   name.vb: New(String, Exception)
-  fullName: Monarch.Exceptions.ParsingException.ParsingException(string, System.Exception)
+  fullName: Monarch.Exceptions.ParsingException.ParsingException(string?, System.Exception?)
   fullName.vb: Monarch.Exceptions.ParsingException.New(String, System.Exception)
-  nameWithType: ParsingException.ParsingException(string, Exception)
+  nameWithType: ParsingException.ParsingException(string?, Exception?)
   nameWithType.vb: ParsingException.New(String, Exception)
 - uid: Monarch.Exceptions.ParsingException.#ctor*
   name: ParsingException

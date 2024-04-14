@@ -156,7 +156,7 @@ Class CommandManager  <a class="header-action link-secondary" title="View source
   <a id="Monarch_Commands_CommandManager__ctor_" data-uid="Monarch.Commands.CommandManager.#ctor*"></a>
 
   <h3 id="Monarch_Commands_CommandManager__ctor_System_Collections_Generic_IEnumerable_Monarch_Commands_Interfaces_ICommand__System_Collections_Generic_IEnumerable_Monarch_Interfaces_IOptions__System_Collections_Generic_IEnumerable_Monarch_Commands_Interfaces_IArgLexer__System_Collections_Generic_IEnumerable_Monarch_Commands_Interfaces_IArgParser__" data-uid="Monarch.Commands.CommandManager.#ctor(System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.ICommand},System.Collections.Generic.IEnumerable{Monarch.Interfaces.IOptions},System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.IArgLexer},System.Collections.Generic.IEnumerable{Monarch.Commands.Interfaces.IArgParser})">
-  CommandManager(IEnumerable&lt;ICommand&gt;, IEnumerable&lt;IOptions&gt;, IEnumerable&lt;IArgLexer&gt;, IEnumerable&lt;IArgParser&gt;)
+  CommandManager(IEnumerable&lt;ICommand&gt;?, IEnumerable&lt;IOptions&gt;?, IEnumerable&lt;IArgLexer&gt;?, IEnumerable&lt;IArgParser&gt;?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/CommandManager.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -165,7 +165,7 @@ Class CommandManager  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CommandManager(IEnumerable&lt;ICommand&gt; commands, IEnumerable&lt;IOptions&gt; options, IEnumerable&lt;IArgLexer&gt; lexer, IEnumerable&lt;IArgParser&gt; parser)</code></pre>
+    <pre><code class="lang-csharp hljs">public CommandManager(IEnumerable&lt;ICommand&gt;? commands, IEnumerable&lt;IOptions&gt;? options, IEnumerable&lt;IArgLexer&gt;? lexer, IEnumerable&lt;IArgParser&gt;? parser)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -338,7 +338,7 @@ Class CommandManager  <a class="header-action link-secondary" title="View source
   <a id="Monarch_Commands_CommandManager_GetCommand_" data-uid="Monarch.Commands.CommandManager.GetCommand*"></a>
 
   <h3 id="Monarch_Commands_CommandManager_GetCommand_System_String___" data-uid="Monarch.Commands.CommandManager.GetCommand(System.String[])">
-  GetCommand(string[])
+  GetCommand(string?[]?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/CommandManager.cs/#L81"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -347,7 +347,7 @@ Class CommandManager  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICommand GetCommand(string[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">public ICommand GetCommand(string?[]? args)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -377,7 +377,7 @@ Class CommandManager  <a class="header-action link-secondary" title="View source
   <a id="Monarch_Commands_CommandManager_GetInput_" data-uid="Monarch.Commands.CommandManager.GetInput*"></a>
 
   <h3 id="Monarch_Commands_CommandManager_GetInput_Monarch_Commands_Interfaces_ICommand_System_String___" data-uid="Monarch.Commands.CommandManager.GetInput(Monarch.Commands.Interfaces.ICommand,System.String[])">
-  GetInput(ICommand, string[])
+  GetInput(ICommand?, string?[]?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/CommandManager.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -386,7 +386,7 @@ Class CommandManager  <a class="header-action link-secondary" title="View source
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object GetInput(ICommand command, string[] args)</code></pre>
+    <pre><code class="lang-csharp hljs">public object? GetInput(ICommand? command, string?[]? args)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>

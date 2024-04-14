@@ -261,7 +261,7 @@ contextual information about the source or destination.</p>
   <a id="Monarch_Exceptions_ParsingException__ctor_" data-uid="Monarch.Exceptions.ParsingException.#ctor*"></a>
 
   <h3 id="Monarch_Exceptions_ParsingException__ctor_System_String_" data-uid="Monarch.Exceptions.ParsingException.#ctor(System.String)">
-  ParsingException(string)
+  ParsingException(string?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Exceptions/ParsingException.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -270,7 +270,7 @@ contextual information about the source or destination.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParsingException(string message)</code></pre>
+    <pre><code class="lang-csharp hljs">public ParsingException(string? message)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -294,7 +294,7 @@ contextual information about the source or destination.</p>
   <a id="Monarch_Exceptions_ParsingException__ctor_" data-uid="Monarch.Exceptions.ParsingException.#ctor*"></a>
 
   <h3 id="Monarch_Exceptions_ParsingException__ctor_System_String_System_Exception_" data-uid="Monarch.Exceptions.ParsingException.#ctor(System.String,System.Exception)">
-  ParsingException(string, Exception)
+  ParsingException(string?, Exception?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Exceptions/ParsingException.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -303,7 +303,7 @@ contextual information about the source or destination.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ParsingException(string message, Exception innerException)</code></pre>
+    <pre><code class="lang-csharp hljs">public ParsingException(string? message, Exception? innerException)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -312,8 +312,8 @@ contextual information about the source or destination.</p>
     <dd><p>The error message that explains the reason for the exception.</p>
 </dd>
     <dt><code>innerException</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception">Exception</a></dt>
-    <dd><p>The exception that is the cause of the current exception, or a null reference (Nothing in
-Visual Basic) if no inner exception is specified.</p>
+    <dd><p>The exception that is the cause of the current exception, or a null reference (Nothing
+in Visual Basic) if no inner exception is specified.</p>
 </dd>
   </dl>
 

@@ -381,8 +381,8 @@ Class CommandBaseClass&lt;TInput&gt;  <a class="header-action link-secondary" ti
   <a id="Monarch_Commands_BaseClasses_CommandBaseClass_1_Run_" data-uid="Monarch.Commands.BaseClasses.CommandBaseClass`1.Run*"></a>
 
   <h3 id="Monarch_Commands_BaseClasses_CommandBaseClass_1_Run_System_Object_" data-uid="Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(System.Object)">
-  Run(object)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/BaseClasses/CommandBaseClass.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  Run(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/BaseClasses/CommandBaseClass.cs/#L80"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Runs the specified input.</p>
@@ -390,7 +390,7 @@ Class CommandBaseClass&lt;TInput&gt;  <a class="header-action link-secondary" ti
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; Run(object input)</code></pre>
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; Run(object? input)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -420,8 +420,8 @@ Class CommandBaseClass&lt;TInput&gt;  <a class="header-action link-secondary" ti
   <a id="Monarch_Commands_BaseClasses_CommandBaseClass_1_Run_" data-uid="Monarch.Commands.BaseClasses.CommandBaseClass`1.Run*"></a>
 
   <h3 id="Monarch_Commands_BaseClasses_CommandBaseClass_1_Run__0_" data-uid="Monarch.Commands.BaseClasses.CommandBaseClass`1.Run(`0)">
-  Run(TInput)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/BaseClasses/CommandBaseClass.cs/#L93"><i class="bi bi-code-slash"></i></a>
+  Run(TInput?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Monarch/blob/master/Monarch/Commands/BaseClasses/CommandBaseClass.cs/#L87"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Runs the specified input.</p>
@@ -429,7 +429,7 @@ Class CommandBaseClass&lt;TInput&gt;  <a class="header-action link-secondary" ti
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract Task&lt;int&gt; Run(TInput input)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract Task&lt;int&gt; Run(TInput? input)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
