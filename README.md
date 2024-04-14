@@ -1,6 +1,6 @@
 # Monarch
 
-[![.NET Publish](https://github.com/JaCraig/Monarch/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/Monarch/actions/workflows/dotnet-publish.yml)
+[![.NET Publish](https://github.com/JaCraig/Monarch/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/Monarch/actions/workflows/dotnet-publish.yml) [![Coverage Status](https://coveralls.io/repos/github/JaCraig/Monarch/badge.svg?branch=master)](https://coveralls.io/github/JaCraig/Monarch?branch=master)
 
 
 Monarch is a command line parser/task runner.
