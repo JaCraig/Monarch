@@ -43,10 +43,10 @@ namespace Monarch.Commands.Default
         /// </summary>
         /// <param name="console">The console.</param>
         /// <param name="options">The options.</param>
-        public HelpCommand(IEnumerable<IConsoleWriter> console, IEnumerable<IOptions> options)
+        public HelpCommand(IEnumerable<IConsoleWriter>? console, IEnumerable<IOptions>? options)
         {
-            Console = console.FirstOrDefault(x => x is not DefaultConsoleWriter) ?? new DefaultConsoleWriter(options);
-            Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
+            Console = console?.FirstOrDefault(x => x is not DefaultConsoleWriter) ?? new DefaultConsoleWriter(options);
+            Options = options?.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
         }
 
         /// <summary>
@@ -90,8 +90,9 @@ namespace Monarch.Commands.Default
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The result.</returns>
-        protected override async Task<int> Run(HelpInput input)
+        protected override async Task<int> Run(HelpInput? input)
         {
+            input ??= new HelpInput();
             await Task.CompletedTask.ConfigureAwait(false);
             var AppAssembly = Assembly.GetEntryAssembly();
             if (AppAssembly is null)
@@ -99,12 +100,12 @@ namespace Monarch.Commands.Default
             IEnumerable<Attribute> CustomAttributes = AppAssembly.GetCustomAttributes();
             AssemblyName AppName = AppAssembly.GetName();
 
-            Console.Indent();
+            _ = Console.Indent();
             if (string.IsNullOrEmpty(input.Command))
                 PrintDefaultHelp(CustomAttributes, AppName);
             else
                 PrintCommandHelp(input);
-            Console.Outdent();
+            _ = Console.Outdent();
             return 0;
         }
 
@@ -135,35 +136,30 @@ namespace Monarch.Commands.Default
             ICommand? CommandUsing = Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(input.Command?.ToUpper()));
             if (CommandUsing is null)
             {
-                Console.WriteLine($"'{input.Command}' is not found as a command.");
+                _ = Console.WriteLine($"'{input.Command}' is not found as a command.");
                 return;
             }
-            Console.WriteLine($"Command: '{input.Command?.ToString(StringCase.FirstCharacterUpperCase)}' ({CommandUsing.Description})")
+            _ = Console.WriteLine($"Command: '{input.Command?.ToString(StringCase.FirstCharacterUpperCase)}' ({CommandUsing.Description})")
                     .WriteLine();
 
             PropertyInfo[] Properties = CommandUsing.CreateInput().GetType().GetProperties().OrderBy(x => x.Name).ToArray();
 
             var UsageBuilder = new StringBuilder();
-            UsageBuilder.Append("Usage: ").Append(input.Command).Append(' ');
+            _ = UsageBuilder.Append("Usage: ").Append(input.Command).Append(' ');
             for (var X = 0; X < Properties.Length; ++X)
             {
-                if ((Properties[X].PropertyType.IsGenericType
+                _ = (Properties[X].PropertyType.IsGenericType
                     && Properties[X].PropertyType.GetGenericTypeDefinition() != typeof(Nullable<>))
-                    || Properties[X].Attribute<RequiredAttribute>() != null)
-                {
-                    UsageBuilder.Append('<').Append(Properties[X].Name).Append("> ");
-                }
-                else
-                {
-                    UsageBuilder.Append('[').Append(Properties[X].Name).Append("] ");
-                }
+                    || Properties[X].Attribute<RequiredAttribute>() != null
+                    ? UsageBuilder.Append('<').Append(Properties[X].Name).Append("> ")
+                    : UsageBuilder.Append('[').Append(Properties[X].Name).Append("] ");
             }
 
-            Console.WriteLine(UsageBuilder.ToString());
+            _ = Console.WriteLine(UsageBuilder.ToString());
 
             if (Properties.Length > 0)
             {
-                Console.WriteSeparator()
+                _ = Console.WriteSeparator()
                         .WriteLine("Options")
                         .WriteLine()
                         .WriteSeparator();
@@ -173,31 +169,31 @@ namespace Monarch.Commands.Default
                 for (var X = 0; X < Properties.Length; ++X)
                 {
                     var Builder = new StringBuilder();
-                    Builder.Append(SetLength(Properties[X].Name, MaxLength));
+                    _ = Builder.Append(SetLength(Properties[X].Name, MaxLength));
 
-                    Builder.Append(Properties[X].GetCustomAttribute<DisplayAttribute>()?.Description);
+                    _ = Builder.Append(Properties[X].GetCustomAttribute<DisplayAttribute>()?.Description);
 
-                    Builder.Append(Properties[X].GetCustomAttribute<DynamicDisplayAttribute>()?.GetDescription());
+                    _ = Builder.Append(Properties[X].GetCustomAttribute<DynamicDisplayAttribute>()?.GetDescription());
 
-                    Builder.Append(' ');
+                    _ = Builder.Append(' ');
 
                     if (Properties[X].PropertyType.IsEnum)
                     {
-                        Builder.Append("[Values = (").Append(Enum.GetNames(Properties[X].PropertyType).ToString(x => "'" + x + "'")).Append(")] ");
+                        _ = Builder.Append("[Values = (").Append(Enum.GetNames(Properties[X].PropertyType).ToString(x => "'" + x + "'")).Append(")] ");
                     }
 
                     IEnumerable<ValidationAttribute> ValidationAttributes = Properties[X].GetCustomAttributes<ValidationAttribute>();
 
                     if (ValidationAttributes.FirstOrDefault(y => y is MaxLengthAttribute) is MaxLengthAttribute MaxLengthAttr)
-                        Builder.Append("[Max Length = ").Append(MaxLengthAttr.Length).Append(']');
+                        _ = Builder.Append("[Max Length = ").Append(MaxLengthAttr.Length).Append(']');
                     if (ValidationAttributes.FirstOrDefault(y => y is MinLengthAttribute) is MinLengthAttribute MinLengthAttr)
-                        Builder.Append("[Min Length = ").Append(MinLengthAttr.Length).Append(']');
+                        _ = Builder.Append("[Min Length = ").Append(MinLengthAttr.Length).Append(']');
 
-                    Builder.Append(ValidationAttributes.Any(y => y is not MinLengthAttribute and not MaxLengthAttribute) ? ", " : " ")
+                    _ = Builder.Append(ValidationAttributes.Any(y => y is not MinLengthAttribute and not MaxLengthAttribute) ? ", " : " ")
                         .Append(ValidationAttributes.Where(y => y is not MinLengthAttribute and not MaxLengthAttribute)
                         .ToString(y => "[" + y.GetType().Name.Replace("Attribute", "") + "]", ", "));
 
-                    Console.WriteLine(Builder.ToString());
+                    _ = Console.WriteLine(Builder.ToString());
                 }
             }
         }
@@ -230,7 +226,7 @@ namespace Monarch.Commands.Default
         /// <param name="appName">Name of the application.</param>
         private void PrintHeader(IEnumerable<Attribute> customAttributes, AssemblyName appName)
         {
-            Console.WriteLine($"{customAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product ?? ""} ({appName.Version})")
+            _ = Console.WriteLine($"{customAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product ?? ""} ({appName.Version})")
                     .WriteLine(customAttributes.OfType<AssemblyCopyrightAttribute>().FirstOrDefault()?.Copyright ?? "")
                     .WriteLine()
                     .WriteSeparator()
@@ -249,7 +245,7 @@ namespace Monarch.Commands.Default
         /// <param name="maxLength">The maximum length.</param>
         private void PrintInternalCommands(int maxLength)
         {
-            Console.WriteLine();
+            _ = Console.WriteLine();
             foreach (ICommand? Command in Commands
                                 .Where(x => x is HelpCommand or VersionCommand)
                                 .OrderBy(x => x.Aliases.FirstOrDefault()))

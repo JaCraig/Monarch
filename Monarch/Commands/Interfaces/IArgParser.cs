@@ -28,6 +28,6 @@ namespace Monarch.Commands.Interfaces
         /// </summary>
         /// <param name="args">The arguments.</param>
         /// <returns>The tokens based on the args sent in.</returns>
-        TokenBaseClass[] GetTokens(string[] args);
+        TokenBaseClass[] GetTokens(string?[]? args);
     }
 }

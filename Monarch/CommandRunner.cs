@@ -54,7 +54,7 @@ namespace Monarch
         /// </summary>
         /// <param name="args">The arguments.</param>
         /// <returns>The result.</returns>
-        public Task<int> Run(string[] args)
+        public Task<int> Run(string?[]? args)
         {
             if (Manager is null)
                 return Task.FromResult(0);

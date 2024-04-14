@@ -71,9 +71,9 @@ namespace Monarch.Commands.Lexer
         /// Gets the value.
         /// </summary>
         /// <param name="inputObject">The input object.</param>
-        public void GetValue(object inputObject)
+        public void GetValue(object? inputObject)
         {
-            if (PropertyInfo is null)
+            if (PropertyInfo is null || inputObject is null)
                 return;
             if (IsIEnumerable)
             {
@@ -84,7 +84,7 @@ namespace Monarch.Commands.Lexer
                 for (int I = 0, FlagValueCount = FlagValue.Count; I < FlagValueCount; I++)
                 {
                     TokenBaseClass Item = FlagValue[I];
-                    CurrentList?.Add(Item.Value.To(ConvertToType, null));
+                    _ = (CurrentList?.Add(Item.Value.To(ConvertToType, null)));
                 }
                 PropertyInfo.SetValue(inputObject, CurrentList);
             }

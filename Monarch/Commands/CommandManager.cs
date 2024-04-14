@@ -41,12 +41,12 @@ namespace Monarch.Commands
         /// <param name="options">The options.</param>
         /// <param name="lexer">The lexer.</param>
         /// <param name="parser">The parser.</param>
-        public CommandManager(IEnumerable<ICommand> commands, IEnumerable<IOptions> options, IEnumerable<IArgLexer> lexer, IEnumerable<IArgParser> parser)
+        public CommandManager(IEnumerable<ICommand>? commands, IEnumerable<IOptions>? options, IEnumerable<IArgLexer>? lexer, IEnumerable<IArgParser>? parser)
         {
             Commands = commands ?? new List<ICommand>();
-            Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
-            Lexer = lexer.FirstOrDefault(x => x is not ArgLexer) ?? new ArgLexer();
-            Parser = parser.FirstOrDefault(x => x is not ArgParser) ?? new ArgParser(Options, Commands);
+            Options = options?.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
+            Lexer = lexer?.FirstOrDefault(x => x is not ArgLexer) ?? new ArgLexer();
+            Parser = parser?.FirstOrDefault(x => x is not ArgParser) ?? new ArgParser(Options, Commands);
         }
 
         /// <summary>
@@ -78,14 +78,14 @@ namespace Monarch.Commands
         /// </summary>
         /// <param name="args">The arguments.</param>
         /// <returns>The command specified by the arguments.</returns>
-        public ICommand GetCommand(string[] args)
+        public ICommand GetCommand(string?[]? args)
         {
-            args ??= Array.Empty<string>();
+            args ??= Array.Empty<string?>();
             if (args.Length == 0)
                 return GetCommand(new string[] { Options.CommandPrefix + "?" });
             for (var X = 0; X < args.Length; ++X)
             {
-                ICommand? TempCommand = GetCommand(args[X]);
+                ICommand? TempCommand = GetCommand(args[X] ?? "");
                 if (TempCommand is not null)
                     return TempCommand;
             }
@@ -98,11 +98,17 @@ namespace Monarch.Commands
         /// <param name="command">The command.</param>
         /// <param name="args">The arguments.</param>
         /// <returns>The resulting command input.</returns>
-        public object GetInput(ICommand command, string[] args)
+        public object? GetInput(ICommand? command, string?[]? args)
         {
+            if (command is null)
+                return null;
+
             TokenBaseClass[] Tokens = Parser.GetTokens(args);
 
             var InputObject = command.CreateInput();
+
+            if (InputObject is null)
+                return null;
 
             System.Reflection.PropertyInfo[] InputProperties = InputObject.GetType()
                                                 .GetProperties()
@@ -125,16 +131,14 @@ namespace Monarch.Commands
         /// <returns>The appropriate command.</returns>
         private ICommand? GetCommand(string arg)
         {
-            if (!arg.StartsWith(Options.CommandPrefix, StringComparison.OrdinalIgnoreCase))
+            if (string.IsNullOrEmpty(arg) || !arg.StartsWith(Options.CommandPrefix, StringComparison.OrdinalIgnoreCase))
                 return null;
             arg = arg.StripLeft(Options.CommandPrefix)?.ToUpper() ?? "";
             ICommand? PotentialCommand = Commands.FirstOrDefault(x => x.Aliases.Contains(arg)) ??
                     Commands.FirstOrDefault(x => x.Aliases.Select(y => y.ToUpper()).Contains(arg));
-            if (PotentialCommand is not null)
-                return PotentialCommand;
-            return Commands.Count() == 3
+            return PotentialCommand ?? (Commands.Count() == 3
                 ? Commands.FirstOrDefault(x => x is not HelpCommand and not VersionCommand)
-                : Commands.Count() == 2 ? Commands.FirstOrDefault(x => x is HelpCommand) : null;
+                : Commands.Count() == 2 ? Commands.FirstOrDefault(x => x is HelpCommand) : null);
         }
     }
 }

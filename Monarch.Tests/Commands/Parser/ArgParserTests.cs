@@ -19,6 +19,11 @@ namespace Monarch.Tests.Commands.Parser
 {
     public class ArgParserTests : TestBaseClass<ArgParser>
     {
+        public ArgParserTests()
+        {
+            TestObject = new ArgParser(new DefaultOptions(), new ICommand[] { new HelpCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, System.Array.Empty<IOptions>()), new UserCommand() });
+        }
+
         public static readonly TheoryData<TestData, string> CommandsData = new()
         {
             { new TestData{Data=new string[]{"?","?" } },"?" },
@@ -34,8 +39,8 @@ namespace Monarch.Tests.Commands.Parser
         {
             IArgParser? Item = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider().GetService<IArgParser>();
             TokenBaseClass[] Tokens = Item?.GetTokens(data?.Data ?? Array.Empty<string>()) ?? Array.Empty<TokenBaseClass>();
-            Tokens.Should().NotBeNullOrEmpty();
-            Tokens[0].Should().BeOfType<CommandToken>();
+            _ = Tokens.Should().NotBeNullOrEmpty();
+            _ = Tokens[0].Should().BeOfType<CommandToken>();
             Assert.StartsWith(expectedCommand, Tokens[0].Value, System.StringComparison.OrdinalIgnoreCase);
         }
 
@@ -44,10 +49,10 @@ namespace Monarch.Tests.Commands.Parser
         {
             IArgParser? Item = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider().GetService<IArgParser>();
             TokenBaseClass[] Tokens = Item?.GetTokens(data?.Data ?? Array.Empty<string>()) ?? Array.Empty<TokenBaseClass>();
-            Tokens.Should().NotBeNullOrEmpty();
-            Tokens[0].Should().BeOfType<CommandToken>();
-            Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
-            Tokens.Should().HaveCountGreaterOrEqualTo(1).And.HaveCountLessOrEqualTo(11);
+            _ = Tokens.Should().NotBeNullOrEmpty();
+            _ = Tokens[0].Should().BeOfType<CommandToken>();
+            _ = Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
+            _ = Tokens.Should().HaveCountGreaterOrEqualTo(1).And.HaveCountLessOrEqualTo(11);
         }
 
         [Fact]
@@ -58,13 +63,13 @@ namespace Monarch.Tests.Commands.Parser
                     new HelpCommand(new IConsoleWriter[]{new EmptyConsoleWriter() },System.Array.Empty<IOptions>()),
                     new UserCommand()});
             TokenBaseClass[] Tokens = Item.GetTokens(new string[] { "UserCommand", "Test", "Data" });
-            Tokens.Should().NotBeNullOrEmpty();
-            Tokens[0].Should().BeOfType<CommandToken>();
-            Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
-            Tokens[1].Should().BeOfType<OptionValueToken>();
-            Tokens[1].Value.Should().BeEquivalentTo("Test");
-            Tokens[2].Should().BeOfType<OptionValueToken>();
-            Tokens[2].Value.Should().BeEquivalentTo("Data");
+            _ = Tokens.Should().NotBeNullOrEmpty();
+            _ = Tokens[0].Should().BeOfType<CommandToken>();
+            _ = Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
+            _ = Tokens[1].Should().BeOfType<OptionValueToken>();
+            _ = Tokens[1].Value.Should().BeEquivalentTo("Test");
+            _ = Tokens[2].Should().BeOfType<OptionValueToken>();
+            _ = Tokens[2].Value.Should().BeEquivalentTo("Data");
         }
 
         public class TestData
@@ -81,7 +86,7 @@ namespace Monarch.Tests.Commands.Parser
 
             public override string Name => "Name";
 
-            protected override async Task<int> Run(EmptyInput input)
+            protected override async Task<int> Run(EmptyInput? input)
             {
                 await Task.CompletedTask.ConfigureAwait(false);
                 return 1;

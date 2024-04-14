@@ -17,6 +17,7 @@ limitations under the License.
 using BigBook;
 using Monarch.Commands.Interfaces;
 using Monarch.Commands.Parser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -35,10 +36,11 @@ namespace Monarch.Commands.Lexer
         /// <param name="tokens">The tokens.</param>
         /// <param name="properties">The properties.</param>
         /// <returns>The command</returns>
-        public Command Lex(List<TokenBaseClass> tokens, PropertyInfo[] properties)
+        public Command Lex(List<TokenBaseClass>? tokens, PropertyInfo[]? properties)
         {
+            properties ??= Array.Empty<PropertyInfo>();
             var Results = new Command();
-            if (tokens.Count == 0)
+            if (tokens is null || tokens.Count == 0)
                 return Results;
 
             Results.Name = tokens.Find(x => x is CommandToken);
@@ -94,7 +96,7 @@ namespace Monarch.Commands.Lexer
                         CurrentProperty.FlagValue.Add(tokens[0]);
                     }
                 }
-                tokens.Remove(tokens[0]);
+                _ = tokens.Remove(tokens[0]);
             }
             return Results;
         }

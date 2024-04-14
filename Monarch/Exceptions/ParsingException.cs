@@ -35,7 +35,7 @@ namespace Monarch.Exceptions
         /// Initializes a new instance of the <see cref="ParsingException"/> class.
         /// </summary>
         /// <param name="message">The message that describes the error.</param>
-        public ParsingException(string message) : base(message)
+        public ParsingException(string? message) : base(message)
         {
         }
 
@@ -44,10 +44,10 @@ namespace Monarch.Exceptions
         /// </summary>
         /// <param name="message">The error message that explains the reason for the exception.</param>
         /// <param name="innerException">
-        /// The exception that is the cause of the current exception, or a null reference (Nothing in
-        /// Visual Basic) if no inner exception is specified.
+        /// The exception that is the cause of the current exception, or a null reference (Nothing
+        /// in Visual Basic) if no inner exception is specified.
         /// </param>
-        public ParsingException(string message, Exception innerException) : base(message, innerException)
+        public ParsingException(string? message, Exception? innerException) : base(message, innerException)
         {
         }
 

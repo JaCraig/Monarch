@@ -50,8 +50,10 @@ namespace Monarch.Commands.Lexer
         /// </summary>
         /// <param name="inputObject">The input object.</param>
         /// <returns>The resulting value.</returns>
-        public object GetValue(object inputObject)
+        public object? GetValue(object? inputObject)
         {
+            if (inputObject is null)
+                return null;
             for (var I = 0; I < Properties.Count; I++)
             {
                 Properties[I].GetValue(inputObject);

@@ -60,13 +60,13 @@ namespace Monarch.Commands.Parser
         /// <param name="args">The arguments.</param>
         /// <returns>Converts the args into tokens.</returns>
         /// <exception cref="ParsingException">Unable to find command.</exception>
-        public TokenBaseClass[] GetTokens(string[] args)
+        public TokenBaseClass[] GetTokens(string?[]? args)
         {
             if (args is null || args.Length == 0)
                 return Array.Empty<TokenBaseClass>();
             var Results = new List<TokenBaseClass>();
             var Found = false;
-            if (args[0].StartsWith(Options.CommandPrefix, StringComparison.Ordinal))
+            if (args[0]?.StartsWith(Options.CommandPrefix, StringComparison.Ordinal) == true)
             {
                 Found |= Commands.Any(x => x.CanRun(args[0].StripLeft(Options.CommandPrefix) ?? ""));
             }
@@ -85,10 +85,10 @@ namespace Monarch.Commands.Parser
 
             for (var X = Found ? 1 : 0; X < args.Length; ++X)
             {
-                if (args[X].StartsWith(Options.FlagPrefix, StringComparison.Ordinal))
-                    Results.Add(new OptionNameToken(args[X].Replace(Options.FlagPrefix, "")));
+                if (args[X]?.StartsWith(Options.FlagPrefix, StringComparison.Ordinal) == true)
+                    Results.Add(new OptionNameToken(args[X]?.Replace(Options.FlagPrefix, "") ?? ""));
                 else
-                    Results.Add(new OptionValueToken(args[X]));
+                    Results.Add(new OptionValueToken(args[X] ?? ""));
             }
             return Results.ToArray();
         }

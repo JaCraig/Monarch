@@ -70,26 +70,20 @@ namespace Monarch.Commands.BaseClasses
         /// Creates the input.
         /// </summary>
         /// <returns></returns>
-        public object CreateInput()
-        {
-            return new TInput();
-        }
+        public object CreateInput() => new TInput();
 
         /// <summary>
         /// Runs the specified input.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The result.</returns>
-        public Task<int> Run(object input)
-        {
-            return Run((input as TInput)!);
-        }
+        public Task<int> Run(object? input) => Run(input as TInput);
 
         /// <summary>
         /// Runs the specified input.
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The result.</returns>
-        protected abstract Task<int> Run(TInput input);
+        protected abstract Task<int> Run(TInput? input);
     }
 }

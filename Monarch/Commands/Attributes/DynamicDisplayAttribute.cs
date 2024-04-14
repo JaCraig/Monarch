@@ -14,7 +14,7 @@ namespace Monarch.Commands.Attributes
         /// Initializes a new instance of the <see cref="DynamicDisplayAttribute"/> class.
         /// </summary>
         /// <param name="descriptionType">Type of the description.</param>
-        public DynamicDisplayAttribute(Type descriptionType)
+        public DynamicDisplayAttribute(Type? descriptionType)
         {
             DescriptionType = descriptionType;
         }
@@ -23,7 +23,17 @@ namespace Monarch.Commands.Attributes
         /// Gets the type of the description.
         /// </summary>
         /// <value>The type of the description.</value>
-        public Type DescriptionType { get; }
+        public Type? DescriptionType { get; }
+
+        /// <summary>
+        /// Lock object
+        /// </summary>
+        private readonly object _LockObj = new();
+
+        /// <summary>
+        /// The description
+        /// </summary>
+        private string _Description = "";
 
         /// <summary>
         /// Gets the description.
@@ -31,7 +41,15 @@ namespace Monarch.Commands.Attributes
         /// <returns>The description.</returns>
         public string GetDescription()
         {
-            return DescriptionType.Create()?.ToString() ?? "";
+            if (!string.IsNullOrEmpty(_Description))
+                return _Description;
+            lock (_LockObj)
+            {
+                if (!string.IsNullOrEmpty(_Description))
+                    return _Description;
+                _Description = DescriptionType?.Create()?.ToString() ?? "";
+                return _Description;
+            }
         }
     }
 }

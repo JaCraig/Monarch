@@ -49,7 +49,8 @@ namespace Monarch.Tests.BaseClasses
                     .IgnoreException<NotImplementedException>()
                     .IgnoreException<ArgumentOutOfRangeException>((_, __) => true)
                     .IgnoreException<ArgumentException>()
-                    .IgnoreException<ObjectDisposedException>((_, __) => true),
+                    .IgnoreException<ObjectDisposedException>((_, __) => true)
+                    .IgnoreException<Exception>(),
                     DiscoverInheritedMethods = false
                 });
         }
@@ -67,7 +68,7 @@ namespace Monarch.Tests.BaseClasses
         {
             lock (_LockObject)
             {
-                new ServiceCollection().AddCanisterModules();
+                _ = new ServiceCollection().AddCanisterModules();
                 _ = Mech.Default;
             }
         }

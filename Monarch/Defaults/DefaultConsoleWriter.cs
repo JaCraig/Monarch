@@ -33,7 +33,7 @@ namespace Monarch.Defaults
         /// Initializes a new instance of the <see cref="DefaultConsoleWriter"/> class.
         /// </summary>
         /// <param name="options">The options.</param>
-        public DefaultConsoleWriter(IEnumerable<IOptions> options)
+        public DefaultConsoleWriter(IEnumerable<IOptions>? options)
         {
             try
             {
@@ -44,7 +44,7 @@ namespace Monarch.Defaults
                 ConsoleWidth = _DefaultWidth;
             }
             Separator = new string('-', ConsoleWidth);
-            Options = options.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
+            Options = options?.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace Monarch.Defaults
         {
             CurrentIndent += Options.IndentAmount;
             if (CurrentIndent >= ConsoleWidth)
-                Outdent();
+                _ = Outdent();
             return this;
         }
 
@@ -126,7 +126,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>This</returns>
-        public IConsoleWriter Write(string value)
+        public IConsoleWriter Write(string? value)
         {
             Console.Write(value);
             return this;
@@ -159,7 +159,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>This</returns>
-        public IConsoleWriter Write(char[] value)
+        public IConsoleWriter Write(char[]? value)
         {
             Console.Write(value);
             return this;
@@ -225,7 +225,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>This</returns>
-        public IConsoleWriter Write(object value)
+        public IConsoleWriter Write(object? value)
         {
             Console.Write(value);
             return this;
@@ -268,7 +268,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>This</returns>
-        public IConsoleWriter WriteLine(string value)
+        public IConsoleWriter WriteLine(string? value)
         {
             var Lines = BreakIntoLines(value);
             for (var I = 0; I < Lines.Length; I++)
@@ -307,7 +307,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>This</returns>
-        public IConsoleWriter WriteLine(char[] value)
+        public IConsoleWriter WriteLine(char[]? value)
         {
             WriteIndent();
             Console.WriteLine(value);
@@ -379,7 +379,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>This</returns>
-        public IConsoleWriter WriteLine(object value)
+        public IConsoleWriter WriteLine(object? value)
         {
             WriteIndent();
             Console.WriteLine(value);
@@ -425,7 +425,7 @@ namespace Monarch.Defaults
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The resulting lines</returns>
-        private string[] BreakIntoLines(string input)
+        private string[] BreakIntoLines(string? input)
         {
             if (string.IsNullOrEmpty(input))
                 return Array.Empty<string>();

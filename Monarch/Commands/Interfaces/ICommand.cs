@@ -61,7 +61,7 @@ namespace Monarch.Commands.Interfaces
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The result</returns>
-        Task<int> Run(object input);
+        Task<int> Run(object? input);
     }
 
     /// <summary>
