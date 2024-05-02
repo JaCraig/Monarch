@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.77"></a>
+## [3.0.77](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.77) (2024-05-02)
+
+### Bug Fixes
+
+* bump Valkyrie from 4.0.71 to 4.0.72 in the dependencies group ([11b951a](https://www.github.com/JaCraig/Monarch/commit/11b951aa0fbf1b536b6aed766e60d4f34c62cdba))
+
+### Other
+
+* Merge pull request #210 from JaCraig/dependabot/nuget/dependencies-59b39e682e ([c8de5a9](https://www.github.com/JaCraig/Monarch/commit/c8de5a9f528b9f6bcc2bdaa2564490abcce73c98))
+
 <a name="3.0.76"></a>
 ## [3.0.76](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.76) (2024-05-01)
 
