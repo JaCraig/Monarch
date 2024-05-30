@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.84"></a>
+## [3.0.84](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.84) (2024-05-30)
+
+### Bug Fixes
+
+* Fixing build ([ed4b96e](https://www.github.com/JaCraig/Monarch/commit/ed4b96ed713eb4b50426aafcd3882700e7b37bc9))
+
+### Other
+
+* --- ([ad1525c](https://www.github.com/JaCraig/Monarch/commit/ad1525c89a7124779c4816317bfa49232cb574d8))
+* Merge pull request #226 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-17bfdebd43 ([789bc29](https://www.github.com/JaCraig/Monarch/commit/789bc29673441146c3a28b54932489f847e84e0e))
+* Merge pull request #227 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-d10d8338a5 ([52a9e3b](https://www.github.com/JaCraig/Monarch/commit/52a9e3b4adc5038f62e808b3b8f0958817d63f5a))
+* Merge pull request #228 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-e000669da3 ([1a47800](https://www.github.com/JaCraig/Monarch/commit/1a47800c7e7306baac26dc78b73b9cd220545789))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([72d5030](https://www.github.com/JaCraig/Monarch/commit/72d50303e231756720528f14a8678c41af6885fa))
+* bump Microsoft.NET.Test.Sdk ([3900893](https://www.github.com/JaCraig/Monarch/commit/39008932d877e636497863efa21567b7d6266dce))
+* Update dotnet-publish.yml ([00e630a](https://www.github.com/JaCraig/Monarch/commit/00e630ad71a275e41891fa4b53e73d6f9d325710))
+
 <a name="3.0.83"></a>
 ## [3.0.83](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.83) (2024-05-17)
 
