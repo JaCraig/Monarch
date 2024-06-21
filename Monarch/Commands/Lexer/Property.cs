@@ -99,6 +99,6 @@ namespace Monarch.Commands.Lexer
         /// Returns a <see cref="string"/> that represents this instance.
         /// </summary>
         /// <returns>A <see cref="string"/> that represents this instance.</returns>
-        public override string ToString() => $"{FlagName} {FlagValue.ToString(x => x.ToString())}";
+        public override string ToString() => $"{FlagName} {FlagValue?.ToString(x => x?.ToString() ?? "")}";
     }
 }
