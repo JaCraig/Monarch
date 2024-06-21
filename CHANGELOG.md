@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.91"></a>
+## [3.0.91](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.91) (2024-06-21)
+
+### Bug Fixes
+
+* Fixing bug found by Mecha test ([18eadc1](https://www.github.com/JaCraig/Monarch/commit/18eadc17c664e6aa2b8e60fa94779a05e6f715f0))
+
+### Other
+
+* Merge pull request #242 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-9ecedce413 ([64fccdf](https://www.github.com/JaCraig/Monarch/commit/64fccdf97149413aaa7fa95053c74fe241c44e80))
+* Merge pull request #243 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-07c158d08b ([f904ce4](https://www.github.com/JaCraig/Monarch/commit/f904ce401e6d10b432c3c53fcff9be0b1af5a529))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([c80c763](https://www.github.com/JaCraig/Monarch/commit/c80c763707f61d41314f3da237430fe05c0d3ebe))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([394de6f](https://www.github.com/JaCraig/Monarch/commit/394de6fc66ccec94e83b7b8ddd1a380ef89983e5))
+
 <a name="3.0.90"></a>
 ## [3.0.90](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.90) (2024-06-19)
 
