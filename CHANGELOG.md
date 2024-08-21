@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.99"></a>
+## [3.0.99](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.99) (2024-08-21)
+
+### Bug Fixes
+
+* Fixing build and updating packages ([a9da3b1](https://www.github.com/JaCraig/Monarch/commit/a9da3b1d44b22204941e9e0a82c95cb98515a71d))
+
 <a name="3.0.98"></a>
 ## [3.0.98](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.98) (2024-08-20)
 
