@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.103"></a>
+## [3.0.103](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.103) (2024-08-29)
+
+### Bug Fixes
+
+* bump Valkyrie from 4.0.93 to 4.0.94 in the dependencies group ([0cc3646](https://www.github.com/JaCraig/Monarch/commit/0cc3646addfc8033fdeb78dbe908f03652fa5cfe))
+
+### Other
+
+* Merge pull request #276 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-3dbce8c6f5 ([abf7f86](https://www.github.com/JaCraig/Monarch/commit/abf7f863d8cfa4e4ed239420226899520b3720ff))
+* Merge pull request #277 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-d145a1dea9 ([2898d2f](https://www.github.com/JaCraig/Monarch/commit/2898d2f8c43b7fc4e0122798f3e4c0e4d6fb3101))
+* Merge pull request #278 from JaCraig/dependabot/nuget/dependencies-67f7df6b50 ([2cba87d](https://www.github.com/JaCraig/Monarch/commit/2cba87d09b4a997b23c3a86f2f034db8fac61603))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([98b519c](https://www.github.com/JaCraig/Monarch/commit/98b519c8c052877f5ef16281e7161764bf59fda1))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([1e681f7](https://www.github.com/JaCraig/Monarch/commit/1e681f7e951ab27ba40a184a47ffa6d7bff55738))
+
 <a name="3.0.102"></a>
 ## [3.0.102](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.102) (2024-08-27)
 
