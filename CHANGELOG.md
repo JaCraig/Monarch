@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.105"></a>
+## [3.0.105](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.105) (2024-10-10)
+
+### Bug Fixes
+
+* bump Valkyrie from 4.0.94 to 4.0.95 in the dependencies group ([1a657df](https://www.github.com/JaCraig/Monarch/commit/1a657df845095465dd86e92c41eaa36fc303b575))
+
+### Other
+
+* Merge pull request #283 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-fea68d101d ([69dd303](https://www.github.com/JaCraig/Monarch/commit/69dd303cb8b2c39324005f6b81feda0cf5718028))
+* Merge pull request #284 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-0a3d0dcfc4 ([2a39dd5](https://www.github.com/JaCraig/Monarch/commit/2a39dd58549fc63d36f217af0263da1b3aa2071f))
+* Merge pull request #285 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-15f3a94963 ([e20460e](https://www.github.com/JaCraig/Monarch/commit/e20460e371d50180c897c5bb4fab6716be118aa9))
+* Merge pull request #286 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-e8514b389a ([8b6efec](https://www.github.com/JaCraig/Monarch/commit/8b6efec6ee69d63c3894580dc59b43c74964a5a8))
+* Merge pull request #287 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-fa09ffb26b ([77f659a](https://www.github.com/JaCraig/Monarch/commit/77f659a0670fb09e35e73bebf37e9c5c479179e2))
+* Merge pull request #288 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-429049ca98 ([019241a](https://www.github.com/JaCraig/Monarch/commit/019241a7a0d8cec72f83288510d347d574a64ba7))
+* Merge pull request #289 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-88334da37a ([75f5947](https://www.github.com/JaCraig/Monarch/commit/75f5947cbc3d794ded5c759c760c4cd276bc3ade))
+* Merge pull request #290 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-ba86b341d4 ([3ce9803](https://www.github.com/JaCraig/Monarch/commit/3ce9803f5239d1773689b28b4a7dae310da67932))
+* Merge pull request #291 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-006c3a6508 ([ef38d38](https://www.github.com/JaCraig/Monarch/commit/ef38d389692d8d71bad2100815db86237070bcc1))
+* Merge pull request #292 from JaCraig/dependabot/nuget/dependencies-ac0816fe07 ([0113cff](https://www.github.com/JaCraig/Monarch/commit/0113cff91d99f3839fc800836ee34a2195b85ce0))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([c122e56](https://www.github.com/JaCraig/Monarch/commit/c122e56e556d3af66b5aa600f0e716d5e134a20f))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([cdc9f58](https://www.github.com/JaCraig/Monarch/commit/cdc9f586328963e55a887eb92f307d7c0bd782b5))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([b2ea0c2](https://www.github.com/JaCraig/Monarch/commit/b2ea0c2c443bfdf752a3c41cdb16c18433a0e902))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([0374554](https://www.github.com/JaCraig/Monarch/commit/0374554e4328daf838899959ec32e4b611e7c634))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([7b6cef9](https://www.github.com/JaCraig/Monarch/commit/7b6cef9640f9bf84ab5d458f2ff7b28648256c82))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([9619c5f](https://www.github.com/JaCraig/Monarch/commit/9619c5f150ca668174e78851b5763067b3299847))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([b7a5319](https://www.github.com/JaCraig/Monarch/commit/b7a5319db001cad7c1fc4d0a23a80ea3a6f1a050))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([5a031e0](https://www.github.com/JaCraig/Monarch/commit/5a031e0d40a5e63f10f6ae98d46d37da109133e1))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([8b73541](https://www.github.com/JaCraig/Monarch/commit/8b73541d6480ea84cb7b6b6511fa007634c1d3b0))
+* Update xunit package to version 2.9.2 ([226cf12](https://www.github.com/JaCraig/Monarch/commit/226cf1292555461769408076ebb04f82d90dd8ce))
+* Update xunit to 2.9.1 and reorder Mecha.xUnit reference ([21037a0](https://www.github.com/JaCraig/Monarch/commit/21037a0926d38b1bf5e6a26709f0293f1319cd1a))
+
 <a name="3.0.104"></a>
 ## [3.0.104](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.104) (2024-09-09)
 
