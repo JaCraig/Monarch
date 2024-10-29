@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.107"></a>
+## [3.0.107](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.107) (2024-10-29)
+
+### Bug Fixes
+
+* bump versionize from 1.27.0 to 2.0.0 in the dependencies group ([4a7ba36](https://www.github.com/JaCraig/Monarch/commit/4a7ba3641be4249602cbe219bf533a49738905bd))
+* bump versionize from 2.0.0 to 2.1.0 in the dependencies group ([ce8d486](https://www.github.com/JaCraig/Monarch/commit/ce8d486c945cf72cbab92d20f179432299e9866d))
+
+### Other
+
+* Merge pull request #294 from JaCraig/dependabot/nuget/dependencies-9c36df7c76 ([19d8a75](https://www.github.com/JaCraig/Monarch/commit/19d8a75eaefe9997ccb9e10e5b52803322b2bcbc))
+* Merge pull request #295 from JaCraig/dependabot/nuget/dependencies-3894128c1d ([dc83ddd](https://www.github.com/JaCraig/Monarch/commit/dc83ddd7c2da62fe06716ebd1d205013eb589dc9))
+* Merge pull request #296 from JaCraig/dependabot/github_actions/dependencies-18190d55f2 ([41d5e69](https://www.github.com/JaCraig/Monarch/commit/41d5e6985079ee2def764e5fe855bf8da5d9f542))
+* bump actions/setup-dotnet in the dependencies group ([2d415dd](https://www.github.com/JaCraig/Monarch/commit/2d415dd15065d57296d50745089a560242c4bbaf))
+* Refactor versionize command in dotnet-publish workflow ([ec9acf2](https://www.github.com/JaCraig/Monarch/commit/ec9acf227b0df16b9712aefe7eeb8f493176d95e))
+
 <a name="3.0.106"></a>
 ## [3.0.106](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.106) (2024-10-11)
 
