@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.113"></a>
+## [3.0.113](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.113) (2024-11-08)
+
+### Bug Fixes
+
+* bump FluentAssertions in the dependencies group ([d5d1fa4](https://www.github.com/JaCraig/Monarch/commit/d5d1fa40dc16a4d81a0e532c41fbc3c2a627e70c))
+
+### Other
+
+* Merge pull request #306 from JaCraig/dependabot/nuget/dependencies-08860afd26 ([b9150b4](https://www.github.com/JaCraig/Monarch/commit/b9150b40641225106b21e2adc6f200703070660d))
+
 <a name="3.0.112"></a>
 ## [3.0.112](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.112) (2024-11-06)
 
