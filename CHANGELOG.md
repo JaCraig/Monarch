@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.114"></a>
+## [3.0.114](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.114) (2024-11-11)
+
+### Bug Fixes
+
+* bump versionize from 2.2.0 to 2.3.0 in the dependencies group ([2cadb31](https://www.github.com/JaCraig/Monarch/commit/2cadb3163796f1ac5238ed92a137a06ca39631ff))
+
+### Other
+
+* Merge pull request #307 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-23db35b6a2 ([370e57c](https://www.github.com/JaCraig/Monarch/commit/370e57c04d831d44f685a6cda79bf6e9c57c197e))
+* Merge pull request #308 from JaCraig/dependabot/nuget/dependencies-ca13a1f720 ([ef4eded](https://www.github.com/JaCraig/Monarch/commit/ef4eded9a0ded4b19ea47f1bef893bc5e56507d2))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([f84a400](https://www.github.com/JaCraig/Monarch/commit/f84a40030c4c69afe2575f98cc426bea252468d7))
+
 <a name="3.0.113"></a>
 ## [3.0.113](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.113) (2024-11-08)
 
