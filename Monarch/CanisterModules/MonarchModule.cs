@@ -16,11 +16,6 @@ limitations under the License.
 
 using Canister.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
-using Monarch.Commands;
-using Monarch.Commands.Interfaces;
-using Monarch.Commands.Lexer;
-using Monarch.Commands.Parser;
-using Monarch.Interfaces;
 
 namespace Monarch.CanisterModules
 {
@@ -39,15 +34,6 @@ namespace Monarch.CanisterModules
         /// Loads the module using the bootstrapper
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IServiceCollection? bootstrapper)
-        {
-            bootstrapper?.AddAllSingleton<ICommand>()
-                    ?.AddAllSingleton<IOptions>()
-                    ?.AddAllSingleton<IConsoleWriter>()
-                    ?.AddTransient<IArgParser, ArgParser>()
-                    .AddTransient<IArgLexer, ArgLexer>()
-                    .AddSingleton<CommandManager>()
-                    .AddSingleton<CommandRunner>();
-        }
+        public void Load(IServiceCollection? bootstrapper) => bootstrapper?.RegisterMonarch();
     }
 }

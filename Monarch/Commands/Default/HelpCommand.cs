@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using BigBook;
+using BigBook.ExtensionMethods;
 using Microsoft.Extensions.DependencyInjection;
 using Monarch.Commands.Attributes;
 using Monarch.Commands.BaseClasses;

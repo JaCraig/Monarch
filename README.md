@@ -9,6 +9,10 @@ Monarch is a command line parser/task runner.
 
 In order to use the system, you need to register it with your ServiceCollection:
 
+    serviceCollection.RegisterMonarch();
+
+Or if you are using [Canister](https://github.com/JaCraig/Canister):
+
     serviceCollection.AddCanisterModules();
 					
 This is required prior to using the Monarch class for the first time. Once it is wired up, you can use the CommandRunner class:

@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using BigBook;
+using BigBook.ExtensionMethods;
 using Monarch.Commands.Default;
 using Monarch.Commands.Interfaces;
 using Monarch.Commands.Lexer;
@@ -25,7 +26,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using Valkyrie;
+using Valkyrie.ExtensionMethods;
 
 namespace Monarch.Commands
 {
@@ -43,7 +44,7 @@ namespace Monarch.Commands
         /// <param name="parser">The parser.</param>
         public CommandManager(IEnumerable<ICommand>? commands, IEnumerable<IOptions>? options, IEnumerable<IArgLexer>? lexer, IEnumerable<IArgParser>? parser)
         {
-            Commands = commands ?? new List<ICommand>();
+            Commands = commands ?? [];
             Options = options?.FirstOrDefault(x => x is not DefaultOptions) ?? new DefaultOptions();
             Lexer = lexer?.FirstOrDefault(x => x is not ArgLexer) ?? new ArgLexer();
             Parser = parser?.FirstOrDefault(x => x is not ArgParser) ?? new ArgParser(Options, Commands);

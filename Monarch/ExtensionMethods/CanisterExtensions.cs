@@ -15,6 +15,13 @@ limitations under the License.
 */
 
 using Canister.Interfaces;
+using Monarch;
+using Monarch.Commands;
+using Monarch.Commands.Interfaces;
+using Monarch.Commands.Lexer;
+using Monarch.Commands.Parser;
+using Monarch.Interfaces;
+using Valkyrie.Registration;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -29,5 +36,24 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="bootstrapper">The bootstrapper.</param>
         /// <returns>The bootstrapper.</returns>
         public static ICanisterConfiguration? RegisterMonarch(this ICanisterConfiguration? bootstrapper) => bootstrapper?.AddAssembly(typeof(MonarchCanisterExtensions).Assembly);
+
+        /// <summary>
+        /// Registers Monarch services with the provided IServiceCollection.
+        /// </summary>
+        /// <param name="services">The IServiceCollection to add services to.</param>
+        /// <returns>The updated IServiceCollection.</returns>
+        public static IServiceCollection? RegisterMonarch(this IServiceCollection? services)
+        {
+            if (services.Exists<CommandManager>())
+                return services;
+            return services?.AddAllSingleton<ICommand>()
+                    ?.AddAllSingleton<IOptions>()
+                    ?.AddAllSingleton<IConsoleWriter>()
+                    ?.AddTransient<IArgParser, ArgParser>()
+                    ?.AddTransient<IArgLexer, ArgLexer>()
+                    ?.AddSingleton<CommandManager>()
+                    ?.AddSingleton<CommandRunner>()
+                    ?.RegisterValkyrie();
+        }
     }
 }
