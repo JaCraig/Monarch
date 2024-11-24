@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.0"></a>
+## [4.0.0](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.0) (2024-11-24)
+
+### Features
+
+* Update configs, workflows, and target frameworks ([9b67b21](https://www.github.com/JaCraig/Monarch/commit/9b67b219d6c66a61a45ee4b196d7c41a5a68c97b))
+
+### Breaking Changes
+
+* Update configs, workflows, and target frameworks ([9b67b21](https://www.github.com/JaCraig/Monarch/commit/9b67b219d6c66a61a45ee4b196d7c41a5a68c97b))
+
+### Other
+
+* Merge pull request #312 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-617062173c ([821894a](https://www.github.com/JaCraig/Monarch/commit/821894a8fe85b75cafad75d27c8ecb4a6e136d0b))
+* bump Microsoft.NET.Test.Sdk ([5d3b4ed](https://www.github.com/JaCraig/Monarch/commit/5d3b4edd144e48c1f46d668cdcd78181f0379c75))
+
 <a name="3.0.116"></a>
 ## [3.0.116](https://www.github.com/JaCraig/Monarch/releases/tag/v3.0.116) (2024-11-13)
 
