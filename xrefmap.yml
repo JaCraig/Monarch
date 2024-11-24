@@ -22,6 +22,15 @@ references:
   fullName.vb: Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.RegisterMonarch(Canister.Interfaces.ICanisterConfiguration)
   nameWithType: MonarchCanisterExtensions.RegisterMonarch(ICanisterConfiguration?)
   nameWithType.vb: MonarchCanisterExtensions.RegisterMonarch(ICanisterConfiguration)
+- uid: Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.RegisterMonarch(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: RegisterMonarch(IServiceCollection?)
+  href: api/Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.html#Microsoft_Extensions_DependencyInjection_MonarchCanisterExtensions_RegisterMonarch_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.RegisterMonarch(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name.vb: RegisterMonarch(IServiceCollection)
+  fullName: Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.RegisterMonarch(Microsoft.Extensions.DependencyInjection.IServiceCollection?)
+  fullName.vb: Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.RegisterMonarch(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: MonarchCanisterExtensions.RegisterMonarch(IServiceCollection?)
+  nameWithType.vb: MonarchCanisterExtensions.RegisterMonarch(IServiceCollection)
 - uid: Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.RegisterMonarch*
   name: RegisterMonarch
   href: api/Microsoft.Extensions.DependencyInjection.MonarchCanisterExtensions.html#Microsoft_Extensions_DependencyInjection_MonarchCanisterExtensions_RegisterMonarch_
