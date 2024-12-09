@@ -23,7 +23,7 @@
     </PackageReference>
     <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="FluentAssertions" Version="7.0.0" />
-    <PackageReference Include="Mecha.xUnit" Version="3.0.0" />
+    <PackageReference Include="Mecha.xUnit" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
