@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Monarch.Defaults;
 using Monarch.Interfaces;
 using Monarch.Tests.BaseClasses;
@@ -427,7 +426,7 @@ namespace Monarch.Tests.Defaults
             var Instance = new DefaultConsoleWriter(_Options);
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
@@ -436,16 +435,16 @@ namespace Monarch.Tests.Defaults
         [Fact]
         public void CanGetConsoleWidth() =>
             // Assert
-            _TestClass.ConsoleWidth.As<object>().Should().BeAssignableTo<int>();
+            Assert.IsType<int>(_TestClass.ConsoleWidth);
 
         [Fact]
         public void CanGetCurrentIndent() =>
             // Assert
-            _TestClass.CurrentIndent.As<object>().Should().BeAssignableTo<int>();
+            Assert.IsType<int>(_TestClass.CurrentIndent);
 
         [Fact]
         public void CanGetSeparator() =>
             // Assert
-            _TestClass.Separator.Should().BeAssignableTo<string>();
+            Assert.IsType<string>(_TestClass.Separator);
     }
 }

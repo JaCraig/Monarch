@@ -69,7 +69,7 @@ namespace Monarch.Commands.Default
         /// </summary>
         /// <param name="input">The input.</param>
         /// <returns>The result.</returns>
-        protected override async Task<int> Run(EmptyInput input)
+        protected override async Task<int> Run(EmptyInput? input)
         {
             await Task.CompletedTask.ConfigureAwait(false);
             var AppAssembly = Assembly.GetEntryAssembly();
@@ -78,7 +78,7 @@ namespace Monarch.Commands.Default
             IEnumerable<System.Attribute> CustomAttributes = AppAssembly.GetCustomAttributes();
             AssemblyName AppName = AppAssembly.GetName();
 
-            Console.WriteLine($"{CustomAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product} ({AppName.Version})");
+            _ = Console.WriteLine($"{CustomAttributes.OfType<AssemblyProductAttribute>().FirstOrDefault()?.Product} ({AppName.Version})");
             return 0;
         }
     }

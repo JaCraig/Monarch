@@ -1,10 +1,8 @@
-using FluentAssertions;
 using Monarch.Commands.Lexer;
 using Monarch.Commands.Parser;
 using Monarch.Tests.BaseClasses;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using Xunit;
 
@@ -30,11 +28,11 @@ namespace Monarch.Tests.Commands.Lexer
             Command Result = _TestClass.Lex(Tokens, Properties);
 
             // Assert
-            _ = Result.Should().NotBeNull();
+            Assert.NotNull(Result);
         }
 
         [Fact]
-        public void CanCallLexWithNullProperties() => _TestClass.Lex(new List<TokenBaseClass>(), default);
+        public void CanCallLexWithNullProperties() => _TestClass.Lex([], default);
 
         [Fact]
         public void CanCallLexWithNullTokens() => _TestClass.Lex(default, GetTestType().GetProperties());
@@ -57,8 +55,11 @@ namespace Monarch.Tests.Commands.Lexer
             Command Result = _TestClass.Lex(Tokens, Properties);
 
             // Assert
-            _ = Result.Properties.Select(property => property.PropertyInfo.Name).Should().BeEquivalentTo(Properties.Select(property => property.Name));
-            _ = Result.Name.Value.Should().Be("TestClass");
+            Assert.Equal("TestClass", Result.Name?.Value);
+            Assert.Equal("TestValue1", Result.Properties[0].PropertyInfo?.Name);
+            Assert.Equal("TestValue2", Result.Properties[1].PropertyInfo?.Name);
+            Assert.Equal("TestValue1", Result.Properties[0].FlagValue[0].Value);
+            Assert.Equal("TestValue2", Result.Properties[1].FlagValue[0].Value);
         }
 
         private static Type GetTestType() => typeof(TestClass);

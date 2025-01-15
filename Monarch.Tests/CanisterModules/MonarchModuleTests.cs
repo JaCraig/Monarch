@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Microsoft.Extensions.DependencyInjection;
 using Monarch.CanisterModules;
 using Monarch.Tests.BaseClasses;
@@ -30,6 +29,6 @@ namespace Monarch.Tests.CanisterModules
         [Fact]
         public void CanGetOrder() =>
             // Assert
-            _TestClass.Order.As<object>().Should().BeAssignableTo<int>();
+            Assert.IsType<int>(_TestClass.Order);
     }
 }

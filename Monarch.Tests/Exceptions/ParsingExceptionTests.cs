@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Monarch.Exceptions;
 using NSubstitute;
 using System;
@@ -31,19 +30,19 @@ namespace Monarch.Tests.Exceptions
             var instance = new ParsingException();
 
             // Assert
-            _ = instance.Should().NotBeNull();
+            Assert.NotNull(instance);
 
             // Act
             instance = new ParsingException(_message);
 
             // Assert
-            _ = instance.Should().NotBeNull();
+            Assert.NotNull(instance);
 
             // Act
             instance = new ParsingException(_message, _innerException);
 
             // Assert
-            _ = instance.Should().NotBeNull();
+            Assert.NotNull(instance);
         }
 
         [Theory]

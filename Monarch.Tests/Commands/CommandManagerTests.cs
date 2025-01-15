@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Monarch.Commands;
 using Monarch.Commands.Interfaces;
 using Monarch.Interfaces;
@@ -36,8 +35,8 @@ namespace Monarch.Tests.Commands
             var Args = new[] { "?" };
 
             // Act
-            _ = _TestClass.GetCommand(Array.Empty<string>()).Should().NotBeNull();
-            _ = _TestClass.GetCommand(Args).Should().NotBeNull();
+            Assert.NotNull(_TestClass.GetCommand(Array.Empty<string>()));
+            Assert.NotNull(_TestClass.GetCommand(Args));
         }
 
         [Fact]
@@ -64,7 +63,7 @@ namespace Monarch.Tests.Commands
             var Instance = new CommandManager(_Commands, _Options, _Lexer, _Parser);
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
@@ -80,15 +79,15 @@ namespace Monarch.Tests.Commands
         public void CanConstructWithNullParser() => _ = new CommandManager(_Commands, _Options, _Lexer, default);
 
         [Fact]
-        public void CommandsIsInitializedCorrectly() => _TestClass.Commands.Should().BeSameAs(_Commands);
+        public void CommandsIsInitializedCorrectly() => Assert.Same(_Commands, _TestClass.Commands);
 
         [Fact]
-        public void LexerIsInitializedCorrectly() => _TestClass.Lexer.Should().BeSameAs(_Lexer.First());
+        public void LexerIsInitializedCorrectly() => Assert.Same(_Lexer.First(), _TestClass.Lexer);
 
         [Fact]
-        public void OptionsIsInitializedCorrectly() => _TestClass.Options.Should().BeSameAs(_Options.First());
+        public void OptionsIsInitializedCorrectly() => Assert.Same(_Options.First(), _TestClass.Options);
 
         [Fact]
-        public void ParserIsInitializedCorrectly() => _TestClass.Parser.Should().BeSameAs(_Parser.First());
+        public void ParserIsInitializedCorrectly() => Assert.Same(_Parser.First(), _TestClass.Parser);
     }
 }

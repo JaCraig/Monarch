@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Monarch.Commands;
 using Monarch.Commands.Interfaces;
 using Monarch.Interfaces;
@@ -31,7 +30,7 @@ namespace Monarch.Tests
             var Result = await _TestClass.Run(Args);
 
             // Assert
-            _ = Result.Should().Be(0);
+            Assert.Equal(0, Result);
         }
 
         [Fact]
@@ -44,16 +43,17 @@ namespace Monarch.Tests
             var Instance = new CommandRunner();
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
 
             // Act
             Instance = new CommandRunner(_Manager);
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
-        public void ManagerIsInitializedCorrectly() => _TestClass.Manager.Should().BeSameAs(_Manager);
+        public void ManagerIsInitializedCorrectly() =>
+            Assert.Same(_Manager, _TestClass.Manager);
     }
 }

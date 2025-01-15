@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Monarch.Commands.Default;
+﻿using Monarch.Commands.Default;
 using Monarch.Defaults;
 using Monarch.Interfaces;
 using Monarch.Tests.BaseClasses;
@@ -57,7 +56,7 @@ namespace Monarch.Tests.Commands.Default
             var Instance = new HelpCommand(Console, Options);
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
@@ -70,42 +69,42 @@ namespace Monarch.Tests.Commands.Default
         public void CanGetAliases()
         {
             // Assert
-            _ = _TestClass.Aliases.Should().BeAssignableTo<string[]>();
-
-            _ = _TestClass.Aliases.Should().BeEquivalentTo(new[] { "?", "help", "h" });
+            _ = Assert.IsType<string[]>(_TestClass.Aliases);
+            Assert.Equal(new[] { "?", "help", "h" }, _TestClass.Aliases);
         }
 
         [Fact]
         public void CanGetDescription()
         {
             // Assert
-            _ = _TestClass.Description.Should().BeAssignableTo<string>();
-
-            _ = _TestClass.Description.Should().BeEquivalentTo("Show command line help");
+            _ = Assert.IsType<string>(_TestClass.Description);
+            Assert.Equal("Show command line help", _TestClass.Description);
         }
 
         [Fact]
         public void CanGetName()
         {
             // Assert
-            _ = _TestClass.Name.Should().BeAssignableTo<string>();
-
-            _ = _TestClass.Name.Should().BeEquivalentTo("Help");
+            _ = Assert.IsType<string>(_TestClass.Name);
+            Assert.Equal("Help", _TestClass.Name);
         }
 
         [Fact]
-        public void ConsoleIsInitializedCorrectly() => _TestClass.Console.Should().BeSameAs(_Console[0]);
+        public void ConsoleIsInitializedCorrectly() => Assert.Same(_Console[0], _TestClass.Console);
 
         [Fact]
         public void Creation()
         {
+            // Arrange
             var TestObject = new HelpCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, Array.Empty<IOptions>());
-            _ = TestObject.Console.Should().BeOfType<EmptyConsoleWriter>();
-            _ = TestObject.Options.Should().BeOfType<DefaultOptions>();
+
+            // Assert
+            _ = Assert.IsType<EmptyConsoleWriter>(TestObject.Console);
+            _ = Assert.IsType<DefaultOptions>(TestObject.Options);
         }
 
         [Fact]
-        public void OptionsIsInitializedCorrectly() => _TestClass.Options.Should().BeOfType(typeof(DefaultOptions));
+        public void OptionsIsInitializedCorrectly() => Assert.IsType<DefaultOptions>(_TestClass.Options);
 
         [Theory]
         [MemberData(nameof(CommandsData))]
@@ -113,7 +112,7 @@ namespace Monarch.Tests.Commands.Default
         {
             var TestObject = new HelpCommand(new IConsoleWriter[] { new EmptyConsoleWriter() }, Array.Empty<IOptions>());
             var Result = await TestObject.Run(data);
-            _ = Result.Should().Be(0);
+            Assert.Equal(0, Result);
         }
     }
 }

@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Monarch.Commands.Attributes;
 using Monarch.Tests.BaseClasses;
 using System;
@@ -35,13 +34,13 @@ namespace Monarch.Tests.Commands.Attributes
             var Instance = new DynamicDisplayAttribute(_DescriptionType);
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
         public void CanConstructWithNullDescriptionType() => new DynamicDisplayAttribute(default);
 
         [Fact]
-        public void DescriptionTypeIsInitializedCorrectly() => _TestClass.DescriptionType.Should().BeSameAs(_DescriptionType);
+        public void DescriptionTypeIsInitializedCorrectly() => Assert.Same(_DescriptionType, _TestClass.DescriptionType);
     }
 }

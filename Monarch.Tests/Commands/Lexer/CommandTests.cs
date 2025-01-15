@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Monarch.Commands.Lexer;
 using Monarch.Commands.Parser;
 using Monarch.Tests.BaseClasses;
@@ -50,7 +49,7 @@ namespace Monarch.Tests.Commands.Lexer
             var Instance = new Command();
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
@@ -63,7 +62,7 @@ namespace Monarch.Tests.Commands.Lexer
             _TestClass.Name = TestValue;
 
             // Assert
-            _ = _TestClass.Name.Should().BeSameAs(TestValue);
+            Assert.Same(TestValue, _TestClass.Name);
         }
 
         [Fact]
@@ -76,7 +75,7 @@ namespace Monarch.Tests.Commands.Lexer
             _TestClass.Properties = TestValue;
 
             // Assert
-            _ = _TestClass.Properties.Should().BeSameAs(TestValue);
+            Assert.Same(TestValue, _TestClass.Properties);
         }
     }
 }

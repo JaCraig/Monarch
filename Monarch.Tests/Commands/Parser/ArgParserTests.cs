@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Mecha.xUnit;
+﻿using Mecha.xUnit;
 using Microsoft.Extensions.DependencyInjection;
 using Mirage.Generators.Default;
 using Monarch.Commands.BaseClasses;
@@ -39,8 +38,9 @@ namespace Monarch.Tests.Commands.Parser
         {
             IArgParser? Item = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider().GetService<IArgParser>();
             TokenBaseClass[] Tokens = Item?.GetTokens(data?.Data ?? Array.Empty<string>()) ?? Array.Empty<TokenBaseClass>();
-            _ = Tokens.Should().NotBeNullOrEmpty();
-            _ = Tokens[0].Should().BeOfType<CommandToken>();
+            Assert.NotNull(Tokens);
+            Assert.NotEmpty(Tokens);
+            _ = Assert.IsType<CommandToken>(Tokens[0]);
             Assert.StartsWith(expectedCommand, Tokens[0].Value, System.StringComparison.OrdinalIgnoreCase);
         }
 
@@ -49,10 +49,11 @@ namespace Monarch.Tests.Commands.Parser
         {
             IArgParser? Item = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider().GetService<IArgParser>();
             TokenBaseClass[] Tokens = Item?.GetTokens(data?.Data ?? Array.Empty<string>()) ?? Array.Empty<TokenBaseClass>();
-            _ = Tokens.Should().NotBeNullOrEmpty();
-            _ = Tokens[0].Should().BeOfType<CommandToken>();
-            _ = Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
-            _ = Tokens.Should().HaveCountGreaterOrEqualTo(1).And.HaveCountLessOrEqualTo(11);
+            Assert.NotNull(Tokens);
+            Assert.NotEmpty(Tokens);
+            _ = Assert.IsType<CommandToken>(Tokens[0]);
+            Assert.Equal("UserCommand", Tokens[0].Value);
+            Assert.True(Tokens.Length is >= 1 and <= 11);
         }
 
         [Fact]
@@ -63,13 +64,14 @@ namespace Monarch.Tests.Commands.Parser
                     new HelpCommand(new IConsoleWriter[]{new EmptyConsoleWriter() },System.Array.Empty<IOptions>()),
                     new UserCommand()});
             TokenBaseClass[] Tokens = Item.GetTokens(new string[] { "UserCommand", "Test", "Data" });
-            _ = Tokens.Should().NotBeNullOrEmpty();
-            _ = Tokens[0].Should().BeOfType<CommandToken>();
-            _ = Tokens[0].Value.Should().BeEquivalentTo("UserCommand");
-            _ = Tokens[1].Should().BeOfType<OptionValueToken>();
-            _ = Tokens[1].Value.Should().BeEquivalentTo("Test");
-            _ = Tokens[2].Should().BeOfType<OptionValueToken>();
-            _ = Tokens[2].Value.Should().BeEquivalentTo("Data");
+            Assert.NotNull(Tokens);
+            Assert.NotEmpty(Tokens);
+            _ = Assert.IsType<CommandToken>(Tokens[0]);
+            Assert.Equal("UserCommand", Tokens[0].Value);
+            _ = Assert.IsType<OptionValueToken>(Tokens[1]);
+            Assert.Equal("Test", Tokens[1].Value);
+            _ = Assert.IsType<OptionValueToken>(Tokens[2]);
+            Assert.Equal("Data", Tokens[2].Value);
         }
 
         public class TestData

@@ -1,5 +1,4 @@
-﻿using FluentAssertions;
-using Monarch.Commands.Lexer;
+﻿using Monarch.Commands.Lexer;
 using Monarch.Commands.Parser;
 using Monarch.Tests.BaseClasses;
 using System.Collections.Generic;
@@ -45,7 +44,7 @@ namespace Monarch.Tests.Commands.Lexer
             var Result = _TestClass.ToString();
 
             // Assert
-            _ = Result.Should().Be(" ");
+            Assert.Equal(" ", Result);
         }
 
         [Fact]
@@ -55,18 +54,18 @@ namespace Monarch.Tests.Commands.Lexer
             var Instance = new Property();
 
             // Assert
-            _ = Instance.Should().NotBeNull();
+            Assert.NotNull(Instance);
         }
 
         [Fact]
         public void CanGetIsIEnumerable() =>
             // Assert
-            _ = _TestClass.IsIEnumerable.As<object>().Should().BeAssignableTo<bool>();
+            Assert.IsType<bool>(_TestClass.IsIEnumerable);
 
         [Fact]
         public void CanGetMaxValueCount() =>
             // Assert
-            _ = _TestClass.MaxValueCount.As<object>().Should().BeAssignableTo<int>();
+            Assert.IsType<int>(_TestClass.MaxValueCount);
 
         [Fact]
         public void CanSetAndGetFlagName()
@@ -78,7 +77,7 @@ namespace Monarch.Tests.Commands.Lexer
             _TestClass.FlagName = TestValue;
 
             // Assert
-            _ = _TestClass.FlagName.Should().BeSameAs(TestValue);
+            Assert.Same(TestValue, _TestClass.FlagName);
         }
 
         [Fact]
@@ -91,20 +90,20 @@ namespace Monarch.Tests.Commands.Lexer
             _TestClass.FlagValue = TestValue;
 
             // Assert
-            _ = _TestClass.FlagValue.Should().BeSameAs(TestValue);
+            Assert.Same(TestValue, _TestClass.FlagValue);
         }
 
         [Fact]
         public void CanSetAndGetPropertyInfo()
         {
             // Arrange
-            PropertyInfo TestValue = typeof(TestClass).Properties().First();
+            PropertyInfo TestValue = typeof(TestClass).GetProperties().First();
 
             // Act
             _TestClass.PropertyInfo = TestValue;
 
             // Assert
-            _ = _TestClass.PropertyInfo.Should().BeSameAs(TestValue);
+            Assert.Same(TestValue, _TestClass.PropertyInfo);
         }
 
         [Fact]
