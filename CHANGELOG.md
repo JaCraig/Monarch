@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.1"></a>
+## [4.0.1](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.1) (2025-01-15)
+
+### Bug Fixes
+
+* **tests:** update assertions and refactor main method ([888f612](https://www.github.com/JaCraig/Monarch/commit/888f612f19c626bdc9c1390cad3fb0c201322f9f))
+
+### Other
+
+* Merge pull request #313 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-6c34fbe01a ([0e9b6d6](https://www.github.com/JaCraig/Monarch/commit/0e9b6d6c4f28c908df7439d92cc1cb8a45cf5440))
+* Merge pull request #314 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-8c8b2232d5 ([b4671e2](https://www.github.com/JaCraig/Monarch/commit/b4671e27311da4989a3005ca20ed1e11ef2c375d))
+* Merge pull request #315 from JaCraig/dependabot/nuget/TestApp/dependencies-0eb5dce03c ([475d770](https://www.github.com/JaCraig/Monarch/commit/475d77087a9172c07d091961b2e66771b9e7ae15))
+* Merge pull request #316 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-ae4dc51d69 ([5772009](https://www.github.com/JaCraig/Monarch/commit/57720099c07c15354a5303881330abca65729f26))
+* Merge pull request #317 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-637ad84d5b ([78530f3](https://www.github.com/JaCraig/Monarch/commit/78530f35a50f82fc137cf0fb51f0c22dbc0e6cb6))
+* Merge pull request #318 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-37a7915f86 ([594d3a3](https://www.github.com/JaCraig/Monarch/commit/594d3a354023a02bf69ccfa15d5398d24613310e))
+* Merge pull request #319 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-dac939b906 ([bf19be3](https://www.github.com/JaCraig/Monarch/commit/bf19be390544f20f74528bccddf3a6e5a55e7a9c))
+* Merge pull request #320 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-ed63622fe2 ([f188f81](https://www.github.com/JaCraig/Monarch/commit/f188f81c0e4953a1c76b342a8e4039594e9b5015))
+* bump FluentAssertions in /Monarch.Tests in the dependencies group ([1bdc3cd](https://www.github.com/JaCraig/Monarch/commit/1bdc3cdfcd6c2228b39d0def65596b465a3bad19))
+* bump husky in /TestApp in the dependencies group ([d974941](https://www.github.com/JaCraig/Monarch/commit/d97494174942b98b55ff1fefa995564671e1e8aa))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([9320711](https://www.github.com/JaCraig/Monarch/commit/9320711ab2ef53036442e0949385966cba2c382e))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([be45b64](https://www.github.com/JaCraig/Monarch/commit/be45b64d4e78fa9f8787b4ef6600665abe500626))
+* bump the dependencies group in /Monarch.Tests with 2 updates ([a627706](https://www.github.com/JaCraig/Monarch/commit/a62770602a5f8c795d031b85b77c28bac147ea71))
+* bump the dependencies group in /Monarch.Tests with 2 updates ([e804b7f](https://www.github.com/JaCraig/Monarch/commit/e804b7f3ec63a1e492cc5de8bb513399f7750a01))
+* bump xunit in /Monarch.Tests in the dependencies group ([9db98ca](https://www.github.com/JaCraig/Monarch/commit/9db98ca25063e19ee5daaef6df52f63e1a9f7b2e))
+* bump xunit.runner.visualstudio ([41a0377](https://www.github.com/JaCraig/Monarch/commit/41a03773fb232c2abbcdac360be642ad5d29eb36))
+* update husky and versionize tool versions to 0.7.1 and 2.3.0 respectively ([c0fec65](https://www.github.com/JaCraig/Monarch/commit/c0fec650afd955ba2bb8c15bb1702c6e31967c46))
+
 <a name="4.0.0"></a>
 ## [4.0.0](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.0) (2024-11-24)
 
