@@ -682,11 +682,14 @@ references:
   fullName: Monarch.Commands.Default.VersionCommand.Name
   nameWithType: VersionCommand.Name
 - uid: Monarch.Commands.Default.VersionCommand.Run(Monarch.Commands.Default.EmptyInput)
-  name: Run(EmptyInput)
+  name: Run(EmptyInput?)
   href: api/Monarch.Commands.Default.VersionCommand.html#Monarch_Commands_Default_VersionCommand_Run_Monarch_Commands_Default_EmptyInput_
   commentId: M:Monarch.Commands.Default.VersionCommand.Run(Monarch.Commands.Default.EmptyInput)
-  fullName: Monarch.Commands.Default.VersionCommand.Run(Monarch.Commands.Default.EmptyInput)
-  nameWithType: VersionCommand.Run(EmptyInput)
+  name.vb: Run(EmptyInput)
+  fullName: Monarch.Commands.Default.VersionCommand.Run(Monarch.Commands.Default.EmptyInput?)
+  fullName.vb: Monarch.Commands.Default.VersionCommand.Run(Monarch.Commands.Default.EmptyInput)
+  nameWithType: VersionCommand.Run(EmptyInput?)
+  nameWithType.vb: VersionCommand.Run(EmptyInput)
 - uid: Monarch.Commands.Default.VersionCommand.Run*
   name: Run
   href: api/Monarch.Commands.Default.VersionCommand.html#Monarch_Commands_Default_VersionCommand_Run_

@@ -94,12 +94,9 @@ namespace ExampleApp
 {
     internal static class Program
     {
-        private static void Main(string[] args)
-        {
-            new ServiceCollection().AddCanisterModules();
-
+        private static void Main(string[] args) =&gt;
+            // Run the command runner with the provided arguments
             new ServiceCollection().AddCanisterModules().BuildServiceProvider().GetService&lt;CommandRunner&gt;().Run(args);
-        }
     }
 }
 </code></pre><h1 id="command-code">Command Code</h1>
