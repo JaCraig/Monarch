@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.2"></a>
+## [4.0.2](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.2) (2025-06-27)
+
+### Bug Fixes
+
+* **dependencies:** update package references and patterns in configuration ([4213c2c](https://www.github.com/JaCraig/Monarch/commit/4213c2cc0672582019d0860b3afe2b31671846d9))
+
+### Other
+
+* Merge pull request #322 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-a3eea154c6 ([e0004ab](https://www.github.com/JaCraig/Monarch/commit/e0004ab0796a05793409694359deb6682d04dffd))
+* Merge pull request #323 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-7fe5cb5319 ([37d712d](https://www.github.com/JaCraig/Monarch/commit/37d712d115a055d01357a2ee8488db9461f8f1e8))
+* Merge pull request #324 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-cdc5eca79b ([6592bb9](https://www.github.com/JaCraig/Monarch/commit/6592bb9ab3fae87e9d2eaad61352eadb001c42d8))
+* Merge pull request #325 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-b09a967ee8 ([f69d7bb](https://www.github.com/JaCraig/Monarch/commit/f69d7bb657d1c21a106c7f49d7aca3a2a5cb9171))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([5998ab7](https://www.github.com/JaCraig/Monarch/commit/5998ab772aff98c6527fed006069e5bbe8e6c8fa))
+* bump Mecha.xUnit in /Monarch.Tests in the dependencies group ([9445dcd](https://www.github.com/JaCraig/Monarch/commit/9445dcde24dc6af13487f5fc76983273d0821242))
+* bump the dependencies group in /Monarch.Tests with 2 updates ([f61a5c2](https://www.github.com/JaCraig/Monarch/commit/f61a5c2503f8366c11f8993cb7e1ddb84808ffa5))
+* bump the dependencies group in /Monarch.Tests with 3 updates ([1e0699f](https://www.github.com/JaCraig/Monarch/commit/1e0699f6623928fd3384562705751fda0828f86e))
+
 <a name="4.0.1"></a>
 ## [4.0.1](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.1) (2025-01-15)
 
