@@ -71,7 +71,7 @@ namespace Monarch.Commands.Lexer
                 {
                     CurrentProperty = new Property
                     {
-                        FlagName = new OptionNameToken(properties[0].Name),
+                        FlagName = new OptionNameToken(properties[0]?.Name ?? ""),
                         PropertyInfo = properties[0]
                     };
                     CurrentProperty.FlagValue.Add(tokens[0]);
