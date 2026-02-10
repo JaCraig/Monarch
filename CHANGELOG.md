@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.6"></a>
+## [4.0.6](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.6) (2026-02-10)
+
+### Bug Fixes
+
+* Bump the dependencies group with 2 updates ([846ff7b](https://www.github.com/JaCraig/Monarch/commit/846ff7b819f729ba480effed21344c8f499e3567))
+
+### Other
+
+* Merge pull request #363 from JaCraig/dependabot/nuget/dot-config/dependencies-e8c00ce845 ([e3b7971](https://www.github.com/JaCraig/Monarch/commit/e3b79713dd27659f0c08b0c111a3fe8204b8bab9))
+* Merge pull request #364 from JaCraig/dependabot/nuget/Monarch/dependencies-ee7eafef00 ([a202654](https://www.github.com/JaCraig/Monarch/commit/a202654fcc0e78838c8e251d47aed4c3997bdc90))
+* Merge pull request #365 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-0ab92a1bf0 ([9f48e0e](https://www.github.com/JaCraig/Monarch/commit/9f48e0e36873abb10743840a894fa505cb426b37))
+* Merge pull request #366 from JaCraig/dependabot/nuget/Monarch/dependencies-a5bc480f90 ([86ffaad](https://www.github.com/JaCraig/Monarch/commit/86ffaad7106819a11f3f79f4442adf291c48ff9f))
+* Merge pull request #367 from JaCraig/dependabot/nuget/Monarch/dependencies-a5bc480f90 ([7d28917](https://www.github.com/JaCraig/Monarch/commit/7d28917ec026ba3b9b66dc55832741af25c699ad))
+* Bump the dependencies group with 1 update ([184c04a](https://www.github.com/JaCraig/Monarch/commit/184c04a298b80366e3904b9450ab7c5e446f7156))
+* Bump the dependencies group with 1 update ([ef56ae2](https://www.github.com/JaCraig/Monarch/commit/ef56ae2712a42aefe8f82404bf6bd0699761132f))
+* Bump the dependencies group with 2 updates ([4499183](https://www.github.com/JaCraig/Monarch/commit/449918335e65c48c1ae492b97f95dfae84499909))
+* Bump the dependencies group with 2 updates ([eb0418c](https://www.github.com/JaCraig/Monarch/commit/eb0418c49896863440b76836e9be432bf2acb136))
+
 <a name="4.0.5"></a>
 ## [4.0.5](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.5) (2026-01-21)
 
