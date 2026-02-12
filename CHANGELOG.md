@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.7"></a>
+## [4.0.7](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.7) (2026-02-12)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([da58a92](https://www.github.com/JaCraig/Monarch/commit/da58a927dc6d79442b19718b710daa351c36c442))
+
+### Other
+
+* Merge pull request #368 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-fb5728d31d ([1a36161](https://www.github.com/JaCraig/Monarch/commit/1a361619929fa3ef306cd33c4488a031dbaabca7))
+* Merge pull request #369 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-446ee85a89 ([af738d6](https://www.github.com/JaCraig/Monarch/commit/af738d663b2e7f709c4ffe239ecee8a267538912))
+* Merge pull request #370 from JaCraig/dependabot/nuget/Monarch/dependencies-197e38b05a ([c48af73](https://www.github.com/JaCraig/Monarch/commit/c48af73c3c17b58a0ee19370f4934afa148c26ad))
+* Bump the dependencies group with 1 update ([e7f0f38](https://www.github.com/JaCraig/Monarch/commit/e7f0f3816153ebd61f6c776ceb549cf12dbcec95))
+* Bump the dependencies group with 2 updates ([450ce67](https://www.github.com/JaCraig/Monarch/commit/450ce6779108bc1b3ceffd4f8f69ab8eec15b0ca))
+
 <a name="4.0.6"></a>
 ## [4.0.6](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.6) (2026-02-10)
 
