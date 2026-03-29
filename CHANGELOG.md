@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.0"></a>
+## [4.1.0](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.0) (2026-03-29)
+
+### Features
+
+* **dependabot:** update schedule from daily to weekly ([c20e47b](https://www.github.com/JaCraig/Monarch/commit/c20e47b83a3dc555163b237a4ae34ff70632a31c))
+
+### Other
+
+* Merge pull request #384 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-cd793c22e8 ([94a0a20](https://www.github.com/JaCraig/Monarch/commit/94a0a20e8c463d63f72ca24681007bf597d8e126))
+* Merge pull request #385 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-4bb5c90d9e ([f759216](https://www.github.com/JaCraig/Monarch/commit/f759216d1af06fe0b7e8eb4cb1102f62e06bb04a))
+* Bump the dependencies group with 2 updates ([ff11c5d](https://www.github.com/JaCraig/Monarch/commit/ff11c5d4cd337d5a0c757b08428bd7297e1a7811))
+* Bump the dependencies group with 2 updates ([010aa89](https://www.github.com/JaCraig/Monarch/commit/010aa8952b65bcf7ace762773def1f54f7b3bac6))
+
 <a name="4.0.11"></a>
 ## [4.0.11](https://www.github.com/JaCraig/Monarch/releases/tag/v4.0.11) (2026-03-13)
 
