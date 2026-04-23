@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.10"></a>
+## [4.1.10](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.10) (2026-04-23)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([0931306](https://www.github.com/JaCraig/Monarch/commit/093130620abd3c324b41d57a38af70aaf9bbf44e))
+
+### Other
+
+* Merge pull request #398 from JaCraig/dependabot/nuget/Monarch/dependencies-48e98a0ad3 ([c5b3092](https://www.github.com/JaCraig/Monarch/commit/c5b309243c458b0a1e470a685ecd4cec125a0058))
+
 <a name="4.1.9"></a>
 ## [4.1.9](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.9) (2026-04-22)
 
