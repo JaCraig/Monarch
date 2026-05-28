@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.18"></a>
+## [4.1.18](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.18) (2026-05-28)
+
+### Bug Fixes
+
+* **workflows:** remove PERSONAL_ACCESS_TOKEN from workflow secrets ([78cd343](https://www.github.com/JaCraig/Monarch/commit/78cd34369963490d88b441c4f5412d5f062a6321))
+
+### Other
+
+* Merge pull request #410 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-4b47ae212b ([fd18097](https://www.github.com/JaCraig/Monarch/commit/fd1809704bd12b038e83ff3f6eb755382d596227))
+* Bump the dependencies group with 3 updates ([0fa5627](https://www.github.com/JaCraig/Monarch/commit/0fa5627eadbcf1e5ecbf23c9f818b9808cddabd3))
+
 <a name="4.1.17"></a>
 ## [4.1.17](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.17) (2026-05-20)
 
