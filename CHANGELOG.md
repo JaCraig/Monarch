@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.19"></a>
+## [4.1.19](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.19) (2026-08-21)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([c80b7a3](https://www.github.com/JaCraig/Monarch/commit/c80b7a3dead78afb807c8ee6e8d46905d8d2b6dc))
+* Bump the dependencies group with 1 update ([2bfd612](https://www.github.com/JaCraig/Monarch/commit/2bfd612ff0e9938e23e7fe553b5185c0c4318387))
+* Bump the dependencies group with 1 update ([5355f6c](https://www.github.com/JaCraig/Monarch/commit/5355f6ce2beab1392670dc168dcf7dd387804a49))
+* Bump the dependencies group with 2 updates ([5aa3716](https://www.github.com/JaCraig/Monarch/commit/5aa37167d7a5ca7ba04575a3e759d94e07960289))
+* Bump the dependencies group with 2 updates ([183f120](https://www.github.com/JaCraig/Monarch/commit/183f120f80cdb7976450cba95f5b8a148724adc9))
+
+### Other
+
+* Merge pull request #411 from JaCraig/dependabot/nuget/Monarch/dependencies-e8d27ec23f ([e81c386](https://www.github.com/JaCraig/Monarch/commit/e81c386fd9cc65bb4c40c1c0b2c32eabacc73bec))
+* Merge pull request #412 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-89e6161468 ([390df2b](https://www.github.com/JaCraig/Monarch/commit/390df2bb8d55de955fb31c5e064f219efcd5f2ac))
+* Merge pull request #413 from JaCraig/dependabot/nuget/Monarch/dependencies-991ee26f7c ([3e07d0b](https://www.github.com/JaCraig/Monarch/commit/3e07d0bc06447bf03b995ec0485163821c938b8b))
+* Merge pull request #414 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-407341980e ([2264fd3](https://www.github.com/JaCraig/Monarch/commit/2264fd388a650fee48e4dc90579253be68b2cdf3))
+* Merge pull request #415 from JaCraig/dependabot/nuget/Monarch/dependencies-5c1cd76f7e ([4f86924](https://www.github.com/JaCraig/Monarch/commit/4f86924ecccef92e59dd423ddde792fd9a602406))
+* Merge pull request #416 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-7071a909e4 ([f256186](https://www.github.com/JaCraig/Monarch/commit/f256186bc580f2c2acca2f1f71ce32372ac88115))
+* Merge pull request #417 from JaCraig/dependabot/nuget/dot-config/dependencies-d580172a4f ([69a7293](https://www.github.com/JaCraig/Monarch/commit/69a7293786f4116251f44866e1ecc100feab2092))
+* Merge pull request #418 from JaCraig/dependabot/nuget/Monarch/dependencies-637020aa5a ([4030181](https://www.github.com/JaCraig/Monarch/commit/4030181cd675d199ac84e571702b8d02062f0523))
+* Merge pull request #419 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-679c1f95be ([4d79d5b](https://www.github.com/JaCraig/Monarch/commit/4d79d5bb85d11b251d5533a7abeb09421da871c6))
+* Merge pull request #420 from JaCraig/dependabot/nuget/Monarch/dependencies-72c809fbb3 ([8e9444d](https://www.github.com/JaCraig/Monarch/commit/8e9444d52cf9868fda113f2e9bc4f2c64802e806))
+* Merge pull request #421 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-862dbac85e ([4462bbd](https://www.github.com/JaCraig/Monarch/commit/4462bbd9a830e961958f72375f09fd640531aea5))
+* Bump the dependencies group with 1 update ([fdf8ecf](https://www.github.com/JaCraig/Monarch/commit/fdf8ecf14b5b29ceb4f4c2fa87449d45b2886a6c))
+* Bump the dependencies group with 1 update ([b73db21](https://www.github.com/JaCraig/Monarch/commit/b73db21dc221cb7c8e5dc3f0a564f04ba45925f1))
+* Bump the dependencies group with 1 update ([014d09c](https://www.github.com/JaCraig/Monarch/commit/014d09c85d4711ab33549bdefeea69cf9df309d8))
+* Bump the dependencies group with 2 updates ([0879131](https://www.github.com/JaCraig/Monarch/commit/08791311477d3db62ad079bf81aabe8b5b4028a2))
+* Bump the dependencies group with 2 updates ([3f8b229](https://www.github.com/JaCraig/Monarch/commit/3f8b229ea9722294c97faf99d67da157c56a5ab3))
+* Bump the dependencies group with 3 updates ([46a6c2b](https://www.github.com/JaCraig/Monarch/commit/46a6c2b56275bac51764d4c63b306a0673cff3e2))
+
 <a name="4.1.18"></a>
 ## [4.1.18](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.18) (2026-05-28)
 
