@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.1.20"></a>
+## [4.1.20](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.20) (2026-11-08)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([3860c81](https://www.github.com/JaCraig/Monarch/commit/3860c81d1f508af1f4c787c6a24ca567ca77d82d))
+* Bump the dependencies group with 2 updates ([3cf0f9e](https://www.github.com/JaCraig/Monarch/commit/3cf0f9e3ed47970da58f9d663399b135b135492c))
+* Bump the dependencies group with 2 updates ([7f0a1aa](https://www.github.com/JaCraig/Monarch/commit/7f0a1aaef10288da4ad7bfa8a90a11db70fbca17))
+* Bump the dependencies group with 2 updates ([f4c7b32](https://www.github.com/JaCraig/Monarch/commit/f4c7b32c92440bf202f39a90b50d8ecda837e598))
+* Merge branch 'master' of https://github.com/JaCraig/Monarch ([9207edb](https://www.github.com/JaCraig/Monarch/commit/9207edb45dee38184f5125634a4428701a353cbe))
+* **workflow:** update permissions and enhance publish steps ([d7e7978](https://www.github.com/JaCraig/Monarch/commit/d7e7978fd109d9ed531ba497d0fe0b5b16cf560a))
+
+### Other
+
+* Merge pull request #422 from JaCraig/dependabot/nuget/dot-config/dependencies-87dec4854d ([6b9e25a](https://www.github.com/JaCraig/Monarch/commit/6b9e25a4b6db7116f85182aa765076cd1f35e0ef))
+* Merge pull request #423 from JaCraig/dependabot/nuget/Monarch/dependencies-39d8d9731f ([b8f68d1](https://www.github.com/JaCraig/Monarch/commit/b8f68d112edaf5db75b33f01647615bede3a06c1))
+* Merge pull request #424 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-3e8ca8d6b6 ([bd30f7c](https://www.github.com/JaCraig/Monarch/commit/bd30f7c38208efd5560245279b269ffccc2598d0))
+* Merge pull request #425 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-8af17d2a0f ([9288f33](https://www.github.com/JaCraig/Monarch/commit/9288f338ec4a622e7918f046ec9e55a1f09b98eb))
+* Merge pull request #426 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-1aaad36d12 ([0bfbd22](https://www.github.com/JaCraig/Monarch/commit/0bfbd225aa9dc74346591be9cb034082b136eefb))
+* Merge pull request #427 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-9d0a37c85b ([b4b7640](https://www.github.com/JaCraig/Monarch/commit/b4b76402a49bb4b32b3229557bf6ea147c12c2fd))
+* Merge pull request #428 from JaCraig/dependabot/nuget/Monarch/dependencies-c1ede9f7c1 ([cbf467d](https://www.github.com/JaCraig/Monarch/commit/cbf467dbd5b926a0c7be30402cfaea0354372971))
+* Merge pull request #429 from JaCraig/dependabot/nuget/Monarch.Tests/dependencies-efc00d6d39 ([b05aec3](https://www.github.com/JaCraig/Monarch/commit/b05aec38ee16d58d8659dada265c0db902d02cbd))
+* Merge pull request #430 from JaCraig/dependabot/nuget/Monarch/dependencies-f4803d6dd8 ([b7f8bbc](https://www.github.com/JaCraig/Monarch/commit/b7f8bbc28bd50dae3aa7dbf9117b22724c1d54c7))
+* Bump the dependencies group with 1 update ([d365142](https://www.github.com/JaCraig/Monarch/commit/d3651427392ead9cc4c45a135b70b73c075f412a))
+* Bump the dependencies group with 1 update ([58f1da4](https://www.github.com/JaCraig/Monarch/commit/58f1da400486517600c519bbb6439245f2eaec9d))
+* Bump the dependencies group with 1 update ([693c1b4](https://www.github.com/JaCraig/Monarch/commit/693c1b4cf164a69d2560aa0bcae83a858c23f971))
+* Bump the dependencies group with 1 update ([010d07c](https://www.github.com/JaCraig/Monarch/commit/010d07c5d931028642f75e3f8ca80302b532db77))
+* Bump the dependencies group with 2 updates ([20b9f00](https://www.github.com/JaCraig/Monarch/commit/20b9f00f864d435846b81a250de5c036f5d141e7))
+
 <a name="4.1.19"></a>
 ## [4.1.19](https://www.github.com/JaCraig/Monarch/releases/tag/v4.1.19) (2026-08-21)
 
